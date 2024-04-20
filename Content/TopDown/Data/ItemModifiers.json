@@ -1,0 +1,34 @@
+[
+  {
+    "MaximumLife": [
+      '5',
+      '10',
+      '15'
+    ],
+    "FlatDamage": [
+      '2',
+      '4',
+      '6'
+    ],
+    "Armour": [
+      '20',
+      '40',
+      '60'
+    ],
+    "FireResistance": [
+      '5',
+      '10',
+      '15'
+    ],
+    "ColdResistance": [
+      '5',
+      '10',
+      '15'
+    ],
+    "LightningResistance": [
+      '5',
+      '10',
+      '15'
+    ]
+  }
+]
