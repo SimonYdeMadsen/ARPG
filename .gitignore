@@ -12,3 +12,9 @@ Saved
 *.suo
 *.xcodeproj
 *.xcworkspace
+
+# Allow specific plugin files
+!Plugins/
+!Plugins/**/
+!Plugins/**/Binaries/
+!Plugins/**/Intermediate/
