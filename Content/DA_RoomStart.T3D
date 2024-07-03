@@ -1,0 +1,4 @@
+Begin Object Class=/Game/Blueprints/Dungeon/BP_MyRoomData.BP_MyRoomData_C Name="DA_RoomStart" ExportPath="/Game/Blueprints/Dungeon/BP_MyRoomData.BP_MyRoomData_C'/Game/Data/Rooms/DA_RoomStart.DA_RoomStart'"
+   Level="/Game/Maps/Rooms/RoomStart.RoomStart"
+   NativeClass="/Script/Engine.BlueprintGeneratedClass'/Game/Blueprints/Dungeon/BP_MyRoomData.BP_MyRoomData_C'"
+End Object

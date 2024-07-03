@@ -1,0 +1,9 @@
+Begin Object Class=/Game/Blueprints/Dungeon/BP_MyRoomData.BP_MyRoomData_C Name="DA_RoomA" ExportPath="/Game/Blueprints/Dungeon/BP_MyRoomData.BP_MyRoomData_C'/Game/Data/Rooms/DA_RoomA.DA_RoomA'"
+   Level="/Game/Maps/Rooms/RoomA.RoomA"
+   Doors(1)=(Position=(X=-1,Y=1,Z=-1),Direction=East)
+   Doors(2)=(Position=(X=-2,Y=0,Z=0),Direction=South)
+   Doors(3)=(Position=(X=-1,Y=-1,Z=1),Direction=West)
+   FirstPoint=(X=-2,Y=-1,Z=-1)
+   SecondPoint=(X=1,Y=2,Z=2)
+   NativeClass="/Script/Engine.BlueprintGeneratedClass'/Game/Blueprints/Dungeon/BP_MyRoomData.BP_MyRoomData_C'"
+End Object

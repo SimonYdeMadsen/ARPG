@@ -1,0 +1,8 @@
+Begin Object Class=/Game/Blueprints/Dungeon/BP_MyRoomData.BP_MyRoomData_C Name="DA_RoomKey" ExportPath="/Game/Blueprints/Dungeon/BP_MyRoomData.BP_MyRoomData_C'/Game/Data/Rooms/DA_RoomKey.DA_RoomKey'"
+   Level="/Game/Maps/Rooms/RoomKey.RoomKey"
+   Doors(1)=(Direction=West)
+   Doors(2)=(Direction=South)
+   Doors(3)=(Direction=East)
+   CustomData=("/Script/Engine.BlueprintGeneratedClass'/Game/Blueprints/Dungeon/CustomData/BP_KeyCustomData.BP_KeyCustomData_C'")
+   NativeClass="/Script/Engine.BlueprintGeneratedClass'/Game/Blueprints/Dungeon/BP_MyRoomData.BP_MyRoomData_C'"
+End Object
