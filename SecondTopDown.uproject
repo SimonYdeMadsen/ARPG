@@ -42,6 +42,14 @@
 		{
 			"Name": "ProceduralDungeon",
 			"Enabled": true
+		},
+		{
+			"Name": "GPULightmass",
+			"Enabled": true
+		},
+		{
+			"Name": "UBSplineStructureCreator",
+			"Enabled": true
 		}
 	]
 }
