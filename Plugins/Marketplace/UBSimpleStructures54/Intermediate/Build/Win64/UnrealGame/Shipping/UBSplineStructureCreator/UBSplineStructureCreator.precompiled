@@ -1,0 +1,7 @@
+{
+	"OutputFiles": [
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\UBSplineStructureCreator\\Module.UBSplineStructureCreator.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\UBSplineStructureCreator\\UBSplineStructureBPFL.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\UBSplineStructureCreator\\UBSplineStructureCreator.cpp.obj"
+	]
+}
