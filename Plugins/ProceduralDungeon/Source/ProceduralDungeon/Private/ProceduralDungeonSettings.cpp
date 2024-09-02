@@ -43,7 +43,7 @@ UProceduralDungeonSettings::UProceduralDungeonSettings(const FObjectInitializer&
 	OccludeDynamicActors = true;
 
 	// Debug settings
-	DrawDebug = true;
+	DrawDebug = false;
 	ShowRoomOrigin = false;
 	bFlipDoorArrowSide = false;
 	DoorArrowLength = 300.0f;
