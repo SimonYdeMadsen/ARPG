@@ -50,6 +50,10 @@
 		{
 			"Name": "UBSplineStructureCreator",
 			"Enabled": true
+		},
+		{
+			"Name": "Water",
+			"Enabled": true
 		}
 	]
 }
