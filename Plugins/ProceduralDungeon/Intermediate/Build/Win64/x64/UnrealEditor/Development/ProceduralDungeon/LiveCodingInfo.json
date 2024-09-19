@@ -2,12 +2,13 @@
 	"RemapUnityFiles": 
 	{
 		"Module.ProceduralDungeon.1.cpp.obj": [
-			"RoomObserverComponent.cpp.obj",
 			"Door.gen.cpp.obj",
 			"DoorType.gen.cpp.obj",
 			"DungeonBlueprintLibrary.gen.cpp.obj",
 			"DungeonGenerator.gen.cpp.obj",
-			"DungeonGraph.gen.cpp.obj",
+			"DungeonGraph.gen.cpp.obj"
+		],
+		"Module.ProceduralDungeon.2.cpp.obj": [
 			"ProceduralDungeon.init.gen.cpp.obj",
 			"ProceduralDungeonSettings.gen.cpp.obj",
 			"ProceduralDungeonTypes.gen.cpp.obj",
@@ -24,7 +25,8 @@
 			"TriggerDoor.gen.cpp.obj",
 			"TriggerType.gen.cpp.obj"
 		],
-		"Module.ProceduralDungeon.2.cpp.obj": [
+		"Module.ProceduralDungeon.3.cpp.obj": [
+			"RoomObserverComponent.cpp.obj",
 			"StaticRoomObserverComponent.cpp.obj",
 			"StaticRoomVisibilityComponent.cpp.obj",
 			"Door.cpp.obj",

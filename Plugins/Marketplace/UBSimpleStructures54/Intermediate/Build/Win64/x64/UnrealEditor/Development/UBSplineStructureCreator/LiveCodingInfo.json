@@ -2,10 +2,10 @@
 	"RemapUnityFiles": 
 	{
 		"Module.UBSplineStructureCreator.cpp.obj": [
-			"UBSplineStructureBPFL.cpp.obj",
-			"UBSplineStructureCreator.cpp.obj",
 			"UBSplineStructureBPFL.gen.cpp.obj",
-			"UBSplineStructureCreator.init.gen.cpp.obj"
+			"UBSplineStructureCreator.init.gen.cpp.obj",
+			"UBSplineStructureBPFL.cpp.obj",
+			"UBSplineStructureCreator.cpp.obj"
 		]
 	}
 }

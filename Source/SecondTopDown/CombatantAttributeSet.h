@@ -13,42 +13,93 @@ class SECONDTOPDOWN_API UCombatantAttributeSet : public UAttributeSet
     GENERATED_BODY()
 
 public:
-
-
-    // Attributes
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Attributes")
-    FGameplayAttributeData Health;
-
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Attributes")
-    FGameplayAttributeData MaxHealth;
-
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Attributes")
-    FGameplayAttributeData InDamage;
-
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Attributes")
-    FGameplayAttributeData Shield;
-
-    // Static Getters for attributes
-    static FGameplayAttribute GetShieldAttribute();
+    UFUNCTION(BlueprintPure, Category = "Attributes")
     static FGameplayAttribute GetHealthAttribute();
+
+    UFUNCTION(BlueprintPure, Category = "Attributes")
     static FGameplayAttribute GetMaxHealthAttribute();
+
+    UFUNCTION(BlueprintPure, Category = "Attributes")
+    static FGameplayAttribute GetShieldAttribute();
+
+    UFUNCTION(BlueprintPure, Category = "Attributes")
     static FGameplayAttribute GetInDamageAttribute();
 
+    UFUNCTION(BlueprintPure, Category = "Attributes")
+    static FGameplayAttribute GetFireResistanceAttribute();
+
+    UFUNCTION(BlueprintPure, Category = "Attributes")
+    static FGameplayAttribute GetColdResistanceAttribute();
+
+    UFUNCTION(BlueprintPure, Category = "Attributes")
+    static FGameplayAttribute GetLightningResistanceAttribute();
+
+    UFUNCTION(BlueprintPure, Category = "Attributes")
+    static FGameplayAttribute GetChaosResistanceAttribute();
+
+    UFUNCTION(BlueprintPure, Category = "Attributes")
+    static FGameplayAttribute GetArmourAttribute();
+
+    // Existing getters and setters
+    float GetHealth() const;
+    void SetHealth(float Value);
+
+    float GetMaxHealth() const;
+    void SetMaxHealth(float Value);
+
+    float GetShield() const;
+    void SetShield(float Value);
+
+    float GetInDamage() const;
+    void SetInDamage(float Value);
+
+    float GetFireResistance() const;
+    void SetFireResistance(float Value);
+
+    float GetColdResistance() const;
+    void SetColdResistance(float Value);
+
+    float GetLightningResistance() const;
+    void SetLightningResistance(float Value);
+
+    float GetChaosResistance() const;
+    void SetChaosResistance(float Value);
+
+    float GetArmour() const;
+    void SetArmour(float Value);
 
     // Override to enforce rules like limiting Health to MaxHealth
     virtual void PostGameplayEffectExecute(const FGameplayEffectModCallbackData& Data) override;
 
-protected: 
-    // Getters and Setters
-    float GetShield() const { return Shield.GetCurrentValue(); }
-    void SetShield(float Value) { Shield.SetCurrentValue(Value); }
+private:
+    UPROPERTY()
+    FGameplayAttributeData Health;
 
-    float GetHealth() const { return Health.GetCurrentValue(); }
-    void SetHealth(float Value) { Health.SetCurrentValue(Value); }
+    UPROPERTY()
+    FGameplayAttributeData MaxHealth;
 
-    float GetMaxHealth() const { return MaxHealth.GetCurrentValue(); }
-    void SetMaxHealth(float Value) { MaxHealth.SetCurrentValue(Value); }
+    UPROPERTY()
+    FGameplayAttributeData Shield;
 
-    float GetInDamage() const { return InDamage.GetCurrentValue(); }
-    void SetInDamage(float Value) { InDamage.SetCurrentValue(Value); }
+    UPROPERTY()
+    FGameplayAttributeData InDamage;
+
+    UPROPERTY()
+    FGameplayAttributeData FireResistance;
+
+    UPROPERTY()
+    FGameplayAttributeData ColdResistance;
+
+    UPROPERTY()
+    FGameplayAttributeData LightningResistance;
+
+    UPROPERTY()
+    FGameplayAttributeData ChaosResistance;
+
+    UPROPERTY()
+    FGameplayAttributeData Armour;
+
+
+    float ApplyDamageMitigation(const FGameplayEffectModCallbackData& Data, FGameplayTagContainer& GameplayTagContainer, float& Damage);
+
 };
