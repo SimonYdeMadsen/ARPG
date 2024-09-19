@@ -1,0 +1,13 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\symig\\onedrive\\documents\\github\\secondtopdown 5.4\\plugins\\proceduraldungeon\\intermediate\\build\\win64\\unrealeditor\\inc\\proceduraldungeoneditor\\uht\\proceduraldungeoneditor.init.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\symig\\onedrive\\documents\\github\\secondtopdown 5.4\\intermediate\\build\\win64\\x64\\secondtopdowneditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.inclorderoldest.h.pch",
+        "Includes": [
+            "c:\\users\\symig\\onedrive\\documents\\github\\secondtopdown 5.4\\plugins\\proceduraldungeon\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\proceduraldungeoneditor\\definitions.proceduraldungeoneditor.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

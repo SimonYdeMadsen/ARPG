@@ -33,9 +33,13 @@ struct Z_Construct_UScriptStruct_FMargin3D_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Struct_MetaDataParams[] = {
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Holds margin values in 3D (e.g. used for box volumes)\n" },
+#endif
 		{ "ModuleRelativePath", "Private/ProceduralDungeonEdTypes.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Holds margin values in 3D (e.g. used for box volumes)" },
+#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_XAxis_MetaData[] = {
 		{ "Category", "Margin" },
@@ -96,15 +100,15 @@ UScriptStruct* Z_Construct_UScriptStruct_FMargin3D()
 // End ScriptStruct FMargin3D
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeonEditor_Private_ProceduralDungeonEdTypes_h_Statics
+struct Z_CompiledInDeferFile_FID_Users_symig_OneDrive_Documents_GitHub_SecondTopDown_5_4_Plugins_ProceduralDungeon_Source_ProceduralDungeonEditor_Private_ProceduralDungeonEdTypes_h_Statics
 {
 	static constexpr FStructRegisterCompiledInInfo ScriptStructInfo[] = {
-		{ FMargin3D::StaticStruct, Z_Construct_UScriptStruct_FMargin3D_Statics::NewStructOps, TEXT("Margin3D"), &Z_Registration_Info_UScriptStruct_Margin3D, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FMargin3D), 1611766425U) },
+		{ FMargin3D::StaticStruct, Z_Construct_UScriptStruct_FMargin3D_Statics::NewStructOps, TEXT("Margin3D"), &Z_Registration_Info_UScriptStruct_Margin3D, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FMargin3D), 321781792U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeonEditor_Private_ProceduralDungeonEdTypes_h_2710074030(TEXT("/Script/ProceduralDungeonEditor"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_symig_OneDrive_Documents_GitHub_SecondTopDown_5_4_Plugins_ProceduralDungeon_Source_ProceduralDungeonEditor_Private_ProceduralDungeonEdTypes_h_2783516910(TEXT("/Script/ProceduralDungeonEditor"),
 	nullptr, 0,
-	Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeonEditor_Private_ProceduralDungeonEdTypes_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeonEditor_Private_ProceduralDungeonEdTypes_h_Statics::ScriptStructInfo),
+	Z_CompiledInDeferFile_FID_Users_symig_OneDrive_Documents_GitHub_SecondTopDown_5_4_Plugins_ProceduralDungeon_Source_ProceduralDungeonEditor_Private_ProceduralDungeonEdTypes_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_symig_OneDrive_Documents_GitHub_SecondTopDown_5_4_Plugins_ProceduralDungeon_Source_ProceduralDungeonEditor_Private_ProceduralDungeonEdTypes_h_Statics::ScriptStructInfo),
 	nullptr, 0);
 // End Registration
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

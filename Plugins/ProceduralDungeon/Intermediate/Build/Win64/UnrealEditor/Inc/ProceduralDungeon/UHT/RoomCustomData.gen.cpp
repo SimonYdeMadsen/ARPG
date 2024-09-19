@@ -30,11 +30,15 @@ struct Z_Construct_UClass_URoomCustomData_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
 		{ "BlueprintType", "true" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Base class for user custom data embedded in room instances\n" },
+#endif
 		{ "IncludePath", "RoomCustomData.h" },
 		{ "IsBlueprintBase", "true" },
 		{ "ModuleRelativePath", "Public/RoomCustomData.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Base class for user custom data embedded in room instances" },
+#endif
 	};
 #endif // WITH_METADATA
 	static UObject* (*const DependentSingletons[])();
@@ -81,14 +85,14 @@ URoomCustomData::~URoomCustomData() {}
 // End Class URoomCustomData
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomCustomData_h_Statics
+struct Z_CompiledInDeferFile_FID_Users_symig_OneDrive_Documents_GitHub_SecondTopDown_5_4_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomCustomData_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_URoomCustomData, URoomCustomData::StaticClass, TEXT("URoomCustomData"), &Z_Registration_Info_UClass_URoomCustomData, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(URoomCustomData), 603039795U) },
+		{ Z_Construct_UClass_URoomCustomData, URoomCustomData::StaticClass, TEXT("URoomCustomData"), &Z_Registration_Info_UClass_URoomCustomData, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(URoomCustomData), 834283952U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomCustomData_h_3452028342(TEXT("/Script/ProceduralDungeon"),
-	Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomCustomData_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomCustomData_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_symig_OneDrive_Documents_GitHub_SecondTopDown_5_4_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomCustomData_h_3458597876(TEXT("/Script/ProceduralDungeon"),
+	Z_CompiledInDeferFile_FID_Users_symig_OneDrive_Documents_GitHub_SecondTopDown_5_4_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomCustomData_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_symig_OneDrive_Documents_GitHub_SecondTopDown_5_4_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomCustomData_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

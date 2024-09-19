@@ -40,29 +40,45 @@ struct Z_Construct_UClass_UProceduralDungeonEditorSettings_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_DefaultRoomDataClass_MetaData[] = {
 		{ "AllowAbstract", "FALSE" },
 		{ "Category", "General" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// The default RoomData class to use in the class picker when creating a new RoomData asset.\n" },
+#endif
 		{ "ModuleRelativePath", "Private/ProceduralDungeonEditorSettings.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "The default RoomData class to use in the class picker when creating a new RoomData asset." },
+#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bUseDefaultIfNoChild_MetaData[] = {
 		{ "Category", "General" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// The class picker will not show if the default RoomData class has no child classes\n" },
+#endif
 		{ "DisplayName", "Use Automatically Default Class If No Child" },
 		{ "ModuleRelativePath", "Private/ProceduralDungeonEditorSettings.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "The class picker will not show if the default RoomData class has no child classes" },
+#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_DefaultMargins_MetaData[] = {
 		{ "Category", "Room Editor Mode" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Default margin values on each axis to update volumes in Room Editor mode.\n" },
+#endif
 		{ "ModuleRelativePath", "Private/ProceduralDungeonEditorSettings.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Default margin values on each axis to update volumes in Room Editor mode." },
+#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bUseRoomAsOrbitPivot_MetaData[] = {
 		{ "Category", "Room Editor Mode" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// When ticked the orbit rotation of the camera will use the room bounds center as pivot point\n// instead of the current selected actor when the Room Editor Mode is active.\n// (Works only when \"Orbit Camera Around Selection\" is ticked in your Editor Preferences)\n" },
+#endif
 		{ "DisplayName", "Use the room bounds center as pivot for camera orbit" },
 		{ "ModuleRelativePath", "Private/ProceduralDungeonEditorSettings.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "When ticked the orbit rotation of the camera will use the room bounds center as pivot point\ninstead of the current selected actor when the Room Editor Mode is active.\n(Works only when \"Orbit Camera Around Selection\" is ticked in your Editor Preferences)" },
+#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FClassPropertyParams NewProp_DefaultRoomDataClass;
@@ -84,7 +100,7 @@ void Z_Construct_UClass_UProceduralDungeonEditorSettings_Statics::NewProp_bUseDe
 	((UProceduralDungeonEditorSettings*)Obj)->bUseDefaultIfNoChild = 1;
 }
 const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UProceduralDungeonEditorSettings_Statics::NewProp_bUseDefaultIfNoChild = { "bUseDefaultIfNoChild", nullptr, (EPropertyFlags)0x0010000000004001, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(UProceduralDungeonEditorSettings), &Z_Construct_UClass_UProceduralDungeonEditorSettings_Statics::NewProp_bUseDefaultIfNoChild_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bUseDefaultIfNoChild_MetaData), NewProp_bUseDefaultIfNoChild_MetaData) };
-const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UProceduralDungeonEditorSettings_Statics::NewProp_DefaultMargins = { "DefaultMargins", nullptr, (EPropertyFlags)0x0010000000004001, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UProceduralDungeonEditorSettings, DefaultMargins), Z_Construct_UScriptStruct_FMargin3D, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DefaultMargins_MetaData), NewProp_DefaultMargins_MetaData) }; // 1611766425
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UProceduralDungeonEditorSettings_Statics::NewProp_DefaultMargins = { "DefaultMargins", nullptr, (EPropertyFlags)0x0010000000004001, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UProceduralDungeonEditorSettings, DefaultMargins), Z_Construct_UScriptStruct_FMargin3D, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DefaultMargins_MetaData), NewProp_DefaultMargins_MetaData) }; // 321781792
 void Z_Construct_UClass_UProceduralDungeonEditorSettings_Statics::NewProp_bUseRoomAsOrbitPivot_SetBit(void* Obj)
 {
 	((UProceduralDungeonEditorSettings*)Obj)->bUseRoomAsOrbitPivot = 1;
@@ -134,14 +150,14 @@ UProceduralDungeonEditorSettings::~UProceduralDungeonEditorSettings() {}
 // End Class UProceduralDungeonEditorSettings
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeonEditor_Private_ProceduralDungeonEditorSettings_h_Statics
+struct Z_CompiledInDeferFile_FID_Users_symig_OneDrive_Documents_GitHub_SecondTopDown_5_4_Plugins_ProceduralDungeon_Source_ProceduralDungeonEditor_Private_ProceduralDungeonEditorSettings_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UProceduralDungeonEditorSettings, UProceduralDungeonEditorSettings::StaticClass, TEXT("UProceduralDungeonEditorSettings"), &Z_Registration_Info_UClass_UProceduralDungeonEditorSettings, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UProceduralDungeonEditorSettings), 1120258025U) },
+		{ Z_Construct_UClass_UProceduralDungeonEditorSettings, UProceduralDungeonEditorSettings::StaticClass, TEXT("UProceduralDungeonEditorSettings"), &Z_Registration_Info_UClass_UProceduralDungeonEditorSettings, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UProceduralDungeonEditorSettings), 3515329228U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeonEditor_Private_ProceduralDungeonEditorSettings_h_3988614805(TEXT("/Script/ProceduralDungeonEditor"),
-	Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeonEditor_Private_ProceduralDungeonEditorSettings_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeonEditor_Private_ProceduralDungeonEditorSettings_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_symig_OneDrive_Documents_GitHub_SecondTopDown_5_4_Plugins_ProceduralDungeon_Source_ProceduralDungeonEditor_Private_ProceduralDungeonEditorSettings_h_2797058249(TEXT("/Script/ProceduralDungeonEditor"),
+	Z_CompiledInDeferFile_FID_Users_symig_OneDrive_Documents_GitHub_SecondTopDown_5_4_Plugins_ProceduralDungeon_Source_ProceduralDungeonEditor_Private_ProceduralDungeonEditorSettings_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_symig_OneDrive_Documents_GitHub_SecondTopDown_5_4_Plugins_ProceduralDungeon_Source_ProceduralDungeonEditor_Private_ProceduralDungeonEditorSettings_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

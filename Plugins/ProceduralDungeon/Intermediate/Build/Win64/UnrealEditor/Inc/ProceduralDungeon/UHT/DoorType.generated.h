@@ -14,7 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define PROCEDURALDUNGEON_DoorType_generated_h
 
-#define FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DoorType_h_34_INCLASS_NO_PURE_DECLS \
+#define FID_Users_symig_OneDrive_Documents_GitHub_SecondTopDown_5_4_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DoorType_h_34_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUDoorType(); \
 	friend struct Z_Construct_UClass_UDoorType_Statics; \
@@ -23,7 +23,7 @@ public: \
 	DECLARE_SERIALIZER(UDoorType)
 
 
-#define FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DoorType_h_34_ENHANCED_CONSTRUCTORS \
+#define FID_Users_symig_OneDrive_Documents_GitHub_SecondTopDown_5_4_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DoorType_h_34_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	UDoorType(UDoorType&&); \
@@ -35,12 +35,12 @@ public: \
 	NO_API virtual ~UDoorType();
 
 
-#define FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DoorType_h_31_PROLOG
-#define FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DoorType_h_34_GENERATED_BODY \
+#define FID_Users_symig_OneDrive_Documents_GitHub_SecondTopDown_5_4_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DoorType_h_31_PROLOG
+#define FID_Users_symig_OneDrive_Documents_GitHub_SecondTopDown_5_4_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DoorType_h_34_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DoorType_h_34_INCLASS_NO_PURE_DECLS \
-	FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DoorType_h_34_ENHANCED_CONSTRUCTORS \
+	FID_Users_symig_OneDrive_Documents_GitHub_SecondTopDown_5_4_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DoorType_h_34_INCLASS_NO_PURE_DECLS \
+	FID_Users_symig_OneDrive_Documents_GitHub_SecondTopDown_5_4_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DoorType_h_34_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -48,7 +48,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> PROCEDURALDUNGEON_API UClass* StaticClass<class UDoorType>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DoorType_h
+#define CURRENT_FILE_ID FID_Users_symig_OneDrive_Documents_GitHub_SecondTopDown_5_4_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DoorType_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
