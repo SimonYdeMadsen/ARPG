@@ -24,10 +24,10 @@ void AGASCharacter::BeginPlay()
 {
     Super::BeginPlay();
 
-    
-    // Apply default attributes
     InitializeAttributes();
-
+    AttributeSet->SetCurrentHealth(AttributeSet->GetTotalMaxHealth());
+    TriggerHealthChanged();
+    
 }
 
 // Called every frame
@@ -50,6 +50,66 @@ UAbilitySystemComponent* AGASCharacter::GetAbilitySystemComponent() const
     return AbilitySystemComponent;
 }
 
+
+
+void AGASCharacter::TriggerHealthChanged()
+{
+    OnHealthChanged(AttributeSet->GetCurrentHealth(), AttributeSet->GetTotalMaxHealth());
+}
+
+void AGASCharacter::AddCurrentHealth(float AddedMaxHealth)
+{
+    AttributeSet->SetCurrentHealth(FMath::Clamp(AttributeSet->GetCurrentHealth() + AddedMaxHealth, 0.0f, AttributeSet->GetTotalMaxHealth()));
+    OnHealthChanged(AttributeSet->GetCurrentHealth(), AttributeSet->GetTotalMaxHealth());
+}
+
+void AGASCharacter::AddBaseMaxHealth(float AddedHealth)
+{
+    AttributeSet->SetBaseMaxHealth(AttributeSet->GetBaseMaxHealth() + AddedHealth);
+    OnHealthChanged(AttributeSet->GetCurrentHealth(), AttributeSet->GetTotalMaxHealth());
+}
+
+void AGASCharacter::AddIncreasedHealth(float AddedIncreasedHealth)
+{
+    AttributeSet->SetIncreasedHealth(AttributeSet->GetIncreasedHealth() + AddedIncreasedHealth);
+    OnHealthChanged(AttributeSet->GetCurrentHealth(), AttributeSet->GetTotalMaxHealth());
+}
+
+
+void AGASCharacter::AddShield(float AddedShield)
+{
+    AttributeSet->SetShield(AttributeSet->GetShield() + AddedShield);
+}
+
+void AGASCharacter::AddInDamage(float AddedInDamage)
+{
+    AttributeSet->SetInDamage(AttributeSet->GetInDamage() + AddedInDamage);
+}
+
+void AGASCharacter::AddFireResistance(float AddedFireResistance)
+{
+    AttributeSet->SetFireResistance(AttributeSet->GetFireResistance() + AddedFireResistance);
+}
+
+void AGASCharacter::AddColdResistance(float AddedColdResistance)
+{
+    AttributeSet->SetColdResistance(AttributeSet->GetColdResistance() + AddedColdResistance);
+}
+
+void AGASCharacter::AddLightningResistance(float AddedLightningResistance)
+{
+    AttributeSet->SetLightningResistance(AttributeSet->GetLightningResistance() + AddedLightningResistance);
+}
+
+void AGASCharacter::AddChaosResistance(float AddedChaosResistance)
+{
+    AttributeSet->SetChaosResistance(AttributeSet->GetChaosResistance() + AddedChaosResistance);
+}
+
+void AGASCharacter::AddArmour(float AddedArmour)
+{
+    AttributeSet->SetArmour(AttributeSet->GetArmour() + AddedArmour);
+}
 
 
 void AGASCharacter::InitializeAttributes()

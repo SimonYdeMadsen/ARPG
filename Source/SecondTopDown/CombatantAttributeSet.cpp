@@ -7,17 +7,26 @@
 #include "CombatantAttributeSet.h"
 #include "GameplayEffectExtension.h"  // Needed for FGameplayEffectModCallbackData
 
-FGameplayAttribute UCombatantAttributeSet::GetHealthAttribute()
+FGameplayAttribute UCombatantAttributeSet::GetCurrentHealthAttribute()
 {
-    static FGameplayAttribute HealthAttribute(UCombatantAttributeSet::StaticClass()->FindPropertyByName(GET_MEMBER_NAME_CHECKED(UCombatantAttributeSet, Health)));
-    return HealthAttribute;
+    static FGameplayAttribute CurrentHealthAttribute(UCombatantAttributeSet::StaticClass()->FindPropertyByName(GET_MEMBER_NAME_CHECKED(UCombatantAttributeSet, CurrentHealth)));
+    return CurrentHealthAttribute;
 }
 
-FGameplayAttribute UCombatantAttributeSet::GetMaxHealthAttribute()
+FGameplayAttribute UCombatantAttributeSet::GetBaseMaxHealthAttribute()
 {
-    static FGameplayAttribute MaxHealthAttribute(UCombatantAttributeSet::StaticClass()->FindPropertyByName(GET_MEMBER_NAME_CHECKED(UCombatantAttributeSet, MaxHealth)));
+    static FGameplayAttribute MaxHealthAttribute(UCombatantAttributeSet::StaticClass()->FindPropertyByName(GET_MEMBER_NAME_CHECKED(UCombatantAttributeSet, BaseMaxHealth)));
     return MaxHealthAttribute;
 }
+
+
+FGameplayAttribute UCombatantAttributeSet::GetIncreasedHealthAttribute()
+{
+    static FGameplayAttribute IncreasedHealthAttribute(UCombatantAttributeSet::StaticClass()->FindPropertyByName(GET_MEMBER_NAME_CHECKED(UCombatantAttributeSet, IncreasedHealth)));
+    return IncreasedHealthAttribute;
+}
+
+
 
 FGameplayAttribute UCombatantAttributeSet::GetShieldAttribute()
 {
@@ -61,33 +70,46 @@ FGameplayAttribute UCombatantAttributeSet::GetArmourAttribute()
     return ArmourAttribute;
 }
 
-
-
-float UCombatantAttributeSet::GetHealth() const
+float UCombatantAttributeSet::GetCurrentHealth() const
 {
-    return Health.GetCurrentValue();
+    return CurrentHealth.GetCurrentValue();
+}
+void UCombatantAttributeSet::SetCurrentHealth(float Value)
+{
+    CurrentHealth.SetCurrentValue(Value);
 }
 
-void UCombatantAttributeSet::SetHealth(float Value)
+
+
+float UCombatantAttributeSet::GetBaseMaxHealth() const
 {
-    Health.SetCurrentValue(Value);
+    return BaseMaxHealth.GetCurrentValue();
+}
+void UCombatantAttributeSet::SetBaseMaxHealth(float Value)
+{
+    BaseMaxHealth.SetCurrentValue(Value);
+    
 }
 
-float UCombatantAttributeSet::GetMaxHealth() const
+float UCombatantAttributeSet::GetIncreasedHealth() const
 {
-    return MaxHealth.GetCurrentValue();
+    return IncreasedHealth.GetCurrentValue();
+}
+void UCombatantAttributeSet::SetIncreasedHealth(float Value)
+{
+    IncreasedHealth.SetCurrentValue(Value);
 }
 
-void UCombatantAttributeSet::SetMaxHealth(float Value)
+float UCombatantAttributeSet::GetTotalMaxHealth() const
 {
-    MaxHealth.SetCurrentValue(Value);
+    return GetBaseMaxHealth() * (1 + GetIncreasedHealth()/100);
 }
+
 
 float UCombatantAttributeSet::GetShield() const
 {
     return Shield.GetCurrentValue();
 }
-
 void UCombatantAttributeSet::SetShield(float Value)
 {
     Shield.SetCurrentValue(Value);
@@ -196,13 +218,14 @@ void UCombatantAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModC
             {
                 SetShield(0.0f);
                 float RemainingDamage = -NewShield;
-                SetHealth(FMath::Clamp(GetHealth() - RemainingDamage, 0.0f, GetMaxHealth()));
-
+                UE_LOG(LogTemp, Warning, TEXT("Health before hit: %f"), GetCurrentHealth());
+                SetCurrentHealth(FMath::Clamp(GetCurrentHealth() - RemainingDamage, 0.0f, GetTotalMaxHealth()));
+                UE_LOG(LogTemp, Warning, TEXT("Health after hit: %f"), GetCurrentHealth());
                 // Call OnHealthChanged event
-                Character->OnHealthChanged(GetHealth(), GetMaxHealth());
+                Character->TriggerHealthChanged();
 
                 // Handle OnDeath
-                if (GetHealth() <= 0)
+                if (GetCurrentHealth() <= 0)
                 {
                     Character->OnDeath(DamageInstigator->GetActorForwardVector());
                 }

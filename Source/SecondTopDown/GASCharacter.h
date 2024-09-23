@@ -54,10 +54,52 @@ public:
 
 	// Called when the character's health changes (Can be implemented in Blueprint)
 	UFUNCTION(BlueprintImplementableEvent, Category = "Health")
-	void OnHealthChanged(float NewHealth, float MaxHealth);
+	void OnHealthChanged(float CurrentHealth, float MaxHealth);
 
 	UFUNCTION(BlueprintImplementableEvent, Category = "Gameplay")
 	void OnDeath(const FVector& ImpactVelocity);
+
+	UFUNCTION(BlueprintCallable, Category = "Event")
+	void TriggerHealthChanged();
+
+	// Health
+	UFUNCTION(BlueprintCallable, Category = "Attributes")
+	void AddCurrentHealth(float AddedHealth);
+
+	UFUNCTION(BlueprintCallable, Category = "Attributes")
+	void AddBaseMaxHealth(float AddedHealth);
+
+	UFUNCTION(BlueprintCallable, Category = "Attributes")
+	void AddIncreasedHealth(float AddedIncreasedHealth);
+	
+
+	// Add Shield
+	UFUNCTION(BlueprintCallable, Category = "Attributes")
+	void AddShield(float AddedShield);
+
+	// Add In Damage
+	UFUNCTION(BlueprintCallable, Category = "Attributes")
+	void AddInDamage(float AddedInDamage);
+
+	// Add Fire Resistance
+	UFUNCTION(BlueprintCallable, Category = "Attributes")
+	void AddFireResistance(float AddedFireResistance);
+
+	// Add Cold Resistance
+	UFUNCTION(BlueprintCallable, Category = "Attributes")
+	void AddColdResistance(float AddedColdResistance);
+
+	// Add Lightning Resistance
+	UFUNCTION(BlueprintCallable, Category = "Attributes")
+	void AddLightningResistance(float AddedLightningResistance);
+
+	// Add Chaos Resistance
+	UFUNCTION(BlueprintCallable, Category = "Attributes")
+	void AddChaosResistance(float AddedChaosResistance);
+
+	// Add Armour
+	UFUNCTION(BlueprintCallable, Category = "Attributes")
+	void AddArmour(float AddedArmour);
 
 private:
 	void InitializeAttributes();
