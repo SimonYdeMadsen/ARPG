@@ -77,6 +77,8 @@ float UCombatantAttributeSet::GetCurrentHealth() const
 void UCombatantAttributeSet::SetCurrentHealth(float Value)
 {
     CurrentHealth.SetCurrentValue(Value);
+    AGASCharacter* Character = Cast<AGASCharacter>(GetOwningActor());
+    Character->TriggerHealthChanged();
 }
 
 
@@ -88,7 +90,6 @@ float UCombatantAttributeSet::GetBaseMaxHealth() const
 void UCombatantAttributeSet::SetBaseMaxHealth(float Value)
 {
     BaseMaxHealth.SetCurrentValue(Value);
-    
 }
 
 float UCombatantAttributeSet::GetIncreasedHealth() const

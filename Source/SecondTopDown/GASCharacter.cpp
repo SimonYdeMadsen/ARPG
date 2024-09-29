@@ -60,19 +60,20 @@ void AGASCharacter::TriggerHealthChanged()
 void AGASCharacter::AddCurrentHealth(float AddedMaxHealth)
 {
     AttributeSet->SetCurrentHealth(FMath::Clamp(AttributeSet->GetCurrentHealth() + AddedMaxHealth, 0.0f, AttributeSet->GetTotalMaxHealth()));
-    OnHealthChanged(AttributeSet->GetCurrentHealth(), AttributeSet->GetTotalMaxHealth());
+    TriggerHealthChanged();
 }
 
 void AGASCharacter::AddBaseMaxHealth(float AddedHealth)
 {
     AttributeSet->SetBaseMaxHealth(AttributeSet->GetBaseMaxHealth() + AddedHealth);
-    OnHealthChanged(AttributeSet->GetCurrentHealth(), AttributeSet->GetTotalMaxHealth());
+    TriggerHealthChanged();
 }
 
 void AGASCharacter::AddIncreasedHealth(float AddedIncreasedHealth)
 {
     AttributeSet->SetIncreasedHealth(AttributeSet->GetIncreasedHealth() + AddedIncreasedHealth);
-    OnHealthChanged(AttributeSet->GetCurrentHealth(), AttributeSet->GetTotalMaxHealth());
+    TriggerHealthChanged();
+    UE_LOG(LogTemp, Warning, TEXT("TotalMax now: %f"), AttributeSet->GetTotalMaxHealth());
 }
 
 
