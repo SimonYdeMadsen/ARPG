@@ -59,10 +59,6 @@
 			"Enabled": true
 		},
 		{
-			"Name": "UBSplineStructureCreator",
-			"Enabled": true
-		},
-		{
 			"Name": "GameplayAbilities",
 			"Enabled": true
 		}
