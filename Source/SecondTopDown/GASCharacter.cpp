@@ -7,8 +7,9 @@
 
 
 // Sets default values
-AGASCharacter::AGASCharacter()
+AGASCharacter::AGASCharacter() : IsDead(false)
 {
+    
     // Set this character to call Tick() every frame. You can turn this off to improve performance if you don't need it.
     PrimaryActorTick.bCanEverTick = true;
 
@@ -111,6 +112,8 @@ void AGASCharacter::AddArmour(float AddedArmour)
 {
     AttributeSet->SetArmour(AttributeSet->GetArmour() + AddedArmour);
 }
+
+
 
 
 void AGASCharacter::InitializeAttributes()

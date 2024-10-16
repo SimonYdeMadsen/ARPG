@@ -201,7 +201,7 @@ void UCombatantAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModC
             FGameplayTagContainer GameplayTagContainer;
             Data.EffectSpec.GetAllAssetTags(GameplayTagContainer);
             
-            Character->OnDamageTaken(DamageInstigator, DamageCauser, GameplayTagContainer, Damage);
+            Character->DamageTaken.Broadcast(DamageInstigator, DamageCauser, GameplayTagContainer, Damage);
 
 
             // Apply mitigation to damage
@@ -226,8 +226,9 @@ void UCombatantAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModC
                 Character->TriggerHealthChanged();
 
                 // Handle OnDeath
-                if (GetCurrentHealth() <= 0)
+                if (GetCurrentHealth() <= 0 && !Character->IsDead)
                 {
+                    Character->IsDead = true;
                     Character->OnDeath(DamageInstigator->GetActorForwardVector());
                 }
 

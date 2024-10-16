@@ -11,13 +11,18 @@
 class UAbilitySystemComponent;
 class UCombatantAttributeSet;
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_FourParams(FDamageTaken, AActor*, DamageInstigator, AActor*, DamageCauser, const FGameplayTagContainer&, GameplayTagContainer, float, Damage);
+
+
+
 #define ATTRIBUTE_ACCESSORS(ClassName, PropertyName) \
 	GAMEPLAYATTRIBUTE_PROPERTY_GETTER(ClassName, PropertyName) \
 	GAMEPLAYATTRIBUTE_VALUE_GETTER(PropertyName) \
 	GAMEPLAYATTRIBUTE_VALUE_SETTER(PropertyName) \
 	GAMEPLAYATTRIBUTE_VALUE_INITTER(PropertyName)
 
-UCLASS()
+//UCLASS()
+UCLASS(config = Game, Blueprintable, meta = (ShortTooltip = "A character that can interact with the Gameplay Ability System."))
 class SECONDTOPDOWN_API AGASCharacter : public ACharacter, public IAbilitySystemInterface
 {
 	GENERATED_BODY()
@@ -54,9 +59,12 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Attributes")
 	TArray<TSubclassOf<UGameplayEffect>> DefaultAttributes;
 
-	// Called when the character takes damage (Can be implemented in Blueprint)
-	UFUNCTION(BlueprintImplementableEvent, Category = "Damage")
-	void OnDamageTaken(AActor* DamageInstigator, AActor* DamageCauser, const FGameplayTagContainer& GameplayTagContainer, float Damage);
+	//// Called when the character takes damage (Can be implemented in Blueprint)
+	//UFUNCTION(BlueprintImplementableEvent, Category = "Damage")
+	//void OnDamageTaken(AActor* DamageInstigator, AActor* DamageCauser, const FGameplayTagContainer& GameplayTagContainer, float Damage);
+	//
+	UPROPERTY(BlueprintAssignable, Category = "Damage")
+	FDamageTaken DamageTaken;
 
 	// Called when the character's health changes (Can be implemented in Blueprint)
 	UFUNCTION(BlueprintImplementableEvent, Category = "Health")
@@ -106,6 +114,9 @@ public:
 	// Add Armour
 	UFUNCTION(BlueprintCallable, Category = "Attributes")
 	void AddArmour(float AddedArmour);
+
+	bool IsDead;
+	
 
 private:
 	void InitializeAttributes();
