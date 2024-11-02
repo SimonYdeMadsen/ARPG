@@ -1,11 +1,13 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Perception/AISightTargetInterface.h"
 #include "GameFramework/Character.h"
 #include "AbilitySystemInterface.h"  // Include for the interface
 #include "GameplayTags.h" // Include Gameplay Tags header
 #include "AbilitySystemComponent.h"
 #include "GameplayEffectExtension.h"  // For handling gameplay effects
+#include "GenericTeamAgentInterface.h"
 #include "GASCharacter.generated.h"
 
 class UAbilitySystemComponent;
@@ -23,9 +25,17 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_FourParams(FDamageTaken, AActor*, DamageInsti
 
 //UCLASS()
 UCLASS(config = Game, Blueprintable, meta = (ShortTooltip = "A character that can interact with the Gameplay Ability System."))
-class SECONDTOPDOWN_API AGASCharacter : public ACharacter, public IAbilitySystemInterface
+class SECONDTOPDOWN_API AGASCharacter : public ACharacter, public IAbilitySystemInterface, public IGenericTeamAgentInterface //, public IAISightTargetInterface
 {
 	GENERATED_BODY()
+
+
+protected:
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
+
+	FGenericTeamId TeamId;
+
 
 public:
 	// Sets default values for this character's properties
@@ -34,11 +44,17 @@ public:
 	// Implement IAbilitySystemInterface
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
 
-protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
+	
+	/*virtual FGenericTeamId GetGenericTeamId() const override { return TeamId; }
 
-public:
+	UFUNCTION(BlueprintImplementableEvent)
+	void SetAnimState(const bool NewState);
+
+	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = "AI")
+	int32 ID = 0;*/
+
+
+
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 

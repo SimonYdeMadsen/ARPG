@@ -8,7 +8,7 @@ public class SecondTopDown : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore" , "GameplayTags", "GameplayAbilities", "GameplayTasks" });
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore" , "GameplayTags", "GameplayAbilities", "GameplayTasks", "AIModule"});
 
 		PrivateDependencyModuleNames.AddRange(new string[] { });
 

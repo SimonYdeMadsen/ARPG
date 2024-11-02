@@ -142,12 +142,12 @@ void AGASCharacter::InitializeAttributes()
                             AbilitySystemComponent->ApplyGameplayEffectSpecToSelf(*EffectSpec);
 
                             // Use a different name for the local tags variable to avoid hiding
-                            FGameplayTagContainer EffectTags;
-                            EffectSpec->GetAllAssetTags(EffectTags); // Check if this function is available
-                            if (EffectTags.HasTag(FGameplayTag::RequestGameplayTag(FName("YourTagName"))))
-                            {
-                                // Do something with the tag
-                            }
+                            //FGameplayTagContainer EffectTags;
+                            //EffectSpec->GetAllAssetTags(EffectTags); // Check if this function is available
+                            //if (EffectTags.HasTag(FGameplayTag::RequestGameplayTag(FName("YourTagName"))))
+                            //{
+                            //    // Do something with the tag
+                            //}
                         }
                     }
                 }
