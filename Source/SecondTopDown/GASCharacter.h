@@ -14,6 +14,7 @@ class UAbilitySystemComponent;
 class UCombatantAttributeSet;
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_FourParams(FDamageTaken, AActor*, DamageInstigator, AActor*, DamageCauser, const FGameplayTagContainer&, GameplayTagContainer, float, Damage);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FEnergyShieldChanged);
 
 
 
@@ -101,11 +102,7 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Attributes")
 	void AddIncreasedHealth(float AddedIncreasedHealth);
-	
 
-	// Add Shield
-	UFUNCTION(BlueprintCallable, Category = "Attributes")
-	void AddShield(float AddedShield);
 
 	// Add In Damage
 	UFUNCTION(BlueprintCallable, Category = "Attributes")
@@ -132,7 +129,14 @@ public:
 	void AddArmour(float AddedArmour);
 
 	bool IsDead;
-	
+
+	// Shield properties
+	UPROPERTY(BlueprintAssignable, Category = "Damage")
+	FEnergyShieldChanged EnergyShieldChanged;
+
+	UFUNCTION(BlueprintCallable, Category = "Attributes")
+	void AddShield(float AddedShield);
+
 
 private:
 	void InitializeAttributes();

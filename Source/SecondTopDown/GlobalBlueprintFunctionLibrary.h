@@ -10,6 +10,5 @@ class SECONDTOPDOWN_API UGlobalBlueprintFunctionLibrary : public UBlueprintFunct
 
 public:
     UFUNCTION(BlueprintCallable, Category = "Search")
-    static void BinarySearch(const TArray<int32>& arr, int32 target,
-    UPARAM(DisplayName = "Index") int32& binary_search_output);
+    static int32 BinarySearch(const TArray<int32>& arr, int32 target);
 };

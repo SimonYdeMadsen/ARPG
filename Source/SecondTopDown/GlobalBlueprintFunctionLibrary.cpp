@@ -1,12 +1,9 @@
 #include "GlobalBlueprintFunctionLibrary.h"
 
-void UGlobalBlueprintFunctionLibrary::BinarySearch(const TArray<int32>& arr, int32 target,
-    int32 &binary_search_output
-    ) {
+int32 UGlobalBlueprintFunctionLibrary::BinarySearch(const TArray<int32>& arr, int32 target) {
     if (arr.Num() == 0) {
         UE_LOG(LogTemp, Warning, TEXT("Invalid array of BinarySearch"));
-        binary_search_output = -1;
-        return;
+        return -1;
     }
 
     int32 left = 0;
@@ -14,8 +11,7 @@ void UGlobalBlueprintFunctionLibrary::BinarySearch(const TArray<int32>& arr, int
 
     if (target >= arr[right]) {
         UE_LOG(LogTemp, Warning, TEXT("Invalid target of BinarySearch"));
-        binary_search_output = -1;
-        return; // Return -1 if the target is larger than the largest element
+        return -1; 
     }
 
     while (left < right) {
@@ -28,6 +24,5 @@ void UGlobalBlueprintFunctionLibrary::BinarySearch(const TArray<int32>& arr, int
             right = mid; // Keep mid in the search range
         }
     }
-    binary_search_output = left;
-    return; // `left` will be the index of the smallest element greater than target
+    return left; // `left` will be the index of the smallest element greater than target
 }

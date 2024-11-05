@@ -28,7 +28,7 @@ void AGASCharacter::BeginPlay()
     InitializeAttributes();
     AttributeSet->SetCurrentHealth(AttributeSet->GetTotalMaxHealth());
     TriggerHealthChanged();
-    
+    UE_LOG(LogTemp, Warning, TEXT("Current health now: %f"), AttributeSet->GetCurrentHealth());
 }
 
 // Called every frame
@@ -74,14 +74,9 @@ void AGASCharacter::AddIncreasedHealth(float AddedIncreasedHealth)
 {
     AttributeSet->SetIncreasedHealth(AttributeSet->GetIncreasedHealth() + AddedIncreasedHealth);
     TriggerHealthChanged();
-    UE_LOG(LogTemp, Warning, TEXT("TotalMax now: %f"), AttributeSet->GetTotalMaxHealth());
+    
 }
 
-
-void AGASCharacter::AddShield(float AddedShield)
-{
-    AttributeSet->SetShield(AttributeSet->GetShield() + AddedShield);
-}
 
 void AGASCharacter::AddInDamage(float AddedInDamage)
 {
@@ -113,8 +108,10 @@ void AGASCharacter::AddArmour(float AddedArmour)
     AttributeSet->SetArmour(AttributeSet->GetArmour() + AddedArmour);
 }
 
-
-
+void AGASCharacter::AddShield(float AddedShield)
+{
+    AttributeSet->AddShieldCurrent(AddedShield); 
+}
 
 void AGASCharacter::InitializeAttributes()
 {

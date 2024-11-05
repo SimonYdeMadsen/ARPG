@@ -30,9 +30,6 @@ public:
 
 
     UFUNCTION(BlueprintPure, Category = "Attributes")
-    static FGameplayAttribute GetShieldAttribute();
-
-    UFUNCTION(BlueprintPure, Category = "Attributes")
     static FGameplayAttribute GetInDamageAttribute();
 
     UFUNCTION(BlueprintPure, Category = "Attributes")
@@ -66,9 +63,6 @@ public:
     float GetIncreasedHealth() const;
     void SetIncreasedHealth(float Value);
 
-    UFUNCTION(BlueprintPure, Category = "Attributes")
-    float GetShield() const;
-    void SetShield(float Value);
 
     UFUNCTION(BlueprintPure, Category = "Attributes")
     float GetInDamage() const;
@@ -94,6 +88,14 @@ public:
     float GetArmour() const;
     void SetArmour(float Value);
 
+
+    // Energy Shield variables
+    UFUNCTION(BlueprintPure, Category = "Attributes")
+    float GetCurrentShield();
+    float AddShieldCurrent(float Addition);
+
+
+
     // Override to enforce rules like limiting Health to MaxHealth
     virtual void PostGameplayEffectExecute(const FGameplayEffectModCallbackData& Data) override;
 
@@ -109,8 +111,6 @@ private:
     UPROPERTY()
     FGameplayAttributeData CurrentHealth;
 
-    UPROPERTY()
-    FGameplayAttributeData Shield;
 
     UPROPERTY()
     FGameplayAttributeData InDamage;
@@ -132,5 +132,18 @@ private:
 
 
     float ApplyDamageMitigation(const FGameplayEffectModCallbackData& Data, FGameplayTagContainer& GameplayTagContainer, float& Damage);
+
+
+    // Energy Shield variables
+    UPROPERTY()
+    FGameplayAttributeData ShieldCurrent;
+    UPROPERTY()
+    FGameplayAttributeData ShieldAddedBuff;
+    UPROPERTY()
+    FGameplayAttributeData ShieldTimeOfLastAddition;
+    UPROPERTY()
+    FGameplayAttributeData ShieldDecayRate = 0.2;
+    UPROPERTY()
+    FGameplayAttributeData ShieldSnapshot;
 
 };

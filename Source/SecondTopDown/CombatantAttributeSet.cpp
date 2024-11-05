@@ -28,12 +28,6 @@ FGameplayAttribute UCombatantAttributeSet::GetIncreasedHealthAttribute()
 
 
 
-FGameplayAttribute UCombatantAttributeSet::GetShieldAttribute()
-{
-    static FGameplayAttribute ShieldAttribute(UCombatantAttributeSet::StaticClass()->FindPropertyByName(GET_MEMBER_NAME_CHECKED(UCombatantAttributeSet, Shield)));
-    return ShieldAttribute;
-}
-
 FGameplayAttribute UCombatantAttributeSet::GetInDamageAttribute()
 {
     static FGameplayAttribute InDamageAttribute(UCombatantAttributeSet::StaticClass()->FindPropertyByName(GET_MEMBER_NAME_CHECKED(UCombatantAttributeSet, InDamage)));
@@ -104,16 +98,6 @@ void UCombatantAttributeSet::SetIncreasedHealth(float Value)
 float UCombatantAttributeSet::GetTotalMaxHealth() const
 {
     return GetBaseMaxHealth() * (1 + GetIncreasedHealth()/100);
-}
-
-
-float UCombatantAttributeSet::GetShield() const
-{
-    return Shield.GetCurrentValue();
-}
-void UCombatantAttributeSet::SetShield(float Value)
-{
-    Shield.SetCurrentValue(Value);
 }
 
 float UCombatantAttributeSet::GetInDamage() const
@@ -208,19 +192,12 @@ void UCombatantAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModC
             UE_LOG(LogTemp, Warning, TEXT("Damage Applied before mitigation: %f"), Damage);
             Damage = ApplyDamageMitigation(Data, GameplayTagContainer, Damage);
             UE_LOG(LogTemp, Warning, TEXT("Damage Applied after mitigation: %f"), Damage);
-
-
-            float NewShield = GetShield() - Damage;
-            if (NewShield > 0.0f)
+            
+            float ExcessDamage = AddShieldCurrent(-Damage);
+            if (ExcessDamage > 0.001f) 
             {
-                SetShield(NewShield);
-            }
-            else
-            {
-                SetShield(0.0f);
-                float RemainingDamage = -NewShield;
                 UE_LOG(LogTemp, Warning, TEXT("Health before hit: %f"), GetCurrentHealth());
-                SetCurrentHealth(FMath::Clamp(GetCurrentHealth() - RemainingDamage, 0.0f, GetTotalMaxHealth()));
+                SetCurrentHealth(FMath::Clamp(GetCurrentHealth() - ExcessDamage, 0.0f, GetTotalMaxHealth()));
                 UE_LOG(LogTemp, Warning, TEXT("Health after hit: %f"), GetCurrentHealth());
                 // Call OnHealthChanged event
                 Character->TriggerHealthChanged();
@@ -283,3 +260,54 @@ float UCombatantAttributeSet::ApplyDamageMitigation(const FGameplayEffectModCall
     
 }
 
+
+float UCombatantAttributeSet::AddShieldCurrent(float Addition)
+{
+    Addition += ShieldAddedBuff.GetCurrentValue();
+    float NonNegativeBuffedShield = GetCurrentShield() + Addition;
+    float ExcessDamage = 0;
+    if (NonNegativeBuffedShield < 0)
+    {
+        ExcessDamage = abs(NonNegativeBuffedShield);
+        NonNegativeBuffedShield = 0;
+    }
+    ShieldCurrent.SetCurrentValue(NonNegativeBuffedShield);
+    ShieldSnapshot.SetCurrentValue(NonNegativeBuffedShield);
+    ShieldTimeOfLastAddition.SetCurrentValue(GetWorld()->GetTimeSeconds());
+
+    AGASCharacter* Character = Cast<AGASCharacter>(GetOwningActor());
+    Character->EnergyShieldChanged.Broadcast();
+    UE_LOG(LogTemp, Warning, TEXT("Returning excess damage: %f"), ExcessDamage);
+
+    return ExcessDamage;
+}
+
+float UCombatantAttributeSet::GetCurrentShield()
+{
+    float current = ShieldCurrent.GetCurrentValue();
+
+    if (current > 10)
+    {
+        float timeSinceLastUpdate = GetWorld()->GetTimeSeconds() - ShieldTimeOfLastAddition.GetCurrentValue();
+        float base = 1 - ShieldDecayRate.GetCurrentValue();
+        current = pow(base, timeSinceLastUpdate) * ShieldSnapshot.GetCurrentValue();
+        ShieldCurrent.SetCurrentValue(current);
+        return current;
+    }
+    else
+    {
+        if (current >= 1)
+        {
+            // This step is nonsense, because it scales with calls to Get
+            current -= 0.6;
+            ShieldCurrent.SetCurrentValue(current);
+            return current;
+        }
+        else
+        {
+            // Call energy shield depleted?
+            ShieldCurrent.SetCurrentValue(0);
+            return 0;
+        }
+    }
+}
