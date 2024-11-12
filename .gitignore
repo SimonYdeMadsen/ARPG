@@ -19,16 +19,6 @@ Saved
 !Plugins/**/Binaries/
 !Plugins/**/Intermediate/
 
-Content/PinRPG_IconSet_01_Assets
-Content/LevelPrototyping
-Content/InfinityBladeEffects
-Content/HandPaintedEnvironment
-Content/CityofBrass_Enemies
-Content/__ExternalObjects__
-Content/__ExternalActors__
-Content/Ancient_Golem
-Content/Characters
-Content/Dungeon
-Content/Megascans
-Content/MSPresets
-Content/Primitive_Characters_Pack
+
+/Content/*
+!/Content/TopDown/
