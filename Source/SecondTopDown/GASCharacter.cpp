@@ -83,29 +83,29 @@ void AGASCharacter::AddInDamage(float AddedInDamage)
     AttributeSet->SetInDamage(AttributeSet->GetInDamage() + AddedInDamage);
 }
 
-void AGASCharacter::AddFireResistance(float AddedFireResistance)
+void AGASCharacter::IncreaseFireTaken(float Multiplier)
 {
-    AttributeSet->SetFireResistance(AttributeSet->GetFireResistance() + AddedFireResistance);
+    AttributeSet->SetFireTaken(AttributeSet->GetFireTaken() * Multiplier);
 }
 
-void AGASCharacter::AddColdResistance(float AddedColdResistance)
+void AGASCharacter::IncreaseColdTaken(float Multiplier)
 {
-    AttributeSet->SetColdResistance(AttributeSet->GetColdResistance() + AddedColdResistance);
+    AttributeSet->SetColdTaken(AttributeSet->GetColdTaken() * Multiplier);
 }
 
-void AGASCharacter::AddLightningResistance(float AddedLightningResistance)
+void AGASCharacter::IncreaseLightningTaken(float Multiplier)
 {
-    AttributeSet->SetLightningResistance(AttributeSet->GetLightningResistance() + AddedLightningResistance);
+    AttributeSet->SetLightningTaken(AttributeSet->GetLightningTaken() * Multiplier);
 }
 
-void AGASCharacter::AddChaosResistance(float AddedChaosResistance)
+void AGASCharacter::IncreaseChaosTaken(float Multiplier)
 {
-    AttributeSet->SetChaosResistance(AttributeSet->GetChaosResistance() + AddedChaosResistance);
+    AttributeSet->SetChaosTaken(AttributeSet->GetChaosTaken() * Multiplier);
 }
 
-void AGASCharacter::AddArmour(float AddedArmour)
+void AGASCharacter::IncreasePhysicalTaken(float Multiplier)
 {
-    AttributeSet->SetArmour(AttributeSet->GetArmour() + AddedArmour);
+    AttributeSet->SetPhysicalTaken(AttributeSet->GetPhysicalTaken() * Multiplier);
 }
 
 void AGASCharacter::AddShield(float AddedShield)

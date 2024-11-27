@@ -34,34 +34,35 @@ FGameplayAttribute UCombatantAttributeSet::GetInDamageAttribute()
     return InDamageAttribute;
 }
 
-FGameplayAttribute UCombatantAttributeSet::GetFireResistanceAttribute()
+
+FGameplayAttribute UCombatantAttributeSet::GetFireTakenAttribute()
 {
-    static FGameplayAttribute FireResistanceAttribute(UCombatantAttributeSet::StaticClass()->FindPropertyByName(GET_MEMBER_NAME_CHECKED(UCombatantAttributeSet, FireResistance)));
-    return FireResistanceAttribute;
+    static FGameplayAttribute FireTakenAttribute(UCombatantAttributeSet::StaticClass()->FindPropertyByName(GET_MEMBER_NAME_CHECKED(UCombatantAttributeSet, FireTaken)));
+    return FireTakenAttribute;
 }
 
-FGameplayAttribute UCombatantAttributeSet::GetColdResistanceAttribute()
+FGameplayAttribute UCombatantAttributeSet::GetColdTakenAttribute()
 {
-    static FGameplayAttribute ColdResistanceAttribute(UCombatantAttributeSet::StaticClass()->FindPropertyByName(GET_MEMBER_NAME_CHECKED(UCombatantAttributeSet, ColdResistance)));
-    return ColdResistanceAttribute;
+    static FGameplayAttribute ColdTakenAttribute(UCombatantAttributeSet::StaticClass()->FindPropertyByName(GET_MEMBER_NAME_CHECKED(UCombatantAttributeSet, ColdTaken)));
+    return ColdTakenAttribute;
 }
 
-FGameplayAttribute UCombatantAttributeSet::GetLightningResistanceAttribute()
+FGameplayAttribute UCombatantAttributeSet::GetLightningTakenAttribute()
 {
-    static FGameplayAttribute LightningResistanceAttribute(UCombatantAttributeSet::StaticClass()->FindPropertyByName(GET_MEMBER_NAME_CHECKED(UCombatantAttributeSet, LightningResistance)));
-    return LightningResistanceAttribute;
+    static FGameplayAttribute LightningTakenAttribute(UCombatantAttributeSet::StaticClass()->FindPropertyByName(GET_MEMBER_NAME_CHECKED(UCombatantAttributeSet, LightningTaken)));
+    return LightningTakenAttribute;
 }
 
-FGameplayAttribute UCombatantAttributeSet::GetChaosResistanceAttribute()
+FGameplayAttribute UCombatantAttributeSet::GetChaosTakenAttribute()
 {
-    static FGameplayAttribute ChaosResistanceAttribute(UCombatantAttributeSet::StaticClass()->FindPropertyByName(GET_MEMBER_NAME_CHECKED(UCombatantAttributeSet, ChaosResistance)));
-    return ChaosResistanceAttribute;
+    static FGameplayAttribute ChaosTakenAttribute(UCombatantAttributeSet::StaticClass()->FindPropertyByName(GET_MEMBER_NAME_CHECKED(UCombatantAttributeSet, ChaosTaken)));
+    return ChaosTakenAttribute;
 }
 
-FGameplayAttribute UCombatantAttributeSet::GetArmourAttribute()
+FGameplayAttribute UCombatantAttributeSet::GetPhysicalTakenAttribute()
 {
-    static FGameplayAttribute ArmourAttribute(UCombatantAttributeSet::StaticClass()->FindPropertyByName(GET_MEMBER_NAME_CHECKED(UCombatantAttributeSet, Armour)));
-    return ArmourAttribute;
+    static FGameplayAttribute PhysicalTakenAttribute(UCombatantAttributeSet::StaticClass()->FindPropertyByName(GET_MEMBER_NAME_CHECKED(UCombatantAttributeSet, PhysicalTaken)));
+    return PhysicalTakenAttribute;
 }
 
 float UCombatantAttributeSet::GetCurrentHealth() const
@@ -110,54 +111,55 @@ void UCombatantAttributeSet::SetInDamage(float Value)
     InDamage.SetCurrentValue(Value);
 }
 
-float UCombatantAttributeSet::GetFireResistance() const
+
+float UCombatantAttributeSet::GetFireTaken() const
 {
-    return FireResistance.GetCurrentValue();
+    return FireTaken.GetCurrentValue();
 }
 
-void UCombatantAttributeSet::SetFireResistance(float Value)
+void UCombatantAttributeSet::SetFireTaken(float Value)
 {
-    FireResistance.SetCurrentValue(Value);
+    FireTaken.SetCurrentValue(Value);
 }
 
-float UCombatantAttributeSet::GetColdResistance() const
+float UCombatantAttributeSet::GetColdTaken() const
 {
-    return ColdResistance.GetCurrentValue();
+    return ColdTaken.GetCurrentValue();
 }
 
-void UCombatantAttributeSet::SetColdResistance(float Value)
+void UCombatantAttributeSet::SetColdTaken(float Value)
 {
-    ColdResistance.SetCurrentValue(Value);
+    ColdTaken.SetCurrentValue(Value);
 }
 
-float UCombatantAttributeSet::GetLightningResistance() const
+float UCombatantAttributeSet::GetLightningTaken() const
 {
-    return LightningResistance.GetCurrentValue();
+    return LightningTaken.GetCurrentValue();
 }
 
-void UCombatantAttributeSet::SetLightningResistance(float Value)
+void UCombatantAttributeSet::SetLightningTaken(float Value)
 {
-    LightningResistance.SetCurrentValue(Value);
+    LightningTaken.SetCurrentValue(Value);
 }
 
-float UCombatantAttributeSet::GetChaosResistance() const
+float UCombatantAttributeSet::GetChaosTaken() const
 {
-    return ChaosResistance.GetCurrentValue();
+    return ChaosTaken.GetCurrentValue();
 }
 
-void UCombatantAttributeSet::SetChaosResistance(float Value)
+void UCombatantAttributeSet::SetChaosTaken(float Value)
 {
-    ChaosResistance.SetCurrentValue(Value);
+    ChaosTaken.SetCurrentValue(Value);
 }
 
-float UCombatantAttributeSet::GetArmour() const
+float UCombatantAttributeSet::GetPhysicalTaken() const
 {
-    return Armour.GetCurrentValue();
+    return PhysicalTaken.GetCurrentValue();
 }
 
-void UCombatantAttributeSet::SetArmour(float Value)
+void UCombatantAttributeSet::SetPhysicalTaken(float Value)
 {
-    Armour.SetCurrentValue(Value);
+    PhysicalTaken.SetCurrentValue(Value);
 }
 
 
@@ -222,41 +224,42 @@ void UCombatantAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModC
         // Reset InDamage
         SetInDamage(0.0f);
     }
+    
 }
 
 float UCombatantAttributeSet::ApplyDamageMitigation(const FGameplayEffectModCallbackData& Data, FGameplayTagContainer& GameplayTagContainer, float& Damage)
 {
-    float Reduction = 0.0f;
-    float MitigationSource = 0.0f;
+    float DamageMultiplier = 0.0f;
 
     if (GameplayTagContainer.HasTag(FGameplayTag::RequestGameplayTag(FName("Damage.Type.Physical"))))
     {
         UE_LOG(LogTemp, Warning, TEXT("Physical damage: %f"), Damage);
-        MitigationSource = GetArmourAttribute().GetNumericValue(this);
+        DamageMultiplier = GetPhysicalTakenAttribute().GetNumericValue(this);
     }
     else if (GameplayTagContainer.HasTag(FGameplayTag::RequestGameplayTag(FName("Damage.Type.Fire"))))
     {
         UE_LOG(LogTemp, Warning, TEXT("Fire damage: %f"), Damage);
-        MitigationSource = GetFireResistanceAttribute().GetNumericValue(this);
+        DamageMultiplier = GetFireTakenAttribute().GetNumericValue(this);
     }
     else if (GameplayTagContainer.HasTag(FGameplayTag::RequestGameplayTag(FName("Damage.Type.Cold"))))
     {
         UE_LOG(LogTemp, Warning, TEXT("Cold damage: %f"), Damage);
-        MitigationSource = GetColdResistanceAttribute().GetNumericValue(this);
+        DamageMultiplier = GetColdTakenAttribute().GetNumericValue(this);
     }
     else if (GameplayTagContainer.HasTag(FGameplayTag::RequestGameplayTag(FName("Damage.Type.Lightning"))))
     {
         UE_LOG(LogTemp, Warning, TEXT("Lightning damage: %f"), Damage);
-        MitigationSource = GetLightningResistanceAttribute().GetNumericValue(this);
+        DamageMultiplier = GetLightningTakenAttribute().GetNumericValue(this);
     }
     else if (GameplayTagContainer.HasTag(FGameplayTag::RequestGameplayTag(FName("Damage.Type.Chaos"))))
     {
         UE_LOG(LogTemp, Warning, TEXT("Chaos damage: %f"), Damage);
-        MitigationSource = GetChaosResistanceAttribute().GetNumericValue(this);
+        DamageMultiplier = GetChaosTakenAttribute().GetNumericValue(this);
     }
 
-    Reduction = MitigationSource / (MitigationSource + Damage) * Damage;
-    return Damage - Reduction;
+    
+
+    return Damage * (DamageMultiplier / 100);
     
 }
 

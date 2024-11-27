@@ -110,23 +110,23 @@ public:
 
 	// Add Fire Resistance
 	UFUNCTION(BlueprintCallable, Category = "Attributes")
-	void AddFireResistance(float AddedFireResistance);
+	void IncreaseFireTaken(float Multiplier);
 
 	// Add Cold Resistance
 	UFUNCTION(BlueprintCallable, Category = "Attributes")
-	void AddColdResistance(float AddedColdResistance);
+	void IncreaseColdTaken(float Multiplier);
 
 	// Add Lightning Resistance
 	UFUNCTION(BlueprintCallable, Category = "Attributes")
-	void AddLightningResistance(float AddedLightningResistance);
+	void IncreaseLightningTaken(float Multiplier);
 
 	// Add Chaos Resistance
 	UFUNCTION(BlueprintCallable, Category = "Attributes")
-	void AddChaosResistance(float AddedChaosResistance);
+	void IncreaseChaosTaken(float Multiplier);
 
 	// Add Armour
 	UFUNCTION(BlueprintCallable, Category = "Attributes")
-	void AddArmour(float AddedArmour);
+	void IncreasePhysicalTaken(float Multiplier);
 
 	bool IsDead;
 

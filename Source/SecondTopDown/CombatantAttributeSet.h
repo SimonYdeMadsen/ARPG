@@ -32,20 +32,24 @@ public:
     UFUNCTION(BlueprintPure, Category = "Attributes")
     static FGameplayAttribute GetInDamageAttribute();
 
-    UFUNCTION(BlueprintPure, Category = "Attributes")
-    static FGameplayAttribute GetFireResistanceAttribute();
+
 
     UFUNCTION(BlueprintPure, Category = "Attributes")
-    static FGameplayAttribute GetColdResistanceAttribute();
+    static FGameplayAttribute GetFireTakenAttribute();
 
     UFUNCTION(BlueprintPure, Category = "Attributes")
-    static FGameplayAttribute GetLightningResistanceAttribute();
+    static FGameplayAttribute GetColdTakenAttribute();
 
     UFUNCTION(BlueprintPure, Category = "Attributes")
-    static FGameplayAttribute GetChaosResistanceAttribute();
+    static FGameplayAttribute GetLightningTakenAttribute();
 
     UFUNCTION(BlueprintPure, Category = "Attributes")
-    static FGameplayAttribute GetArmourAttribute();
+    static FGameplayAttribute GetChaosTakenAttribute();
+
+    UFUNCTION(BlueprintPure, Category = "Attributes")
+    static FGameplayAttribute GetPhysicalTakenAttribute();
+
+
 
     // Existing getters and setters
     UFUNCTION(BlueprintPure, Category = "Attributes")
@@ -68,25 +72,26 @@ public:
     float GetInDamage() const;
     void SetInDamage(float Value);
 
-    UFUNCTION(BlueprintPure, Category = "Attributes")
-    float GetFireResistance() const;
-    void SetFireResistance(float Value);
 
     UFUNCTION(BlueprintPure, Category = "Attributes")
-    float GetColdResistance() const;
-    void SetColdResistance(float Value);
+    float GetFireTaken() const;
+    void SetFireTaken(float Value);
 
     UFUNCTION(BlueprintPure, Category = "Attributes")
-    float GetLightningResistance() const;
-    void SetLightningResistance(float Value);
+    float GetColdTaken() const;
+    void SetColdTaken(float Value);
 
     UFUNCTION(BlueprintPure, Category = "Attributes")
-    float GetChaosResistance() const;
-    void SetChaosResistance(float Value);
+    float GetLightningTaken() const;
+    void SetLightningTaken(float Value);
 
     UFUNCTION(BlueprintPure, Category = "Attributes")
-    float GetArmour() const;
-    void SetArmour(float Value);
+    float GetChaosTaken() const;
+    void SetChaosTaken(float Value);
+
+    UFUNCTION(BlueprintPure, Category = "Attributes")
+    float GetPhysicalTaken() const;
+    void SetPhysicalTaken(float Value);
 
 
     // Energy Shield variables
@@ -115,20 +120,21 @@ private:
     UPROPERTY()
     FGameplayAttributeData InDamage;
 
-    UPROPERTY()
-    FGameplayAttributeData FireResistance;
 
     UPROPERTY()
-    FGameplayAttributeData ColdResistance;
+    FGameplayAttributeData FireTaken = 100;
 
     UPROPERTY()
-    FGameplayAttributeData LightningResistance;
+    FGameplayAttributeData ColdTaken = 100;
 
     UPROPERTY()
-    FGameplayAttributeData ChaosResistance;
+    FGameplayAttributeData LightningTaken = 100;
 
     UPROPERTY()
-    FGameplayAttributeData Armour;
+    FGameplayAttributeData ChaosTaken = 100;
+
+    UPROPERTY()
+    FGameplayAttributeData PhysicalTaken = 100;
 
 
     float ApplyDamageMitigation(const FGameplayEffectModCallbackData& Data, FGameplayTagContainer& GameplayTagContainer, float& Damage);
