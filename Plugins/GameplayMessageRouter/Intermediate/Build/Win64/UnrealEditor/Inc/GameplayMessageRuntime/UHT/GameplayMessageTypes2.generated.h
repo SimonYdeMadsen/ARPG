@@ -16,7 +16,11 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define GAMEPLAYMESSAGERUNTIME_GameplayMessageTypes2_generated_h
 
 #undef CURRENT_FILE_ID
+<<<<<<< Updated upstream
 #define CURRENT_FILE_ID FID_Users_symig_Documents_GitHub_ARPG_Plugins_GameplayMessageRouter_Source_GameplayMessageRuntime_Public_GameFramework_GameplayMessageTypes2_h
+=======
+#define CURRENT_FILE_ID FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_GameplayMessageRouter_Source_GameplayMessageRuntime_Public_GameFramework_GameplayMessageTypes2_h
+>>>>>>> Stashed changes
 
 
 #define FOREACH_ENUM_EGAMEPLAYMESSAGEMATCH(op) \

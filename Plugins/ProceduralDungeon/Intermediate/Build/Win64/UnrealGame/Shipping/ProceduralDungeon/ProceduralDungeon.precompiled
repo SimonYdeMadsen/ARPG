@@ -2,10 +2,13 @@
 	"OutputFiles": [
 		"..\\..\\..\\x64\\UnrealGame\\Shipping\\ProceduralDungeon\\Module.ProceduralDungeon.1.cpp.obj",
 		"..\\..\\..\\x64\\UnrealGame\\Shipping\\ProceduralDungeon\\Module.ProceduralDungeon.2.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\ProceduralDungeon\\Module.ProceduralDungeon.3.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\ProceduralDungeon\\BoundsParams.cpp.obj",
 		"..\\..\\..\\x64\\UnrealGame\\Shipping\\ProceduralDungeon\\Door.cpp.obj",
 		"..\\..\\..\\x64\\UnrealGame\\Shipping\\ProceduralDungeon\\DoorType.cpp.obj",
 		"..\\..\\..\\x64\\UnrealGame\\Shipping\\ProceduralDungeon\\DungeonBlueprintLibrary.cpp.obj",
 		"..\\..\\..\\x64\\UnrealGame\\Shipping\\ProceduralDungeon\\DungeonGenerator.cpp.obj",
+		"..\\..\\..\\x64\\UnrealGame\\Shipping\\ProceduralDungeon\\DungeonGeneratorBase.cpp.obj",
 		"..\\..\\..\\x64\\UnrealGame\\Shipping\\ProceduralDungeon\\DungeonGraph.cpp.obj",
 		"..\\..\\..\\x64\\UnrealGame\\Shipping\\ProceduralDungeon\\DungeonOctree.cpp.obj",
 		"..\\..\\..\\x64\\UnrealGame\\Shipping\\ProceduralDungeon\\ProceduralDungeon.cpp.obj",

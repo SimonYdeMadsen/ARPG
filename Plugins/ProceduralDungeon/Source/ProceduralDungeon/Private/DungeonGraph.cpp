@@ -23,7 +23,7 @@
  */
 
 #include "DungeonGraph.h"
-#include "Net/UnrealNetwork.h" // DOREPLIFETIME
+#include "Utils/ReplicationUtils.h"
 #include "ProceduralDungeonLog.h"
 #include "Containers/Queue.h"
 #include "DungeonGenerator.h"
@@ -41,18 +41,28 @@ UDungeonGraph::UDungeonGraph()
 void UDungeonGraph::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
 {
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
-	DOREPLIFETIME(UDungeonGraph, ReplicatedRooms);
+	FDoRepLifetimeParams Params;
+	Params.bIsPushBased = true;
+	DOREPLIFETIME_WITH_PARAMS(UDungeonGraph, ReplicatedRooms, Params);
 }
 
 bool UDungeonGraph::ReplicateSubobjects(UActorChannel* Channel, FOutBunch* Bunch, FReplicationFlags* RepFlags)
 {
-	bool bWroteSomething = Super::ReplicateSubobjects(Channel, Bunch, RepFlags);;
+	bool bWroteSomething = Super::ReplicateSubobjects(Channel, Bunch, RepFlags);
 	for (URoom* Room : ReplicatedRooms)
 	{
 		check(Room);
 		bWroteSomething |= Room->ReplicateSubobject(Channel, Bunch, RepFlags);
 	}
 	return bWroteSomething;
+}
+
+void UDungeonGraph::RegisterReplicableSubobjects(bool bRegister)
+{
+	for (URoom* Room : ReplicatedRooms)
+	{
+		Room->RegisterAsReplicable(bRegister);
+	}
 }
 
 void UDungeonGraph::AddRoom(URoom* Room)
@@ -189,6 +199,21 @@ int UDungeonGraph::CountTotalRoomType(const TArray<TSubclassOf<URoomData>>& Room
 bool UDungeonGraph::HasValidPath(const URoom* From, const URoom* To, bool IgnoreLockedRooms)
 {
 	return FindPath(From, To, nullptr, IgnoreLockedRooms);
+}
+
+int UDungeonGraph::NumberOfRoomBetween(const URoom* A, const URoom* B, bool IgnoreLockedRooms)
+{
+	TArray<const URoom*> Path;
+	FindPath(A, B, &Path, IgnoreLockedRooms);
+	return Path.Num();
+}
+
+bool UDungeonGraph::GetPathBetween(const URoom* A, const URoom* B, TArray<URoom*>& ResultPath, bool IgnoreLockedRooms)
+{
+	// @HACK: is it another alternative?
+	TArray<const URoom*>& Temp = reinterpret_cast<TArray<const URoom*>&>(ResultPath);
+	FindPath(A, B, &Temp, IgnoreLockedRooms);
+	return ResultPath.Num() > 0;
 }
 
 URoom* UDungeonGraph::GetRoomAt(FIntVector RoomCell) const
@@ -409,10 +434,16 @@ void UDungeonGraph::SynchronizeRooms()
 	if (Owner->HasAuthority())
 	{
 		Owner->FlushNetDormancy();
+		RegisterReplicableSubobjects(false);
 		CopyRooms(ReplicatedRooms, Rooms);
+		RegisterReplicableSubobjects(true);
+		MARK_PROPERTY_DIRTY_FROM_NAME(UDungeonGraph, ReplicatedRooms, this);
 	}
 	else
+	{
 		CopyRooms(Rooms, ReplicatedRooms);
+	}
+
 	CurrentState = EDungeonGraphState::None;
 }
 
@@ -449,6 +480,16 @@ bool UDungeonGraph::AreRoomsInitialized(int32& NbRoomInitialized) const
 	return NbRoomInitialized >= Rooms.Num();
 }
 
+bool UDungeonGraph::AreRoomsReady() const
+{
+	for (URoom* Room : Rooms)
+	{
+		if (!(IsValid(Room) && Room->IsReady()))
+			return false;
+	}
+	return true;
+}
+
 void UDungeonGraph::RequestGeneration()
 {
 	check(GetOwner()->HasAuthority());
@@ -463,5 +504,16 @@ void UDungeonGraph::RequestUnload()
 
 void UDungeonGraph::OnRep_Rooms()
 {
+	DungeonLog_InfoSilent("Replicated Rooms Changed! (length: %d)", ReplicatedRooms.Num());
+	for (int i = 0; i < ReplicatedRooms.Num(); ++i)
+	{
+		// Trigger Room List Changed only when all received rooms are valid
+		if (!IsValid(ReplicatedRooms[i]))
+			return;
+
+		DungeonLog_InfoSilent("Replicated Room [%d]: %s", i, *GetNameSafe(ReplicatedRooms[i]));
+	}
+
+	DungeonLog_InfoSilent("Trigger Dungeon Reload!");
 	CurrentState = EDungeonGraphState::RoomListChanged;
 }

@@ -18,8 +18,14 @@ class URoomData;
 #endif
 #define PROCEDURALDUNGEON_DungeonGraph_generated_h
 
+<<<<<<< Updated upstream
 #define FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonGraph_h_50_RPC_WRAPPERS_NO_PURE_DECLS \
+=======
+#define FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonGraph_h_50_RPC_WRAPPERS_NO_PURE_DECLS \
+>>>>>>> Stashed changes
 	DECLARE_FUNCTION(execOnRep_Rooms); \
+	DECLARE_FUNCTION(execGetPathBetween); \
+	DECLARE_FUNCTION(execNumberOfRoomBetween); \
 	DECLARE_FUNCTION(execHasValidPath); \
 	DECLARE_FUNCTION(execCountTotalRoomType); \
 	DECLARE_FUNCTION(execCountRoomType); \
@@ -40,7 +46,11 @@ class URoomData;
 	DECLARE_FUNCTION(execGetAllRooms);
 
 
+<<<<<<< Updated upstream
 #define FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonGraph_h_50_INCLASS_NO_PURE_DECLS \
+=======
+#define FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonGraph_h_50_INCLASS_NO_PURE_DECLS \
+>>>>>>> Stashed changes
 private: \
 	static void StaticRegisterNativesUDungeonGraph(); \
 	friend struct Z_Construct_UClass_UDungeonGraph_Statics; \
@@ -59,7 +69,11 @@ private: \
 public:
 
 
+<<<<<<< Updated upstream
 #define FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonGraph_h_50_ENHANCED_CONSTRUCTORS \
+=======
+#define FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonGraph_h_50_ENHANCED_CONSTRUCTORS \
+>>>>>>> Stashed changes
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	UDungeonGraph(UDungeonGraph&&); \
@@ -71,6 +85,7 @@ public: \
 	NO_API virtual ~UDungeonGraph();
 
 
+<<<<<<< Updated upstream
 #define FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonGraph_h_47_PROLOG
 #define FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonGraph_h_50_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
@@ -78,6 +93,15 @@ public: \
 	FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonGraph_h_50_RPC_WRAPPERS_NO_PURE_DECLS \
 	FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonGraph_h_50_INCLASS_NO_PURE_DECLS \
 	FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonGraph_h_50_ENHANCED_CONSTRUCTORS \
+=======
+#define FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonGraph_h_47_PROLOG
+#define FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonGraph_h_50_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonGraph_h_50_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonGraph_h_50_INCLASS_NO_PURE_DECLS \
+	FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonGraph_h_50_ENHANCED_CONSTRUCTORS \
+>>>>>>> Stashed changes
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -85,7 +109,11 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> PROCEDURALDUNGEON_API UClass* StaticClass<class UDungeonGraph>();
 
 #undef CURRENT_FILE_ID
+<<<<<<< Updated upstream
 #define CURRENT_FILE_ID FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonGraph_h
+=======
+#define CURRENT_FILE_ID FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonGraph_h
+>>>>>>> Stashed changes
 
 
 #define FOREACH_ENUM_EDUNGEONGRAPHSTATE(op) \

@@ -15,6 +15,7 @@ COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FIntVector();
 ENGINE_API UClass* Z_Construct_UClass_UPrimaryDataAsset();
 ENGINE_API UClass* Z_Construct_UClass_UWorld_NoRegister();
+PROCEDURALDUNGEON_API UClass* Z_Construct_UClass_UDoorType_NoRegister();
 PROCEDURALDUNGEON_API UClass* Z_Construct_UClass_UDungeonGraph_NoRegister();
 PROCEDURALDUNGEON_API UClass* Z_Construct_UClass_URoom_NoRegister();
 PROCEDURALDUNGEON_API UClass* Z_Construct_UClass_URoomCustomData_NoRegister();
@@ -30,13 +31,21 @@ struct RoomData_eventCleanupRoom_Parms
 	URoom* Room;
 	UDungeonGraph* Dungeon;
 };
-static FName NAME_URoomData_CleanupRoom = FName(TEXT("CleanupRoom"));
+static const FName NAME_URoomData_CleanupRoom = FName(TEXT("CleanupRoom"));
 void URoomData::CleanupRoom(URoom* Room, UDungeonGraph* Dungeon) const
 {
-	RoomData_eventCleanupRoom_Parms Parms;
-	Parms.Room=Room;
-	Parms.Dungeon=Dungeon;
-	const_cast<URoomData*>(this)->ProcessEvent(FindFunctionChecked(NAME_URoomData_CleanupRoom),&Parms);
+	UFunction* Func = FindFunctionChecked(NAME_URoomData_CleanupRoom);
+	if (!Func->GetOwnerClass()->HasAnyClassFlags(CLASS_Native))
+	{
+		RoomData_eventCleanupRoom_Parms Parms;
+		Parms.Room=Room;
+		Parms.Dungeon=Dungeon;
+		const_cast<URoomData*>(this)->ProcessEvent(Func,&Parms);
+	}
+	else
+	{
+		const_cast<URoomData*>(this)->CleanupRoom_Implementation(Room, Dungeon);
+	}
 }
 struct Z_Construct_UFunction_URoomData_CleanupRoom_Statics
 {
@@ -79,6 +88,60 @@ DEFINE_FUNCTION(URoomData::execCleanupRoom)
 	P_NATIVE_END;
 }
 // End Class URoomData Function CleanupRoom
+
+// Begin Class URoomData Function GetCompatibleDoors
+struct Z_Construct_UFunction_URoomData_GetCompatibleDoors_Statics
+{
+	struct RoomData_eventGetCompatibleDoors_Parms
+	{
+		FDoorDef DoorData;
+		TArray<int32> CompatibleDoors;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Room Data" },
+		{ "ModuleRelativePath", "Public/RoomData.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_DoorData_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FStructPropertyParams NewProp_DoorData;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_CompatibleDoors_Inner;
+	static const UECodeGen_Private::FArrayPropertyParams NewProp_CompatibleDoors;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URoomData_GetCompatibleDoors_Statics::NewProp_DoorData = { "DoorData", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(RoomData_eventGetCompatibleDoors_Parms, DoorData), Z_Construct_UScriptStruct_FDoorDef, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DoorData_MetaData), NewProp_DoorData_MetaData) }; // 3661065545
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URoomData_GetCompatibleDoors_Statics::NewProp_CompatibleDoors_Inner = { "CompatibleDoors", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_URoomData_GetCompatibleDoors_Statics::NewProp_CompatibleDoors = { "CompatibleDoors", nullptr, (EPropertyFlags)0x0010000000000180, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(RoomData_eventGetCompatibleDoors_Parms, CompatibleDoors), EArrayPropertyFlags::None, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_URoomData_GetCompatibleDoors_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URoomData_GetCompatibleDoors_Statics::NewProp_DoorData,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URoomData_GetCompatibleDoors_Statics::NewProp_CompatibleDoors_Inner,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URoomData_GetCompatibleDoors_Statics::NewProp_CompatibleDoors,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_URoomData_GetCompatibleDoors_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_URoomData_GetCompatibleDoors_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_URoomData, nullptr, "GetCompatibleDoors", nullptr, nullptr, Z_Construct_UFunction_URoomData_GetCompatibleDoors_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_URoomData_GetCompatibleDoors_Statics::PropPointers), sizeof(Z_Construct_UFunction_URoomData_GetCompatibleDoors_Statics::RoomData_eventGetCompatibleDoors_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x54420401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_URoomData_GetCompatibleDoors_Statics::Function_MetaDataParams), Z_Construct_UFunction_URoomData_GetCompatibleDoors_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_URoomData_GetCompatibleDoors_Statics::RoomData_eventGetCompatibleDoors_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_URoomData_GetCompatibleDoors()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_URoomData_GetCompatibleDoors_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(URoomData::execGetCompatibleDoors)
+{
+	P_GET_STRUCT_REF(FDoorDef,Z_Param_Out_DoorData);
+	P_GET_TARRAY_REF(int32,Z_Param_Out_CompatibleDoors);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->GetCompatibleDoors(Z_Param_Out_DoorData,Z_Param_Out_CompatibleDoors);
+	P_NATIVE_END;
+}
+// End Class URoomData Function GetCompatibleDoors
 
 // Begin Class URoomData Function GetNbDoor
 struct Z_Construct_UFunction_URoomData_GetNbDoor_Statics
@@ -123,6 +186,322 @@ DEFINE_FUNCTION(URoomData::execGetNbDoor)
 	P_NATIVE_END;
 }
 // End Class URoomData Function GetNbDoor
+
+// Begin Class URoomData Function GetSize
+struct Z_Construct_UFunction_URoomData_GetSize_Statics
+{
+	struct RoomData_eventGetSize_Parms
+	{
+		FIntVector ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Room Data" },
+		{ "ModuleRelativePath", "Public/RoomData.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FStructPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_URoomData_GetSize_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(RoomData_eventGetSize_Parms, ReturnValue), Z_Construct_UScriptStruct_FIntVector, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_URoomData_GetSize_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URoomData_GetSize_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_URoomData_GetSize_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_URoomData_GetSize_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_URoomData, nullptr, "GetSize", nullptr, nullptr, Z_Construct_UFunction_URoomData_GetSize_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_URoomData_GetSize_Statics::PropPointers), sizeof(Z_Construct_UFunction_URoomData_GetSize_Statics::RoomData_eventGetSize_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x54820401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_URoomData_GetSize_Statics::Function_MetaDataParams), Z_Construct_UFunction_URoomData_GetSize_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_URoomData_GetSize_Statics::RoomData_eventGetSize_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_URoomData_GetSize()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_URoomData_GetSize_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(URoomData::execGetSize)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(FIntVector*)Z_Param__Result=P_THIS->GetSize();
+	P_NATIVE_END;
+}
+// End Class URoomData Function GetSize
+
+// Begin Class URoomData Function GetVolume
+struct Z_Construct_UFunction_URoomData_GetVolume_Statics
+{
+	struct RoomData_eventGetVolume_Parms
+	{
+		int32 ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Room Data" },
+		{ "ModuleRelativePath", "Public/RoomData.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_URoomData_GetVolume_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(RoomData_eventGetVolume_Parms, ReturnValue), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_URoomData_GetVolume_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URoomData_GetVolume_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_URoomData_GetVolume_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_URoomData_GetVolume_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_URoomData, nullptr, "GetVolume", nullptr, nullptr, Z_Construct_UFunction_URoomData_GetVolume_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_URoomData_GetVolume_Statics::PropPointers), sizeof(Z_Construct_UFunction_URoomData_GetVolume_Statics::RoomData_eventGetVolume_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x54020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_URoomData_GetVolume_Statics::Function_MetaDataParams), Z_Construct_UFunction_URoomData_GetVolume_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_URoomData_GetVolume_Statics::RoomData_eventGetVolume_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_URoomData_GetVolume()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_URoomData_GetVolume_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(URoomData::execGetVolume)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(int32*)Z_Param__Result=P_THIS->GetVolume();
+	P_NATIVE_END;
+}
+// End Class URoomData Function GetVolume
+
+// Begin Class URoomData Function HasAllCustomData
+struct Z_Construct_UFunction_URoomData_HasAllCustomData_Statics
+{
+	struct RoomData_eventHasAllCustomData_Parms
+	{
+		TArray<TSubclassOf<URoomCustomData> > CustomDataList;
+		bool ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Room Data" },
+		{ "ModuleRelativePath", "Public/RoomData.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CustomDataList_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FClassPropertyParams NewProp_CustomDataList_Inner;
+	static const UECodeGen_Private::FArrayPropertyParams NewProp_CustomDataList;
+	static void NewProp_ReturnValue_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FClassPropertyParams Z_Construct_UFunction_URoomData_HasAllCustomData_Statics::NewProp_CustomDataList_Inner = { "CustomDataList", nullptr, (EPropertyFlags)0x0004000000000000, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_UClass, Z_Construct_UClass_URoomCustomData_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_URoomData_HasAllCustomData_Statics::NewProp_CustomDataList = { "CustomDataList", nullptr, (EPropertyFlags)0x0014000008000182, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(RoomData_eventHasAllCustomData_Parms, CustomDataList), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CustomDataList_MetaData), NewProp_CustomDataList_MetaData) };
+void Z_Construct_UFunction_URoomData_HasAllCustomData_Statics::NewProp_ReturnValue_SetBit(void* Obj)
+{
+	((RoomData_eventHasAllCustomData_Parms*)Obj)->ReturnValue = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_URoomData_HasAllCustomData_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(RoomData_eventHasAllCustomData_Parms), &Z_Construct_UFunction_URoomData_HasAllCustomData_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_URoomData_HasAllCustomData_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URoomData_HasAllCustomData_Statics::NewProp_CustomDataList_Inner,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URoomData_HasAllCustomData_Statics::NewProp_CustomDataList,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URoomData_HasAllCustomData_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_URoomData_HasAllCustomData_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_URoomData_HasAllCustomData_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_URoomData, nullptr, "HasAllCustomData", nullptr, nullptr, Z_Construct_UFunction_URoomData_HasAllCustomData_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_URoomData_HasAllCustomData_Statics::PropPointers), sizeof(Z_Construct_UFunction_URoomData_HasAllCustomData_Statics::RoomData_eventHasAllCustomData_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x54420401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_URoomData_HasAllCustomData_Statics::Function_MetaDataParams), Z_Construct_UFunction_URoomData_HasAllCustomData_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_URoomData_HasAllCustomData_Statics::RoomData_eventHasAllCustomData_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_URoomData_HasAllCustomData()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_URoomData_HasAllCustomData_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(URoomData::execHasAllCustomData)
+{
+	P_GET_TARRAY_REF(TSubclassOf<URoomCustomData>,Z_Param_Out_CustomDataList);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(bool*)Z_Param__Result=P_THIS->HasAllCustomData(Z_Param_Out_CustomDataList);
+	P_NATIVE_END;
+}
+// End Class URoomData Function HasAllCustomData
+
+// Begin Class URoomData Function HasAllDoorOfType
+struct Z_Construct_UFunction_URoomData_HasAllDoorOfType_Statics
+{
+	struct RoomData_eventHasAllDoorOfType_Parms
+	{
+		TArray<UDoorType*> DoorTypes;
+		bool ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Room Data" },
+		{ "ModuleRelativePath", "Public/RoomData.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_DoorTypes_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_DoorTypes_Inner;
+	static const UECodeGen_Private::FArrayPropertyParams NewProp_DoorTypes;
+	static void NewProp_ReturnValue_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_URoomData_HasAllDoorOfType_Statics::NewProp_DoorTypes_Inner = { "DoorTypes", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_UDoorType_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_URoomData_HasAllDoorOfType_Statics::NewProp_DoorTypes = { "DoorTypes", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(RoomData_eventHasAllDoorOfType_Parms, DoorTypes), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DoorTypes_MetaData), NewProp_DoorTypes_MetaData) };
+void Z_Construct_UFunction_URoomData_HasAllDoorOfType_Statics::NewProp_ReturnValue_SetBit(void* Obj)
+{
+	((RoomData_eventHasAllDoorOfType_Parms*)Obj)->ReturnValue = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_URoomData_HasAllDoorOfType_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(RoomData_eventHasAllDoorOfType_Parms), &Z_Construct_UFunction_URoomData_HasAllDoorOfType_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_URoomData_HasAllDoorOfType_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URoomData_HasAllDoorOfType_Statics::NewProp_DoorTypes_Inner,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URoomData_HasAllDoorOfType_Statics::NewProp_DoorTypes,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URoomData_HasAllDoorOfType_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_URoomData_HasAllDoorOfType_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_URoomData_HasAllDoorOfType_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_URoomData, nullptr, "HasAllDoorOfType", nullptr, nullptr, Z_Construct_UFunction_URoomData_HasAllDoorOfType_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_URoomData_HasAllDoorOfType_Statics::PropPointers), sizeof(Z_Construct_UFunction_URoomData_HasAllDoorOfType_Statics::RoomData_eventHasAllDoorOfType_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x54420401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_URoomData_HasAllDoorOfType_Statics::Function_MetaDataParams), Z_Construct_UFunction_URoomData_HasAllDoorOfType_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_URoomData_HasAllDoorOfType_Statics::RoomData_eventHasAllDoorOfType_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_URoomData_HasAllDoorOfType()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_URoomData_HasAllDoorOfType_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(URoomData::execHasAllDoorOfType)
+{
+	P_GET_TARRAY_REF(UDoorType*,Z_Param_Out_DoorTypes);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(bool*)Z_Param__Result=P_THIS->HasAllDoorOfType(Z_Param_Out_DoorTypes);
+	P_NATIVE_END;
+}
+// End Class URoomData Function HasAllDoorOfType
+
+// Begin Class URoomData Function HasAnyCustomData
+struct Z_Construct_UFunction_URoomData_HasAnyCustomData_Statics
+{
+	struct RoomData_eventHasAnyCustomData_Parms
+	{
+		TArray<TSubclassOf<URoomCustomData> > CustomDataList;
+		bool ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Room Data" },
+		{ "ModuleRelativePath", "Public/RoomData.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CustomDataList_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FClassPropertyParams NewProp_CustomDataList_Inner;
+	static const UECodeGen_Private::FArrayPropertyParams NewProp_CustomDataList;
+	static void NewProp_ReturnValue_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FClassPropertyParams Z_Construct_UFunction_URoomData_HasAnyCustomData_Statics::NewProp_CustomDataList_Inner = { "CustomDataList", nullptr, (EPropertyFlags)0x0004000000000000, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_UClass, Z_Construct_UClass_URoomCustomData_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_URoomData_HasAnyCustomData_Statics::NewProp_CustomDataList = { "CustomDataList", nullptr, (EPropertyFlags)0x0014000008000182, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(RoomData_eventHasAnyCustomData_Parms, CustomDataList), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CustomDataList_MetaData), NewProp_CustomDataList_MetaData) };
+void Z_Construct_UFunction_URoomData_HasAnyCustomData_Statics::NewProp_ReturnValue_SetBit(void* Obj)
+{
+	((RoomData_eventHasAnyCustomData_Parms*)Obj)->ReturnValue = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_URoomData_HasAnyCustomData_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(RoomData_eventHasAnyCustomData_Parms), &Z_Construct_UFunction_URoomData_HasAnyCustomData_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_URoomData_HasAnyCustomData_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URoomData_HasAnyCustomData_Statics::NewProp_CustomDataList_Inner,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URoomData_HasAnyCustomData_Statics::NewProp_CustomDataList,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URoomData_HasAnyCustomData_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_URoomData_HasAnyCustomData_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_URoomData_HasAnyCustomData_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_URoomData, nullptr, "HasAnyCustomData", nullptr, nullptr, Z_Construct_UFunction_URoomData_HasAnyCustomData_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_URoomData_HasAnyCustomData_Statics::PropPointers), sizeof(Z_Construct_UFunction_URoomData_HasAnyCustomData_Statics::RoomData_eventHasAnyCustomData_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x54420401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_URoomData_HasAnyCustomData_Statics::Function_MetaDataParams), Z_Construct_UFunction_URoomData_HasAnyCustomData_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_URoomData_HasAnyCustomData_Statics::RoomData_eventHasAnyCustomData_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_URoomData_HasAnyCustomData()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_URoomData_HasAnyCustomData_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(URoomData::execHasAnyCustomData)
+{
+	P_GET_TARRAY_REF(TSubclassOf<URoomCustomData>,Z_Param_Out_CustomDataList);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(bool*)Z_Param__Result=P_THIS->HasAnyCustomData(Z_Param_Out_CustomDataList);
+	P_NATIVE_END;
+}
+// End Class URoomData Function HasAnyCustomData
+
+// Begin Class URoomData Function HasAnyDoorOfType
+struct Z_Construct_UFunction_URoomData_HasAnyDoorOfType_Statics
+{
+	struct RoomData_eventHasAnyDoorOfType_Parms
+	{
+		TArray<UDoorType*> DoorTypes;
+		bool ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Room Data" },
+		{ "ModuleRelativePath", "Public/RoomData.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_DoorTypes_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_DoorTypes_Inner;
+	static const UECodeGen_Private::FArrayPropertyParams NewProp_DoorTypes;
+	static void NewProp_ReturnValue_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_URoomData_HasAnyDoorOfType_Statics::NewProp_DoorTypes_Inner = { "DoorTypes", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_UDoorType_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_URoomData_HasAnyDoorOfType_Statics::NewProp_DoorTypes = { "DoorTypes", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(RoomData_eventHasAnyDoorOfType_Parms, DoorTypes), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DoorTypes_MetaData), NewProp_DoorTypes_MetaData) };
+void Z_Construct_UFunction_URoomData_HasAnyDoorOfType_Statics::NewProp_ReturnValue_SetBit(void* Obj)
+{
+	((RoomData_eventHasAnyDoorOfType_Parms*)Obj)->ReturnValue = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_URoomData_HasAnyDoorOfType_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(RoomData_eventHasAnyDoorOfType_Parms), &Z_Construct_UFunction_URoomData_HasAnyDoorOfType_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_URoomData_HasAnyDoorOfType_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URoomData_HasAnyDoorOfType_Statics::NewProp_DoorTypes_Inner,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URoomData_HasAnyDoorOfType_Statics::NewProp_DoorTypes,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URoomData_HasAnyDoorOfType_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_URoomData_HasAnyDoorOfType_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_URoomData_HasAnyDoorOfType_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_URoomData, nullptr, "HasAnyDoorOfType", nullptr, nullptr, Z_Construct_UFunction_URoomData_HasAnyDoorOfType_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_URoomData_HasAnyDoorOfType_Statics::PropPointers), sizeof(Z_Construct_UFunction_URoomData_HasAnyDoorOfType_Statics::RoomData_eventHasAnyDoorOfType_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x54420401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_URoomData_HasAnyDoorOfType_Statics::Function_MetaDataParams), Z_Construct_UFunction_URoomData_HasAnyDoorOfType_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_URoomData_HasAnyDoorOfType_Statics::RoomData_eventHasAnyDoorOfType_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_URoomData_HasAnyDoorOfType()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_URoomData_HasAnyDoorOfType_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(URoomData::execHasAnyDoorOfType)
+{
+	P_GET_TARRAY_REF(UDoorType*,Z_Param_Out_DoorTypes);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(bool*)Z_Param__Result=P_THIS->HasAnyDoorOfType(Z_Param_Out_DoorTypes);
+	P_NATIVE_END;
+}
+// End Class URoomData Function HasAnyDoorOfType
 
 // Begin Class URoomData Function HasCompatibleDoor
 struct Z_Construct_UFunction_URoomData_HasCompatibleDoor_Statics
@@ -179,19 +558,131 @@ DEFINE_FUNCTION(URoomData::execHasCompatibleDoor)
 }
 // End Class URoomData Function HasCompatibleDoor
 
+// Begin Class URoomData Function HasCustomData
+struct Z_Construct_UFunction_URoomData_HasCustomData_Statics
+{
+	struct RoomData_eventHasCustomData_Parms
+	{
+		TSubclassOf<URoomCustomData> CustomDataClass;
+		bool ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Room Data" },
+		{ "ModuleRelativePath", "Public/RoomData.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FClassPropertyParams NewProp_CustomDataClass;
+	static void NewProp_ReturnValue_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FClassPropertyParams Z_Construct_UFunction_URoomData_HasCustomData_Statics::NewProp_CustomDataClass = { "CustomDataClass", nullptr, (EPropertyFlags)0x0014000000000080, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(RoomData_eventHasCustomData_Parms, CustomDataClass), Z_Construct_UClass_UClass, Z_Construct_UClass_URoomCustomData_NoRegister, METADATA_PARAMS(0, nullptr) };
+void Z_Construct_UFunction_URoomData_HasCustomData_Statics::NewProp_ReturnValue_SetBit(void* Obj)
+{
+	((RoomData_eventHasCustomData_Parms*)Obj)->ReturnValue = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_URoomData_HasCustomData_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(RoomData_eventHasCustomData_Parms), &Z_Construct_UFunction_URoomData_HasCustomData_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_URoomData_HasCustomData_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URoomData_HasCustomData_Statics::NewProp_CustomDataClass,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URoomData_HasCustomData_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_URoomData_HasCustomData_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_URoomData_HasCustomData_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_URoomData, nullptr, "HasCustomData", nullptr, nullptr, Z_Construct_UFunction_URoomData_HasCustomData_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_URoomData_HasCustomData_Statics::PropPointers), sizeof(Z_Construct_UFunction_URoomData_HasCustomData_Statics::RoomData_eventHasCustomData_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x54020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_URoomData_HasCustomData_Statics::Function_MetaDataParams), Z_Construct_UFunction_URoomData_HasCustomData_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_URoomData_HasCustomData_Statics::RoomData_eventHasCustomData_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_URoomData_HasCustomData()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_URoomData_HasCustomData_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(URoomData::execHasCustomData)
+{
+	P_GET_OBJECT(UClass,Z_Param_CustomDataClass);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(bool*)Z_Param__Result=P_THIS->HasCustomData(Z_Param_CustomDataClass);
+	P_NATIVE_END;
+}
+// End Class URoomData Function HasCustomData
+
+// Begin Class URoomData Function HasDoorOfType
+struct Z_Construct_UFunction_URoomData_HasDoorOfType_Statics
+{
+	struct RoomData_eventHasDoorOfType_Parms
+	{
+		UDoorType* DoorType;
+		bool ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Room Data" },
+		{ "ModuleRelativePath", "Public/RoomData.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_DoorType;
+	static void NewProp_ReturnValue_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_URoomData_HasDoorOfType_Statics::NewProp_DoorType = { "DoorType", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(RoomData_eventHasDoorOfType_Parms, DoorType), Z_Construct_UClass_UDoorType_NoRegister, METADATA_PARAMS(0, nullptr) };
+void Z_Construct_UFunction_URoomData_HasDoorOfType_Statics::NewProp_ReturnValue_SetBit(void* Obj)
+{
+	((RoomData_eventHasDoorOfType_Parms*)Obj)->ReturnValue = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_URoomData_HasDoorOfType_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(RoomData_eventHasDoorOfType_Parms), &Z_Construct_UFunction_URoomData_HasDoorOfType_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_URoomData_HasDoorOfType_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URoomData_HasDoorOfType_Statics::NewProp_DoorType,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_URoomData_HasDoorOfType_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_URoomData_HasDoorOfType_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_URoomData_HasDoorOfType_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_URoomData, nullptr, "HasDoorOfType", nullptr, nullptr, Z_Construct_UFunction_URoomData_HasDoorOfType_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_URoomData_HasDoorOfType_Statics::PropPointers), sizeof(Z_Construct_UFunction_URoomData_HasDoorOfType_Statics::RoomData_eventHasDoorOfType_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x54020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_URoomData_HasDoorOfType_Statics::Function_MetaDataParams), Z_Construct_UFunction_URoomData_HasDoorOfType_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_URoomData_HasDoorOfType_Statics::RoomData_eventHasDoorOfType_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_URoomData_HasDoorOfType()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_URoomData_HasDoorOfType_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(URoomData::execHasDoorOfType)
+{
+	P_GET_OBJECT(UDoorType,Z_Param_DoorType);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(bool*)Z_Param__Result=P_THIS->HasDoorOfType(Z_Param_DoorType);
+	P_NATIVE_END;
+}
+// End Class URoomData Function HasDoorOfType
+
 // Begin Class URoomData Function InitializeRoom
 struct RoomData_eventInitializeRoom_Parms
 {
 	URoom* Room;
 	UDungeonGraph* Dungeon;
 };
-static FName NAME_URoomData_InitializeRoom = FName(TEXT("InitializeRoom"));
+static const FName NAME_URoomData_InitializeRoom = FName(TEXT("InitializeRoom"));
 void URoomData::InitializeRoom(URoom* Room, UDungeonGraph* Dungeon) const
 {
-	RoomData_eventInitializeRoom_Parms Parms;
-	Parms.Room=Room;
-	Parms.Dungeon=Dungeon;
-	const_cast<URoomData*>(this)->ProcessEvent(FindFunctionChecked(NAME_URoomData_InitializeRoom),&Parms);
+	UFunction* Func = FindFunctionChecked(NAME_URoomData_InitializeRoom);
+	if (!Func->GetOwnerClass()->HasAnyClassFlags(CLASS_Native))
+	{
+		RoomData_eventInitializeRoom_Parms Parms;
+		Parms.Room=Room;
+		Parms.Dungeon=Dungeon;
+		const_cast<URoomData*>(this)->ProcessEvent(Func,&Parms);
+	}
+	else
+	{
+		const_cast<URoomData*>(this)->InitializeRoom_Implementation(Room, Dungeon);
+	}
 }
 struct Z_Construct_UFunction_URoomData_InitializeRoom_Statics
 {
@@ -241,8 +732,17 @@ void URoomData::StaticRegisterNativesURoomData()
 	UClass* Class = URoomData::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
 		{ "CleanupRoom", &URoomData::execCleanupRoom },
+		{ "GetCompatibleDoors", &URoomData::execGetCompatibleDoors },
 		{ "GetNbDoor", &URoomData::execGetNbDoor },
+		{ "GetSize", &URoomData::execGetSize },
+		{ "GetVolume", &URoomData::execGetVolume },
+		{ "HasAllCustomData", &URoomData::execHasAllCustomData },
+		{ "HasAllDoorOfType", &URoomData::execHasAllDoorOfType },
+		{ "HasAnyCustomData", &URoomData::execHasAnyCustomData },
+		{ "HasAnyDoorOfType", &URoomData::execHasAnyDoorOfType },
 		{ "HasCompatibleDoor", &URoomData::execHasCompatibleDoor },
+		{ "HasCustomData", &URoomData::execHasCustomData },
+		{ "HasDoorOfType", &URoomData::execHasDoorOfType },
 		{ "InitializeRoom", &URoomData::execInitializeRoom },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
@@ -303,8 +803,17 @@ struct Z_Construct_UClass_URoomData_Statics
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_URoomData_CleanupRoom, "CleanupRoom" }, // 656686782
+		{ &Z_Construct_UFunction_URoomData_GetCompatibleDoors, "GetCompatibleDoors" }, // 2016375168
 		{ &Z_Construct_UFunction_URoomData_GetNbDoor, "GetNbDoor" }, // 2426882746
+		{ &Z_Construct_UFunction_URoomData_GetSize, "GetSize" }, // 3326477934
+		{ &Z_Construct_UFunction_URoomData_GetVolume, "GetVolume" }, // 3791668381
+		{ &Z_Construct_UFunction_URoomData_HasAllCustomData, "HasAllCustomData" }, // 1860706087
+		{ &Z_Construct_UFunction_URoomData_HasAllDoorOfType, "HasAllDoorOfType" }, // 483641989
+		{ &Z_Construct_UFunction_URoomData_HasAnyCustomData, "HasAnyCustomData" }, // 1237505751
+		{ &Z_Construct_UFunction_URoomData_HasAnyDoorOfType, "HasAnyDoorOfType" }, // 3632416655
 		{ &Z_Construct_UFunction_URoomData_HasCompatibleDoor, "HasCompatibleDoor" }, // 507472149
+		{ &Z_Construct_UFunction_URoomData_HasCustomData, "HasCustomData" }, // 1853914441
+		{ &Z_Construct_UFunction_URoomData_HasDoorOfType, "HasDoorOfType" }, // 3869356723
 		{ &Z_Construct_UFunction_URoomData_InitializeRoom, "InitializeRoom" }, // 76212547
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
@@ -373,14 +882,23 @@ URoomData::~URoomData() {}
 // End Class URoomData
 
 // Begin Registration
+<<<<<<< Updated upstream
 struct Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_Statics
+=======
+struct Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_Statics
+>>>>>>> Stashed changes
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_URoomData, URoomData::StaticClass, TEXT("URoomData"), &Z_Registration_Info_UClass_URoomData, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(URoomData), 2379904780U) },
+		{ Z_Construct_UClass_URoomData, URoomData::StaticClass, TEXT("URoomData"), &Z_Registration_Info_UClass_URoomData, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(URoomData), 3665733619U) },
 	};
 };
+<<<<<<< Updated upstream
 static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_284445413(TEXT("/Script/ProceduralDungeon"),
 	Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_Statics::ClassInfo),
+=======
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_59445043(TEXT("/Script/ProceduralDungeon"),
+	Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_Statics::ClassInfo),
+>>>>>>> Stashed changes
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

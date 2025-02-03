@@ -1,3 +1,9 @@
+<<<<<<< Updated upstream
 C:\Users\symig\Documents\GitHub\ARPG\Plugins\GameplayMessageRouter\Source\GameplayMessageRuntime\Public\GameFramework\AsyncAction_ListenForGameplayMessage.h
 C:\Users\symig\Documents\GitHub\ARPG\Plugins\GameplayMessageRouter\Source\GameplayMessageRuntime\Public\GameFramework\GameplayMessageTypes2.h
 C:\Users\symig\Documents\GitHub\ARPG\Plugins\GameplayMessageRouter\Source\GameplayMessageRuntime\Public\GameFramework\GameplayMessageSubsystem.h
+=======
+C:\Users\symig\Documents\GitHub\ARPG 5.5\Plugins\GameplayMessageRouter\Source\GameplayMessageRuntime\Public\GameFramework\AsyncAction_ListenForGameplayMessage.h
+C:\Users\symig\Documents\GitHub\ARPG 5.5\Plugins\GameplayMessageRouter\Source\GameplayMessageRuntime\Public\GameFramework\GameplayMessageSubsystem.h
+C:\Users\symig\Documents\GitHub\ARPG 5.5\Plugins\GameplayMessageRouter\Source\GameplayMessageRuntime\Public\GameFramework\GameplayMessageTypes2.h
+>>>>>>> Stashed changes

@@ -34,14 +34,22 @@ struct TriggerDoor_eventIsValidActor_Parms
 	{
 	}
 };
-static FName NAME_ATriggerDoor_IsValidActor = FName(TEXT("IsValidActor"));
+static const FName NAME_ATriggerDoor_IsValidActor = FName(TEXT("IsValidActor"));
 bool ATriggerDoor::IsValidActor(AActor* Actor, UPrimitiveComponent* Component)
 {
-	TriggerDoor_eventIsValidActor_Parms Parms;
-	Parms.Actor=Actor;
-	Parms.Component=Component;
-	ProcessEvent(FindFunctionChecked(NAME_ATriggerDoor_IsValidActor),&Parms);
-	return !!Parms.ReturnValue;
+	UFunction* Func = FindFunctionChecked(NAME_ATriggerDoor_IsValidActor);
+	if (!Func->GetOwnerClass()->HasAnyClassFlags(CLASS_Native))
+	{
+		TriggerDoor_eventIsValidActor_Parms Parms;
+		Parms.Actor=Actor;
+		Parms.Component=Component;
+	ProcessEvent(Func,&Parms);
+		return !!Parms.ReturnValue;
+	}
+	else
+	{
+		return IsValidActor_Implementation(Actor, Component);
+	}
 }
 struct Z_Construct_UFunction_ATriggerDoor_IsValidActor_Statics
 {
@@ -340,14 +348,23 @@ ATriggerDoor::~ATriggerDoor() {}
 // End Class ATriggerDoor
 
 // Begin Registration
+<<<<<<< Updated upstream
 struct Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerDoor_h_Statics
+=======
+struct Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerDoor_h_Statics
+>>>>>>> Stashed changes
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ATriggerDoor, ATriggerDoor::StaticClass, TEXT("ATriggerDoor"), &Z_Registration_Info_UClass_ATriggerDoor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATriggerDoor), 1525932843U) },
+		{ Z_Construct_UClass_ATriggerDoor, ATriggerDoor::StaticClass, TEXT("ATriggerDoor"), &Z_Registration_Info_UClass_ATriggerDoor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATriggerDoor), 816553344U) },
 	};
 };
+<<<<<<< Updated upstream
 static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerDoor_h_301808226(TEXT("/Script/ProceduralDungeon"),
 	Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerDoor_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerDoor_h_Statics::ClassInfo),
+=======
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerDoor_h_1373610455(TEXT("/Script/ProceduralDungeon"),
+	Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerDoor_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerDoor_h_Statics::ClassInfo),
+>>>>>>> Stashed changes
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

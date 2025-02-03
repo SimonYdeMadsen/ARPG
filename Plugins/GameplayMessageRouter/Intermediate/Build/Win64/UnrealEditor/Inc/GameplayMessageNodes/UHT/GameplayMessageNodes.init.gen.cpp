@@ -17,7 +17,11 @@ void EmptyLinkFunctionForGeneratedCodeGameplayMessageNodes_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000100,
+<<<<<<< Updated upstream
 				0x5A4384C2,
+=======
+				0x84F1DFD5,
+>>>>>>> Stashed changes
 				0xA5AABE37,
 				METADATA_PARAMS(0, nullptr)
 			};
@@ -25,5 +29,9 @@ void EmptyLinkFunctionForGeneratedCodeGameplayMessageNodes_init() {}
 		}
 		return Z_Registration_Info_UPackage__Script_GameplayMessageNodes.OuterSingleton;
 	}
+<<<<<<< Updated upstream
 	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_GameplayMessageNodes(Z_Construct_UPackage__Script_GameplayMessageNodes, TEXT("/Script/GameplayMessageNodes"), Z_Registration_Info_UPackage__Script_GameplayMessageNodes, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x5A4384C2, 0xA5AABE37));
+=======
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_GameplayMessageNodes(Z_Construct_UPackage__Script_GameplayMessageNodes, TEXT("/Script/GameplayMessageNodes"), Z_Registration_Info_UPackage__Script_GameplayMessageNodes, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x84F1DFD5, 0xA5AABE37));
+>>>>>>> Stashed changes
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

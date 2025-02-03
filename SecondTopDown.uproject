@@ -1,6 +1,6 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "5.4",
+	"EngineAssociation": "5.5",
 	"Category": "",
 	"Description": "",
 	"Modules": [
@@ -30,8 +30,7 @@
 		},
 		{
 			"Name": "AdvancedFadeObjects",
-			"Enabled": true,
-			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/5797fa36906648ba8ffdeb6ee94c903e"
+			"Enabled": true
 		},
 		{
 			"Name": "CircularDependenciesDetector",

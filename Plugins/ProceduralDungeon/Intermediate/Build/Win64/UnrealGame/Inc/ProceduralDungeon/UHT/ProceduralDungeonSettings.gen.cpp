@@ -86,6 +86,14 @@ struct Z_Construct_UClass_UProceduralDungeonSettings_Statics
 		{ "ToolTip", "The number of room placement retry on a specific door before the generator gives up and continues with the next door." },
 		{ "UIMin", "1" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_RoomLimit_MetaData[] = {
+		{ "Category", "General" },
+		{ "ClampMin", "1" },
+		{ "Comment", "// The number of room placement retry on a specific door before the generator gives up and continues with the next door.\n" },
+		{ "ModuleRelativePath", "Public/ProceduralDungeonSettings.h" },
+		{ "ToolTip", "The number of room placement retry on a specific door before the generator gives up and continues with the next door." },
+		{ "UIMin", "1" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OcclusionCulling_MetaData[] = {
 		{ "Category", "Occlusion Culling" },
 		{ "Comment", "// The rooms visibility will be toggled off when the player is not inside it or in a room next to it.\n" },
@@ -165,6 +173,7 @@ struct Z_Construct_UClass_UProceduralDungeonSettings_Statics
 	static const UECodeGen_Private::FBytePropertyParams NewProp_RoomObjectType;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_MaxGenerationTry;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_MaxRoomPlacementTry;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_RoomLimit;
 	static void NewProp_OcclusionCulling_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_OcclusionCulling;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_OcclusionDistance;
@@ -199,6 +208,7 @@ const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UProceduralDunge
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_UProceduralDungeonSettings_Statics::NewProp_RoomObjectType = { "RoomObjectType", nullptr, (EPropertyFlags)0x0010000000004001, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UProceduralDungeonSettings, RoomObjectType), Z_Construct_UEnum_Engine_ECollisionChannel, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_RoomObjectType_MetaData), NewProp_RoomObjectType_MetaData) }; // 756624936
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UProceduralDungeonSettings_Statics::NewProp_MaxGenerationTry = { "MaxGenerationTry", nullptr, (EPropertyFlags)0x0010040000004001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UProceduralDungeonSettings, MaxGenerationTry), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MaxGenerationTry_MetaData), NewProp_MaxGenerationTry_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UProceduralDungeonSettings_Statics::NewProp_MaxRoomPlacementTry = { "MaxRoomPlacementTry", nullptr, (EPropertyFlags)0x0010040000004001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UProceduralDungeonSettings, MaxRoomPlacementTry), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MaxRoomPlacementTry_MetaData), NewProp_MaxRoomPlacementTry_MetaData) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UProceduralDungeonSettings_Statics::NewProp_RoomLimit = { "RoomLimit", nullptr, (EPropertyFlags)0x0010040000004001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UProceduralDungeonSettings, RoomLimit), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_RoomLimit_MetaData), NewProp_RoomLimit_MetaData) };
 void Z_Construct_UClass_UProceduralDungeonSettings_Statics::NewProp_OcclusionCulling_SetBit(void* Obj)
 {
 	((UProceduralDungeonSettings*)Obj)->OcclusionCulling = 1;
@@ -241,6 +251,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UProcedur
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UProceduralDungeonSettings_Statics::NewProp_RoomObjectType,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UProceduralDungeonSettings_Statics::NewProp_MaxGenerationTry,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UProceduralDungeonSettings_Statics::NewProp_MaxRoomPlacementTry,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UProceduralDungeonSettings_Statics::NewProp_RoomLimit,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UProceduralDungeonSettings_Statics::NewProp_OcclusionCulling,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UProceduralDungeonSettings_Statics::NewProp_OcclusionDistance,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UProceduralDungeonSettings_Statics::NewProp_OccludeDynamicActors,
@@ -293,10 +304,10 @@ UProceduralDungeonSettings::~UProceduralDungeonSettings() {}
 struct Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_ProceduralDungeonSettings_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UProceduralDungeonSettings, UProceduralDungeonSettings::StaticClass, TEXT("UProceduralDungeonSettings"), &Z_Registration_Info_UClass_UProceduralDungeonSettings, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UProceduralDungeonSettings), 2532835640U) },
+		{ Z_Construct_UClass_UProceduralDungeonSettings, UProceduralDungeonSettings::StaticClass, TEXT("UProceduralDungeonSettings"), &Z_Registration_Info_UClass_UProceduralDungeonSettings, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UProceduralDungeonSettings), 1587124737U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_ProceduralDungeonSettings_h_980202898(TEXT("/Script/ProceduralDungeon"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_ProceduralDungeonSettings_h_1040589024(TEXT("/Script/ProceduralDungeon"),
 	Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_ProceduralDungeonSettings_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_ProceduralDungeonSettings_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

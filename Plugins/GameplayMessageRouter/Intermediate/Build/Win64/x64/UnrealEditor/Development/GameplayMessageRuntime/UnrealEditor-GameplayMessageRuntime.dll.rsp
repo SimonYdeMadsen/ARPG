@@ -35,9 +35,16 @@
 /NODEFAULTLIB:"LIBCD"
 /NODEFAULTLIB:"LIBCPD"
 /FUNCTIONPADMIN:6
+<<<<<<< Updated upstream
 "C:\Users\symig\Documents\GitHub\ARPG\Intermediate\Build\Win64\x64\SecondTopDownEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.InclOrderOldest.h.obj"
 "C:\Users\symig\Documents\GitHub\ARPG\Plugins\GameplayMessageRouter\Intermediate\Build\Win64\x64\UnrealEditor\Development\GameplayMessageRuntime\Module.GameplayMessageRuntime.cpp.obj"
 "C:\Users\symig\Documents\GitHub\ARPG\Plugins\GameplayMessageRouter\Intermediate\Build\Win64\x64\UnrealEditor\Development\GameplayMessageRuntime\Default.rc2.res"
+=======
+/NOIMPLIB
+"C:\Users\symig\Documents\GitHub\ARPG 5.5\Intermediate\Build\Win64\x64\SecondTopDownEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.InclOrderUnreal5_3.h.obj"
+"C:\Users\symig\Documents\GitHub\ARPG 5.5\Plugins\GameplayMessageRouter\Intermediate\Build\Win64\x64\UnrealEditor\Development\GameplayMessageRuntime\Module.GameplayMessageRuntime.cpp.obj"
+"C:\Users\symig\Documents\GitHub\ARPG 5.5\Plugins\GameplayMessageRouter\Intermediate\Build\Win64\x64\UnrealEditor\Development\GameplayMessageRuntime\Default.rc2.res"
+>>>>>>> Stashed changes
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\CoreUObject\UnrealEditor-CoreUObject.lib"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Core\UnrealEditor-Core.lib"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Engine\UnrealEditor-Engine.lib"
@@ -67,7 +74,12 @@
 "synchronization.lib"
 "dwmapi.lib"
 "imm32.lib"
+<<<<<<< Updated upstream
 /OUT:"C:\Users\symig\Documents\GitHub\ARPG\Plugins\GameplayMessageRouter\Binaries\Win64\UnrealEditor-GameplayMessageRuntime.dll"
 /IMPLIB:"C:\Users\symig\Documents\GitHub\ARPG\Plugins\GameplayMessageRouter\Intermediate\Build\Win64\x64\UnrealEditor\Development\GameplayMessageRuntime\UnrealEditor-GameplayMessageRuntime.sup.lib"
 /PDB:"C:\Users\symig\Documents\GitHub\ARPG\Plugins\GameplayMessageRouter\Binaries\Win64\UnrealEditor-GameplayMessageRuntime.pdb"
+=======
+/OUT:"C:\Users\symig\Documents\GitHub\ARPG 5.5\Plugins\GameplayMessageRouter\Binaries\Win64\UnrealEditor-GameplayMessageRuntime.dll"
+/PDB:"C:\Users\symig\Documents\GitHub\ARPG 5.5\Plugins\GameplayMessageRouter\Binaries\Win64\UnrealEditor-GameplayMessageRuntime.pdb"
+>>>>>>> Stashed changes
 /ignore:4078

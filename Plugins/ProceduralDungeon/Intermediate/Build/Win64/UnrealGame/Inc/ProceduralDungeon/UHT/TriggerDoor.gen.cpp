@@ -34,14 +34,22 @@ struct TriggerDoor_eventIsValidActor_Parms
 	{
 	}
 };
-static FName NAME_ATriggerDoor_IsValidActor = FName(TEXT("IsValidActor"));
+static const FName NAME_ATriggerDoor_IsValidActor = FName(TEXT("IsValidActor"));
 bool ATriggerDoor::IsValidActor(AActor* Actor, UPrimitiveComponent* Component)
 {
-	TriggerDoor_eventIsValidActor_Parms Parms;
-	Parms.Actor=Actor;
-	Parms.Component=Component;
-	ProcessEvent(FindFunctionChecked(NAME_ATriggerDoor_IsValidActor),&Parms);
-	return !!Parms.ReturnValue;
+	UFunction* Func = FindFunctionChecked(NAME_ATriggerDoor_IsValidActor);
+	if (!Func->GetOwnerClass()->HasAnyClassFlags(CLASS_Native))
+	{
+		TriggerDoor_eventIsValidActor_Parms Parms;
+		Parms.Actor=Actor;
+		Parms.Component=Component;
+	ProcessEvent(Func,&Parms);
+		return !!Parms.ReturnValue;
+	}
+	else
+	{
+		return IsValidActor_Implementation(Actor, Component);
+	}
 }
 struct Z_Construct_UFunction_ATriggerDoor_IsValidActor_Statics
 {
@@ -339,10 +347,10 @@ ATriggerDoor::~ATriggerDoor() {}
 struct Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerDoor_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ATriggerDoor, ATriggerDoor::StaticClass, TEXT("ATriggerDoor"), &Z_Registration_Info_UClass_ATriggerDoor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATriggerDoor), 3353969111U) },
+		{ Z_Construct_UClass_ATriggerDoor, ATriggerDoor::StaticClass, TEXT("ATriggerDoor"), &Z_Registration_Info_UClass_ATriggerDoor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATriggerDoor), 3214044731U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerDoor_h_2582159054(TEXT("/Script/ProceduralDungeon"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerDoor_h_3440542444(TEXT("/Script/ProceduralDungeon"),
 	Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerDoor_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerDoor_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

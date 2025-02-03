@@ -31,7 +31,7 @@
 class URoom;
 class URoomData;
 class URoomCustomData;
-class ADungeonGenerator;
+class ADungeonGeneratorBase;
 
 UENUM()
 enum class EDungeonGraphState : uint8
@@ -49,7 +49,7 @@ class PROCEDURALDUNGEON_API UDungeonGraph : public UReplicableObject
 {
 	GENERATED_BODY()
 
-	friend ADungeonGenerator;
+	friend ADungeonGeneratorBase;
 
 public:
 	UDungeonGraph();
@@ -135,6 +135,16 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Dungeon Graph", meta = (ReturnDisplayName = "Yes"))
 	bool HasValidPath(const URoom* From, const URoom* To, bool IgnoreLockedRooms = false);
 
+	// Returns the minimum number of connected rooms between A and B.
+	// Note: Could be pure, but since it can be heavy duty for large dungeons, keep it impure to avoid duplicate calls.
+	UFUNCTION(BlueprintCallable, Category = "Dungeon Graph")
+	int NumberOfRoomBetween(const URoom* A, const URoom* B, bool IgnoreLockedRooms = false);
+
+	// Returns the path between A and B.
+	// Note: Could be pure, but since it can be heavy duty for large dungeons, keep it impure to avoid duplicate calls.
+	UFUNCTION(BlueprintCallable, Category = "Dungeon Graph", meta = (ReturnDisplayName = "Has Path"))
+	bool GetPathBetween(const URoom* A, const URoom* B, TArray<URoom*>& ResultPath, bool IgnoreLockedRooms = false);
+
 	URoom* GetRoomAt(FIntVector RoomCell) const;
 	URoom* GetRoomByIndex(int64 Index) const;
 
@@ -149,8 +159,10 @@ protected:
 	void GetRoomsByPredicate(TArray<URoom*>& OutRooms, TFunction<bool(const URoom*)> Predicate) const;
 	const URoom* FindFirstRoomByPredicate(TFunction<bool(const URoom*)> Predicate) const;
 
-	// UReplicableObject interface
+	//~ Begin UReplicableObject Interface
 	virtual bool ReplicateSubobjects(UActorChannel* Channel, FOutBunch* Bunch, FReplicationFlags* RepFlags) override;
+	virtual void RegisterReplicableSubobjects(bool bRegister) override;
+	//~ End UReplicableObject Interface
 
 	// Sync Rooms and ReplicatedRooms arrays
 	void SynchronizeRooms();
@@ -158,6 +170,7 @@ protected:
 	bool AreRoomsLoaded(int32& NbRoomLoaded) const;
 	bool AreRoomsUnloaded(int32& NbRoomUnloaded) const;
 	bool AreRoomsInitialized(int32& NbRoomInitialized) const;
+	bool AreRoomsReady() const;
 
 	void RequestGeneration();
 	void RequestUnload();
@@ -175,5 +188,5 @@ private:
 	void OnRep_Rooms();
 
 	EDungeonGraphState CurrentState {EDungeonGraphState::None};
-	TWeakObjectPtr<ADungeonGenerator> Generator {nullptr};
+	TWeakObjectPtr<ADungeonGeneratorBase> Generator {nullptr};
 };

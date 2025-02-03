@@ -35,6 +35,7 @@ UProceduralDungeonSettings::UProceduralDungeonSettings(const FObjectInitializer&
 	CanLoop = true;
 	MaxGenerationTry = 500;
 	MaxRoomPlacementTry = 10;
+	RoomLimit = 100;
 
 	// Occlusion settings
 	OcclusionCulling = true;
@@ -43,7 +44,7 @@ UProceduralDungeonSettings::UProceduralDungeonSettings(const FObjectInitializer&
 	OccludeDynamicActors = true;
 
 	// Debug settings
-	DrawDebug = false;
+	DrawDebug = true;
 	ShowRoomOrigin = false;
 	bFlipDoorArrowSide = false;
 	DoorArrowLength = 300.0f;

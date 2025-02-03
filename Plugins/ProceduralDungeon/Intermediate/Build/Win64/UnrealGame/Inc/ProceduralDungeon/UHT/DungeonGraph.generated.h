@@ -20,6 +20,8 @@ class URoomData;
 
 #define FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonGraph_h_50_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execOnRep_Rooms); \
+	DECLARE_FUNCTION(execGetPathBetween); \
+	DECLARE_FUNCTION(execNumberOfRoomBetween); \
 	DECLARE_FUNCTION(execHasValidPath); \
 	DECLARE_FUNCTION(execCountTotalRoomType); \
 	DECLARE_FUNCTION(execCountRoomType); \

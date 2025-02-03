@@ -35,10 +35,18 @@
 /NODEFAULTLIB:"LIBCD"
 /NODEFAULTLIB:"LIBCPD"
 /FUNCTIONPADMIN:6
+<<<<<<< Updated upstream
 "C:\Users\symig\Documents\GitHub\ARPG\Intermediate\Build\Win64\x64\SecondTopDownEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.InclOrderOldest.h.obj"
 "C:\Users\symig\Documents\GitHub\ARPG\Plugins\ProceduralDungeon\Intermediate\Build\Win64\x64\UnrealEditor\Development\ProceduralDungeonEditor\Module.ProceduralDungeonEditor.cpp.obj"
 "C:\Users\symig\Documents\GitHub\ARPG\Plugins\ProceduralDungeon\Intermediate\Build\Win64\x64\UnrealEditor\Development\ProceduralDungeonEditor\Default.rc2.res"
 "C:\Users\symig\Documents\GitHub\ARPG\Plugins\ProceduralDungeon\Intermediate\Build\Win64\x64\UnrealEditor\Development\ProceduralDungeon\UnrealEditor-ProceduralDungeon.lib"
+=======
+/NOIMPLIB
+"C:\Users\symig\Documents\GitHub\ARPG 5.5\Intermediate\Build\Win64\x64\SecondTopDownEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.InclOrderUnreal5_3.h.obj"
+"C:\Users\symig\Documents\GitHub\ARPG 5.5\Plugins\ProceduralDungeon\Intermediate\Build\Win64\x64\UnrealEditor\Development\ProceduralDungeonEditor\Module.ProceduralDungeonEditor.cpp.obj"
+"C:\Users\symig\Documents\GitHub\ARPG 5.5\Plugins\ProceduralDungeon\Intermediate\Build\Win64\x64\UnrealEditor\Development\ProceduralDungeonEditor\Default.rc2.res"
+"C:\Users\symig\Documents\GitHub\ARPG 5.5\Plugins\ProceduralDungeon\Intermediate\Build\Win64\x64\UnrealEditor\Development\ProceduralDungeon\UnrealEditor-ProceduralDungeon.lib"
+>>>>>>> Stashed changes
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\CoreUObject\UnrealEditor-CoreUObject.lib"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\InputCore\UnrealEditor-InputCore.lib"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\PropertyEditor\UnrealEditor-PropertyEditor.lib"
@@ -78,7 +86,12 @@
 "synchronization.lib"
 "dwmapi.lib"
 "imm32.lib"
+<<<<<<< Updated upstream
 /OUT:"C:\Users\symig\Documents\GitHub\ARPG\Plugins\ProceduralDungeon\Binaries\Win64\UnrealEditor-ProceduralDungeonEditor.dll"
 /IMPLIB:"C:\Users\symig\Documents\GitHub\ARPG\Plugins\ProceduralDungeon\Intermediate\Build\Win64\x64\UnrealEditor\Development\ProceduralDungeonEditor\UnrealEditor-ProceduralDungeonEditor.sup.lib"
 /PDB:"C:\Users\symig\Documents\GitHub\ARPG\Plugins\ProceduralDungeon\Binaries\Win64\UnrealEditor-ProceduralDungeonEditor.pdb"
+=======
+/OUT:"C:\Users\symig\Documents\GitHub\ARPG 5.5\Plugins\ProceduralDungeon\Binaries\Win64\UnrealEditor-ProceduralDungeonEditor.dll"
+/PDB:"C:\Users\symig\Documents\GitHub\ARPG 5.5\Plugins\ProceduralDungeon\Binaries\Win64\UnrealEditor-ProceduralDungeonEditor.pdb"
+>>>>>>> Stashed changes
 /ignore:4078

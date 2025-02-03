@@ -25,7 +25,7 @@
 #include "Room.h"
 #include "Door.h"
 #include "Engine/World.h"
-#include "Net/UnrealNetwork.h" // DOREPLIFETIME
+#include "Utils/ReplicationUtils.h"
 #include "RoomData.h"
 #include "RoomLevel.h"
 #include "ProceduralDungeonUtils.h"
@@ -45,14 +45,20 @@ URoom::URoom()
 void URoom::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
 {
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
-	DOREPLIFETIME_CONDITION(URoom, RoomData, COND_InitialOnly);
-	DOREPLIFETIME_CONDITION(URoom, Position, COND_InitialOnly);
-	DOREPLIFETIME_CONDITION(URoom, Direction, COND_InitialOnly);
-	DOREPLIFETIME_CONDITION(URoom, Connections, COND_InitialOnly);
-	DOREPLIFETIME_CONDITION(URoom, GeneratorOwner, COND_InitialOnly);
-	DOREPLIFETIME_CONDITION(URoom, Id, COND_InitialOnly);
-	DOREPLIFETIME(URoom, bIsLocked);
-	DOREPLIFETIME(URoom, CustomData);
+
+	FDoRepLifetimeParams Params;
+	Params.bIsPushBased = true;
+	DOREPLIFETIME_WITH_PARAMS(URoom, bIsLocked, Params);
+	DOREPLIFETIME_WITH_PARAMS(URoom, CustomData, Params);
+
+	// InitialOnly is not called on newly created subobjects after the InitialCond of actor owner has already been called!!!
+	//Params.Condition = COND_InitialOnly;
+	DOREPLIFETIME_WITH_PARAMS(URoom, RoomData, Params);
+	DOREPLIFETIME_WITH_PARAMS(URoom, Position, Params);
+	DOREPLIFETIME_WITH_PARAMS(URoom, Direction, Params);
+	DOREPLIFETIME_WITH_PARAMS(URoom, Connections, Params);
+	DOREPLIFETIME_WITH_PARAMS(URoom, GeneratorOwner, Params);
+	DOREPLIFETIME_WITH_PARAMS(URoom, Id, Params);
 }
 
 bool URoom::ReplicateSubobjects(UActorChannel* Channel, FOutBunch* Bunch, FReplicationFlags* RepFlags)
@@ -65,17 +71,26 @@ bool URoom::ReplicateSubobjects(UActorChannel* Channel, FOutBunch* Bunch, FRepli
 	return bWroteSomething;
 }
 
-void URoom::Init(URoomData* Data, ADungeonGenerator* Generator, int32 RoomId)
+void URoom::RegisterReplicableSubobjects(bool bRegister)
 {
-	RoomData = Data;
-	GeneratorOwner = Generator;
-	Id = RoomId;
+	for (const auto& Pair : CustomData)
+	{
+		Pair.Data->RegisterAsReplicable(bRegister);
+	}
+}
+
+void URoom::Init(URoomData* Data, ADungeonGeneratorBase* Generator, int32 RoomId)
+{
+	SET_SUBOBJECT_REPLICATED_PROPERTY_VALUE(RoomData, Data);
+	SET_SUBOBJECT_REPLICATED_PROPERTY_VALUE(GeneratorOwner, Generator);
+	SET_SUBOBJECT_REPLICATED_PROPERTY_VALUE(Id, RoomId);
 	Instance = nullptr;
-	Position = FIntVector(0, 0, 0);
-	Direction = EDoorDirection::North;
+	SetPosition(FIntVector::ZeroValue);
+	SetDirection(EDoorDirection::North);
 
 	if (IsValid(RoomData))
 	{
+		MARK_PROPERTY_DIRTY_FROM_NAME(URoom, Connections, this);
 		for (int i = 0; i < RoomData->GetNbDoor(); i++)
 		{
 			Connections.Add(FRoomConnection());
@@ -98,6 +113,7 @@ void URoom::SetConnection(int Index, URoom* Room, int OtherIndex)
 	check(Index >= 0 && Index < Connections.Num());
 	Connections[Index].OtherRoom = Room;
 	Connections[Index].OtherDoorIndex = OtherIndex;
+	MARK_PROPERTY_DIRTY_FROM_NAME(URoom, Connections, this);
 }
 
 TWeakObjectPtr<URoom> URoom::GetConnection(int Index) const
@@ -197,16 +213,73 @@ void URoom::OnInstanceLoaded()
 	DungeonLog_InfoSilent("[%s][R:%s][I:%s] Room loaded: %s", *GetAuthorityName(), *GetName(), *GetNameSafe(Instance), *Instance->GetWorldAssetPackageName());
 }
 
-void URoom::Lock(bool lock)
+void URoom::ForceVisibility(bool bForce)
 {
-	WakeUpOwnerActor();
-	bIsLocked = lock;
+	const bool bWasVisible = IsVisible();
+	bForceVisible = bForce;
+	if (bWasVisible != IsVisible())
+		UpdateVisibility();
+}
+
+void URoom::Lock(bool bLock)
+{
+	SET_SUBOBJECT_REPLICATED_PROPERTY_VALUE(bIsLocked, bLock);
 	DungeonLog_InfoSilent("[%s] Room '%s' setting IsLocked: %s", *GetAuthorityName(), *GetNameSafe(this), bIsLocked ? TEXT("True") : TEXT("False"));
+}
+
+void URoom::SetPosition(const FIntVector& NewPosition)
+{
+	SET_SUBOBJECT_REPLICATED_PROPERTY_VALUE(Position, NewPosition);
+}
+
+void URoom::SetDirection(EDoorDirection NewDirection)
+{
+	SET_SUBOBJECT_REPLICATED_PROPERTY_VALUE(Direction, NewDirection);
+}
+
+void URoom::UpdateVisibility() const
+{
+	const bool bNewVisibility = IsVisible();
+
+	if (Dungeon::UseLegacyOcclusion())
+	{
+		ARoomLevel* LevelScript = GetLevelScript();
+		if (IsValid(LevelScript))
+			LevelScript->SetActorsVisible(bNewVisibility);
+	}
+	else if (IsValid(Instance))
+	{
+		// TODO: make the level be visible again, I don't know why it is not visible although
+		// the Visible and Loaded of StreamingLevel are correctly set to true 
+		// and the Loaded of Level instance inside it is also set to true...
+		// In the meantime, only the legacy version will remains.
+		//Instance->SetShouldBeVisible(bNewVisibility);
+		//Instance->BroadcastLevelVisibleStatus(Instance->GetWorld(), Instance->GetWorldAssetPackageFName(), bNewVisibility);
+	}
 }
 
 void URoom::OnRep_IsLocked()
 {
 	DungeonLog_InfoSilent("[%s] Room '%s' IsLocked Replicated: %s", *GetAuthorityName(), *GetNameSafe(this), bIsLocked ? TEXT("True") : TEXT("False"));
+}
+
+void URoom::OnRep_Id()
+{
+	DungeonLog_InfoSilent("[%s] Room '%s' Id Replicated: %d", *GetAuthorityName(), *GetNameSafe(this), Id);
+}
+
+void URoom::OnRep_RoomData()
+{
+	DungeonLog_InfoSilent("[%s] Room '%s' RoomData Replicated: %s", *GetAuthorityName(), *GetNameSafe(this), *GetNameSafe(RoomData));
+}
+
+void URoom::OnRep_Connections()
+{
+	DungeonLog_InfoSilent("[%s] Room '%s' Connections Replicated", *GetAuthorityName(), *GetNameSafe(this));
+	for (const auto& Connection : Connections)
+	{
+		DungeonLog_InfoSilent("- Connected to %s (door id: %d)", *GetNameSafe(Connection.OtherRoom.Get()), Connection.OtherDoorIndex);
+	}
 }
 
 ARoomLevel* URoom::GetLevelScript() const
@@ -246,6 +319,16 @@ bool URoom::IsInstanceInitialized() const
 {
 	ARoomLevel* Script = GetLevelScript();
 	return (IsValid(Script)) ? Script->IsInit() : false;
+}
+
+void URoom::CreateLevelComponents(ARoomLevel* LevelActor)
+{
+	for (const auto& Pair : CustomData)
+	{
+		if (!IsValid(Pair.Data))
+			continue;
+		Pair.Data->CreateLevelComponent(LevelActor);
+	}
 }
 
 EDoorDirection URoom::GetDoorWorldOrientation(int DoorIndex)
@@ -325,20 +408,20 @@ FBoxMinAndMax URoom::RoomToWorld(const FBoxMinAndMax& RoomBox) const
 void URoom::SetRotationFromDoor(int DoorIndex, EDoorDirection WorldRot)
 {
 	check(DoorIndex >= 0 && DoorIndex < RoomData->Doors.Num());
-	Direction = WorldRot - RoomData->Doors[DoorIndex].Direction;
+	SetDirection(WorldRot - RoomData->Doors[DoorIndex].Direction);
 }
 
 void URoom::SetPositionFromDoor(int DoorIndex, FIntVector WorldPos)
 {
 	check(DoorIndex >= 0 && DoorIndex < RoomData->Doors.Num());
-	Position = WorldPos - Rotate(RoomData->Doors[DoorIndex].Position, Direction);
+	SetPosition(WorldPos - Rotate(RoomData->Doors[DoorIndex].Position, Direction));
 }
 
 void URoom::SetPositionAndRotationFromDoor(int DoorIndex, FIntVector WorldPos, EDoorDirection WorldRot)
 {
 	check(DoorIndex >= 0 && DoorIndex < RoomData->Doors.Num());
-	Direction = WorldRot - RoomData->Doors[DoorIndex].Direction;
-	Position = WorldPos - Rotate(RoomData->Doors[DoorIndex].Position, Direction);
+	SetDirection(WorldRot - RoomData->Doors[DoorIndex].Direction);
+	SetPosition(WorldPos - Rotate(RoomData->Doors[DoorIndex].Position, Direction));
 }
 
 bool URoom::IsOccupied(FIntVector Cell)
@@ -350,27 +433,49 @@ bool URoom::IsOccupied(FIntVector Cell)
 		&& local.Z >= Bounds.Min.Z && local.Z < Bounds.Max.Z;
 }
 
-void URoom::TryConnectToExistingDoors(TArray<URoom*>& RoomList)
+bool URoom::TryConnectDoor(int DoorIndex, const TArray<URoom*>& RoomList)
 {
+	// Check if already connected.
+	if (IsConnected(DoorIndex))
+		return true;
+
+	// Get the room in front of the door if any.
+	EDoorDirection DoorDir = GetDoorWorldOrientation(DoorIndex);
+	FIntVector AdjacentCell = GetDoorWorldPosition(DoorIndex) + ToIntVector(DoorDir);
+	URoom* OtherRoom = GetRoomAt(AdjacentCell, RoomList);
+	if (!IsValid(OtherRoom))
+	{
+		return false;
+	}
+
+	// Get the door index of the other room if any.
+	int OtherDoorIndex = OtherRoom->GetDoorIndexAt(AdjacentCell, ~DoorDir);
+	if (OtherDoorIndex < 0) // -1 if no door
+	{
+		return false;
+	}
+
+	// Check door compatibility.
+	const FDoorDef& ThisDoor = RoomData->Doors[DoorIndex];
+	const FDoorDef& OtherDoor = OtherRoom->RoomData->Doors[OtherDoorIndex];
+	if (!FDoorDef::AreCompatible(ThisDoor, OtherDoor))
+	{
+		return false;
+	}
+
+	// Finally connect the doors.
+	Connect(*this, DoorIndex, *OtherRoom, OtherDoorIndex);
+	return true;
+}
+
+bool URoom::TryConnectToExistingDoors(const TArray<URoom*>& RoomList)
+{
+	bool HasConnection = false;
 	for (int i = 0; i < RoomData->GetNbDoor(); ++i)
 	{
-		if (IsConnected(i))
-			continue;
-
-		EDoorDirection dir = GetDoorWorldOrientation(i);
-		FIntVector pos = GetDoorWorldPosition(i) + ToIntVector(dir);
-		URoom* otherRoom = GetRoomAt(pos, RoomList);
-
-		if (IsValid(otherRoom))
-		{
-			int j = otherRoom->GetDoorIndexAt(pos, ~dir);
-			if (j >= 0 // -1 if no door
-				&& FDoorDef::AreCompatible(RoomData->Doors[i], otherRoom->RoomData->Doors[j]))
-			{
-				Connect(*this, i, *otherRoom, j);
-			}
-		}
+		HasConnection |= TryConnectDoor(i, RoomList);
 	}
+	return HasConnection;
 }
 
 FBoxCenterAndExtent URoom::GetBounds() const
@@ -401,26 +506,10 @@ FTransform URoom::GetTransform() const
 
 void URoom::SetVisible(bool Visible)
 {
-	if (Visible == bIsVisible)
-		return;
-
+	const bool bWasVisible = IsVisible();
 	bIsVisible = Visible;
-
-	if (Dungeon::UseLegacyOcclusion())
-	{
-		ARoomLevel* LevelScript = GetLevelScript();
-		if (IsValid(LevelScript))
-			LevelScript->SetActorsVisible(Visible);
-	}
-	else if (IsValid(Instance))
-	{
-		// TODO: make the level be visible again, I don't know why it is not visible although
-		// the Visible and Loaded of StreamingLevel are correctly set to true 
-		// and the Loaded of Level instance inside it is also set to true...
-		// In the meantime, only the legacy version will remains.
-		//Instance->SetShouldBeVisible(Visible);
-		//Instance->BroadcastLevelVisibleStatus(Instance->GetWorld(), Instance->GetWorldAssetPackageFName(), Visible);
-	}
+	if (bWasVisible != IsVisible())
+		UpdateVisibility();
 }
 
 void URoom::SetPlayerInside(bool PlayerInside)
@@ -441,6 +530,7 @@ bool URoom::CreateCustomData(const TSubclassOf<URoomCustomData>& DataType)
 		return false;
 
 	CustomData.Add({DataType, NewObject<URoomCustomData>(GetOuter(), DataType)});
+	MARK_PROPERTY_DIRTY_FROM_NAME(URoom, CustomData, this);
 	return true;
 }
 
@@ -525,6 +615,17 @@ bool URoom::AreAllDoorsConnected() const
 	return true;
 }
 
+int URoom::CountConnectedDoors() const
+{
+	int ConnectedDoors = 0;
+	for (const auto& Connection : Connections)
+	{
+		if (Connection.OtherRoom != nullptr)
+			++ConnectedDoors;
+	}
+	return ConnectedDoors;
+}
+
 URoom* URoom::GetConnectedRoomAt(int DoorIndex) const
 {
 	if (!Connections.IsValidIndex(DoorIndex))
@@ -546,13 +647,32 @@ void URoom::GetAllConnectedRooms(TArray<URoom*>& ConnectedRooms) const
 	}
 }
 
+int32 URoom::GetConnectedRoomIndex(const URoom* OtherRoom) const
+{
+	for (int i = 0; i < Connections.Num(); ++i)
+	{
+		if (OtherRoom == Connections[i].OtherRoom.Get())
+			return i;
+	}
+	return -1;
+}
+
+void URoom::GetDoorsWith(const URoom* OtherRoom, TArray<ADoor*>& Doors) const
+{
+	Doors.Empty();
+	for (const auto& Connection : Connections)
+	{
+		if (OtherRoom == Connection.OtherRoom.Get())
+			Doors.Add(Connection.DoorInstance);
+	}
+}
+
 FVector URoom::GetBoundsCenter() const
 {
 	FVector Center = GetBounds().Center;
 	if (GeneratorOwner.IsValid())
 	{
-		FTransform DungeonTransform(GeneratorOwner->GetDungeonRotation(), GeneratorOwner->GetDungeonOffset());
-		Center = DungeonTransform.TransformPosition(Center);
+		Center = GeneratorOwner->GetDungeonTransform().TransformPositionNoScale(Center);
 	}
 	return Center;
 }

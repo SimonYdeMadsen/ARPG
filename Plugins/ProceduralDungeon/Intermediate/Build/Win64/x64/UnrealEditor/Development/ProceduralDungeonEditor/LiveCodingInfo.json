@@ -8,6 +8,7 @@
 			"ProceduralDungeonEditorSettings.gen.cpp.obj",
 			"ProceduralDungeonEdTypes.gen.cpp.obj",
 			"RoomDataFactory.gen.cpp.obj",
+			"PerModuleInline.gen.cpp.obj",
 			"AssetTypeActions_DoorType.cpp.obj",
 			"AssetTypeActions_RoomData.cpp.obj",
 			"DoorDefCustomization.cpp.obj",

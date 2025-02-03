@@ -14,7 +14,11 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define PROCEDURALDUNGEONEDITOR_ProceduralDungeonEditorObject_generated_h
 
+<<<<<<< Updated upstream
 #define FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeonEditor_Private_EditorMode_ProceduralDungeonEditorObject_h_35_INCLASS_NO_PURE_DECLS \
+=======
+#define FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeonEditor_Private_EditorMode_ProceduralDungeonEditorObject_h_35_INCLASS_NO_PURE_DECLS \
+>>>>>>> Stashed changes
 private: \
 	static void StaticRegisterNativesUProceduralDungeonEditorObject(); \
 	friend struct Z_Construct_UClass_UProceduralDungeonEditorObject_Statics; \
@@ -23,7 +27,11 @@ public: \
 	DECLARE_SERIALIZER(UProceduralDungeonEditorObject)
 
 
+<<<<<<< Updated upstream
 #define FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeonEditor_Private_EditorMode_ProceduralDungeonEditorObject_h_35_ENHANCED_CONSTRUCTORS \
+=======
+#define FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeonEditor_Private_EditorMode_ProceduralDungeonEditorObject_h_35_ENHANCED_CONSTRUCTORS \
+>>>>>>> Stashed changes
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	PROCEDURALDUNGEONEDITOR_API UProceduralDungeonEditorObject(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 private: \
@@ -37,12 +45,21 @@ public: \
 	PROCEDURALDUNGEONEDITOR_API virtual ~UProceduralDungeonEditorObject();
 
 
+<<<<<<< Updated upstream
 #define FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeonEditor_Private_EditorMode_ProceduralDungeonEditorObject_h_32_PROLOG
 #define FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeonEditor_Private_EditorMode_ProceduralDungeonEditorObject_h_35_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeonEditor_Private_EditorMode_ProceduralDungeonEditorObject_h_35_INCLASS_NO_PURE_DECLS \
 	FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeonEditor_Private_EditorMode_ProceduralDungeonEditorObject_h_35_ENHANCED_CONSTRUCTORS \
+=======
+#define FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeonEditor_Private_EditorMode_ProceduralDungeonEditorObject_h_32_PROLOG
+#define FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeonEditor_Private_EditorMode_ProceduralDungeonEditorObject_h_35_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeonEditor_Private_EditorMode_ProceduralDungeonEditorObject_h_35_INCLASS_NO_PURE_DECLS \
+	FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeonEditor_Private_EditorMode_ProceduralDungeonEditorObject_h_35_ENHANCED_CONSTRUCTORS \
+>>>>>>> Stashed changes
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -50,7 +67,11 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> PROCEDURALDUNGEONEDITOR_API UClass* StaticClass<class UProceduralDungeonEditorObject>();
 
 #undef CURRENT_FILE_ID
+<<<<<<< Updated upstream
 #define CURRENT_FILE_ID FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeonEditor_Private_EditorMode_ProceduralDungeonEditorObject_h
+=======
+#define CURRENT_FILE_ID FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeonEditor_Private_EditorMode_ProceduralDungeonEditorObject_h
+>>>>>>> Stashed changes
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

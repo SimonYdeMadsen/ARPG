@@ -14,7 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define PROCEDURALDUNGEON_ProceduralDungeonTypes_generated_h
 
-#define FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_ProceduralDungeonTypes_h_103_GENERATED_BODY \
+#define FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_ProceduralDungeonTypes_h_104_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FDoorDef_Statics; \
 	static class UScriptStruct* StaticStruct();
 

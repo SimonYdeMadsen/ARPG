@@ -15,21 +15,33 @@ struct FGameplayTag;
 #endif
 #define GAMEPLAYMESSAGERUNTIME_GameplayMessageSubsystem_generated_h
 
+<<<<<<< Updated upstream
 #define FID_Users_symig_Documents_GitHub_ARPG_Plugins_GameplayMessageRouter_Source_GameplayMessageRuntime_Public_GameFramework_GameplayMessageSubsystem_h_27_GENERATED_BODY \
+=======
+#define FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_GameplayMessageRouter_Source_GameplayMessageRuntime_Public_GameFramework_GameplayMessageSubsystem_h_27_GENERATED_BODY \
+>>>>>>> Stashed changes
 	friend struct Z_Construct_UScriptStruct_FGameplayMessageListenerHandle_Statics; \
 	static class UScriptStruct* StaticStruct();
 
 
 template<> GAMEPLAYMESSAGERUNTIME_API UScriptStruct* StaticStruct<struct FGameplayMessageListenerHandle>();
 
+<<<<<<< Updated upstream
 #define FID_Users_symig_Documents_GitHub_ARPG_Plugins_GameplayMessageRouter_Source_GameplayMessageRuntime_Public_GameFramework_GameplayMessageSubsystem_h_58_GENERATED_BODY \
+=======
+#define FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_GameplayMessageRouter_Source_GameplayMessageRuntime_Public_GameFramework_GameplayMessageSubsystem_h_58_GENERATED_BODY \
+>>>>>>> Stashed changes
 	friend struct Z_Construct_UScriptStruct_FGameplayMessageListenerData_Statics; \
 	GAMEPLAYMESSAGERUNTIME_API static class UScriptStruct* StaticStruct();
 
 
 template<> GAMEPLAYMESSAGERUNTIME_API UScriptStruct* StaticStruct<struct FGameplayMessageListenerData>();
 
+<<<<<<< Updated upstream
 #define FID_Users_symig_Documents_GitHub_ARPG_Plugins_GameplayMessageRouter_Source_GameplayMessageRuntime_Public_GameFramework_GameplayMessageSubsystem_h_88_INCLASS_NO_PURE_DECLS \
+=======
+#define FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_GameplayMessageRouter_Source_GameplayMessageRuntime_Public_GameFramework_GameplayMessageSubsystem_h_88_INCLASS_NO_PURE_DECLS \
+>>>>>>> Stashed changes
 private: \
 	static void StaticRegisterNativesUGameplayMessageSubsystem(); \
 	friend struct Z_Construct_UClass_UGameplayMessageSubsystem_Statics; \
@@ -38,7 +50,11 @@ public: \
 	DECLARE_SERIALIZER(UGameplayMessageSubsystem)
 
 
+<<<<<<< Updated upstream
 #define FID_Users_symig_Documents_GitHub_ARPG_Plugins_GameplayMessageRouter_Source_GameplayMessageRuntime_Public_GameFramework_GameplayMessageSubsystem_h_88_ENHANCED_CONSTRUCTORS \
+=======
+#define FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_GameplayMessageRouter_Source_GameplayMessageRuntime_Public_GameFramework_GameplayMessageSubsystem_h_88_ENHANCED_CONSTRUCTORS \
+>>>>>>> Stashed changes
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UGameplayMessageSubsystem(); \
 private: \
@@ -52,12 +68,21 @@ public: \
 	NO_API virtual ~UGameplayMessageSubsystem();
 
 
+<<<<<<< Updated upstream
 #define FID_Users_symig_Documents_GitHub_ARPG_Plugins_GameplayMessageRouter_Source_GameplayMessageRuntime_Public_GameFramework_GameplayMessageSubsystem_h_85_PROLOG
 #define FID_Users_symig_Documents_GitHub_ARPG_Plugins_GameplayMessageRouter_Source_GameplayMessageRuntime_Public_GameFramework_GameplayMessageSubsystem_h_88_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	FID_Users_symig_Documents_GitHub_ARPG_Plugins_GameplayMessageRouter_Source_GameplayMessageRuntime_Public_GameFramework_GameplayMessageSubsystem_h_88_INCLASS_NO_PURE_DECLS \
 	FID_Users_symig_Documents_GitHub_ARPG_Plugins_GameplayMessageRouter_Source_GameplayMessageRuntime_Public_GameFramework_GameplayMessageSubsystem_h_88_ENHANCED_CONSTRUCTORS \
+=======
+#define FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_GameplayMessageRouter_Source_GameplayMessageRuntime_Public_GameFramework_GameplayMessageSubsystem_h_85_PROLOG
+#define FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_GameplayMessageRouter_Source_GameplayMessageRuntime_Public_GameFramework_GameplayMessageSubsystem_h_88_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_GameplayMessageRouter_Source_GameplayMessageRuntime_Public_GameFramework_GameplayMessageSubsystem_h_88_INCLASS_NO_PURE_DECLS \
+	FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_GameplayMessageRouter_Source_GameplayMessageRuntime_Public_GameFramework_GameplayMessageSubsystem_h_88_ENHANCED_CONSTRUCTORS \
+>>>>>>> Stashed changes
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -65,7 +90,11 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> GAMEPLAYMESSAGERUNTIME_API UClass* StaticClass<class UGameplayMessageSubsystem>();
 
 #undef CURRENT_FILE_ID
+<<<<<<< Updated upstream
 #define CURRENT_FILE_ID FID_Users_symig_Documents_GitHub_ARPG_Plugins_GameplayMessageRouter_Source_GameplayMessageRuntime_Public_GameFramework_GameplayMessageSubsystem_h
+=======
+#define CURRENT_FILE_ID FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_GameplayMessageRouter_Source_GameplayMessageRuntime_Public_GameFramework_GameplayMessageSubsystem_h
+>>>>>>> Stashed changes
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

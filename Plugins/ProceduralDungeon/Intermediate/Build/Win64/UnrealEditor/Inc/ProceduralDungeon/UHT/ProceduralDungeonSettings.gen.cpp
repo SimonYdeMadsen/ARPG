@@ -118,6 +118,18 @@ struct Z_Construct_UClass_UProceduralDungeonSettings_Statics
 #endif
 		{ "UIMin", "1" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_RoomLimit_MetaData[] = {
+		{ "Category", "General" },
+		{ "ClampMin", "1" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// The number of room placement retry on a specific door before the generator gives up and continues with the next door.\n" },
+#endif
+		{ "ModuleRelativePath", "Public/ProceduralDungeonSettings.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "The number of room placement retry on a specific door before the generator gives up and continues with the next door." },
+#endif
+		{ "UIMin", "1" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OcclusionCulling_MetaData[] = {
 		{ "Category", "Occlusion Culling" },
 #if !UE_BUILD_SHIPPING
@@ -237,6 +249,7 @@ struct Z_Construct_UClass_UProceduralDungeonSettings_Statics
 	static const UECodeGen_Private::FBytePropertyParams NewProp_RoomObjectType;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_MaxGenerationTry;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_MaxRoomPlacementTry;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_RoomLimit;
 	static void NewProp_OcclusionCulling_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_OcclusionCulling;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_OcclusionDistance;
@@ -271,6 +284,7 @@ const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UProceduralDunge
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_UProceduralDungeonSettings_Statics::NewProp_RoomObjectType = { "RoomObjectType", nullptr, (EPropertyFlags)0x0010000000004001, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UProceduralDungeonSettings, RoomObjectType), Z_Construct_UEnum_Engine_ECollisionChannel, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_RoomObjectType_MetaData), NewProp_RoomObjectType_MetaData) }; // 756624936
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UProceduralDungeonSettings_Statics::NewProp_MaxGenerationTry = { "MaxGenerationTry", nullptr, (EPropertyFlags)0x0010040000004001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UProceduralDungeonSettings, MaxGenerationTry), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MaxGenerationTry_MetaData), NewProp_MaxGenerationTry_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UProceduralDungeonSettings_Statics::NewProp_MaxRoomPlacementTry = { "MaxRoomPlacementTry", nullptr, (EPropertyFlags)0x0010040000004001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UProceduralDungeonSettings, MaxRoomPlacementTry), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MaxRoomPlacementTry_MetaData), NewProp_MaxRoomPlacementTry_MetaData) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UProceduralDungeonSettings_Statics::NewProp_RoomLimit = { "RoomLimit", nullptr, (EPropertyFlags)0x0010040000004001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UProceduralDungeonSettings, RoomLimit), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_RoomLimit_MetaData), NewProp_RoomLimit_MetaData) };
 void Z_Construct_UClass_UProceduralDungeonSettings_Statics::NewProp_OcclusionCulling_SetBit(void* Obj)
 {
 	((UProceduralDungeonSettings*)Obj)->OcclusionCulling = 1;
@@ -313,6 +327,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UProcedur
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UProceduralDungeonSettings_Statics::NewProp_RoomObjectType,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UProceduralDungeonSettings_Statics::NewProp_MaxGenerationTry,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UProceduralDungeonSettings_Statics::NewProp_MaxRoomPlacementTry,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UProceduralDungeonSettings_Statics::NewProp_RoomLimit,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UProceduralDungeonSettings_Statics::NewProp_OcclusionCulling,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UProceduralDungeonSettings_Statics::NewProp_OcclusionDistance,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UProceduralDungeonSettings_Statics::NewProp_OccludeDynamicActors,
@@ -362,14 +377,23 @@ UProceduralDungeonSettings::~UProceduralDungeonSettings() {}
 // End Class UProceduralDungeonSettings
 
 // Begin Registration
+<<<<<<< Updated upstream
 struct Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_ProceduralDungeonSettings_h_Statics
+=======
+struct Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_ProceduralDungeonSettings_h_Statics
+>>>>>>> Stashed changes
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UProceduralDungeonSettings, UProceduralDungeonSettings::StaticClass, TEXT("UProceduralDungeonSettings"), &Z_Registration_Info_UClass_UProceduralDungeonSettings, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UProceduralDungeonSettings), 3737218545U) },
+		{ Z_Construct_UClass_UProceduralDungeonSettings, UProceduralDungeonSettings::StaticClass, TEXT("UProceduralDungeonSettings"), &Z_Registration_Info_UClass_UProceduralDungeonSettings, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UProceduralDungeonSettings), 3459435738U) },
 	};
 };
+<<<<<<< Updated upstream
 static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_ProceduralDungeonSettings_h_2997165878(TEXT("/Script/ProceduralDungeon"),
 	Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_ProceduralDungeonSettings_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_ProceduralDungeonSettings_h_Statics::ClassInfo),
+=======
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_ProceduralDungeonSettings_h_2377882780(TEXT("/Script/ProceduralDungeon"),
+	Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_ProceduralDungeonSettings_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_ProceduralDungeonSettings_h_Statics::ClassInfo),
+>>>>>>> Stashed changes
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

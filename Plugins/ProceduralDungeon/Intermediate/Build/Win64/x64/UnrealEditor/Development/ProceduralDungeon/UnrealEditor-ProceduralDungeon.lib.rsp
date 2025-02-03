@@ -6,9 +6,18 @@
 /NAME:"UnrealEditor-ProceduralDungeon.dll"
 /IGNORE:4221
 /NODEFAULTLIB
+<<<<<<< Updated upstream
 "C:\Users\symig\Documents\GitHub\ARPG\Intermediate\Build\Win64\x64\SecondTopDownEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.InclOrderOldest.h.obj"
 "C:\Users\symig\Documents\GitHub\ARPG\Plugins\ProceduralDungeon\Intermediate\Build\Win64\x64\UnrealEditor\Development\ProceduralDungeon\Module.ProceduralDungeon.1.cpp.obj"
 "C:\Users\symig\Documents\GitHub\ARPG\Plugins\ProceduralDungeon\Intermediate\Build\Win64\x64\UnrealEditor\Development\ProceduralDungeon\Module.ProceduralDungeon.2.cpp.obj"
 "C:\Users\symig\Documents\GitHub\ARPG\Plugins\ProceduralDungeon\Intermediate\Build\Win64\x64\UnrealEditor\Development\ProceduralDungeon\Module.ProceduralDungeon.3.cpp.obj"
 "C:\Users\symig\Documents\GitHub\ARPG\Plugins\ProceduralDungeon\Intermediate\Build\Win64\x64\UnrealEditor\Development\ProceduralDungeon\Default.rc2.res"
 /OUT:"C:\Users\symig\Documents\GitHub\ARPG\Plugins\ProceduralDungeon\Intermediate\Build\Win64\x64\UnrealEditor\Development\ProceduralDungeon\UnrealEditor-ProceduralDungeon.lib"
+=======
+"C:\Users\symig\Documents\GitHub\ARPG 5.5\Intermediate\Build\Win64\x64\SecondTopDownEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.InclOrderUnreal5_3.h.obj"
+"C:\Users\symig\Documents\GitHub\ARPG 5.5\Plugins\ProceduralDungeon\Intermediate\Build\Win64\x64\UnrealEditor\Development\ProceduralDungeon\Module.ProceduralDungeon.1.cpp.obj"
+"C:\Users\symig\Documents\GitHub\ARPG 5.5\Plugins\ProceduralDungeon\Intermediate\Build\Win64\x64\UnrealEditor\Development\ProceduralDungeon\Module.ProceduralDungeon.2.cpp.obj"
+"C:\Users\symig\Documents\GitHub\ARPG 5.5\Plugins\ProceduralDungeon\Intermediate\Build\Win64\x64\UnrealEditor\Development\ProceduralDungeon\Module.ProceduralDungeon.3.cpp.obj"
+"C:\Users\symig\Documents\GitHub\ARPG 5.5\Plugins\ProceduralDungeon\Intermediate\Build\Win64\x64\UnrealEditor\Development\ProceduralDungeon\Default.rc2.res"
+/OUT:"C:\Users\symig\Documents\GitHub\ARPG 5.5\Plugins\ProceduralDungeon\Intermediate\Build\Win64\x64\UnrealEditor\Development\ProceduralDungeon\UnrealEditor-ProceduralDungeon.lib"
+>>>>>>> Stashed changes

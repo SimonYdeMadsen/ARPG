@@ -60,8 +60,7 @@ void ARoomLevel::Init(URoom* _Room)
 	Room = _Room;
 	bIsInit = false;
 
-	DungeonTransform.SetLocation(Room->Generator()->GetDungeonOffset());
-	DungeonTransform.SetRotation(Room->Generator()->GetDungeonRotation());
+	DungeonTransform = Room->Generator()->GetDungeonTransform();
 
 	// Update the room's bounding box for occlusion culling (also the red box drawn in debug)
 	UpdateBounds();
@@ -117,12 +116,16 @@ void ARoomLevel::BeginPlay()
 
 	SetActorsVisible(Room->IsVisible());
 
+	// Create dynamic components from the RoomCustomData
+	Room->CreateLevelComponents(this);
+
 	bIsInit = true;
 }
 
 void ARoomLevel::EndPlay(EEndPlayReason::Type EndPlayReason)
 {
 	Super::EndPlay(EndPlayReason);
+	Room = nullptr;
 }
 
 // Update is called once per frame
@@ -131,7 +134,7 @@ void ARoomLevel::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 #if ENABLE_DRAW_DEBUG
-	// TODO: Place the debug draw in an editor module of the plugin?
+	// @TODO: Place the debug draw in an editor module of the plugin?
 	if (Dungeon::DrawDebug() && IsValid(Data))
 	{
 		const bool bIsRoomValid = (Room != nullptr);
@@ -144,22 +147,28 @@ void ARoomLevel::Tick(float DeltaTime)
 		// Cache world
 		const UWorld* World = GetWorld();
 
-		// TODO: is it still needed now?
+		// @TODO: is it still needed now?
 		// Pivot
 		if(Dungeon::ShowRoomOrigin())
-			DrawDebugSphere(World, DungeonTransform.TransformPosition(RoomTransform.GetLocation()), 100.0f, 4, FColor::Magenta);
+			DrawDebugSphere(World, DungeonTransform.TransformPositionNoScale(RoomTransform.GetLocation()), 100.0f, 4, FColor::Magenta);
 
 		// Room bounds
-		DrawDebugBox(World, DungeonTransform.TransformPosition(Bounds.Center), Bounds.Extent, DungeonTransform.GetRotation(), IsPlayerInside() ? FColor::Green : FColor::Red);
+		DrawDebugBox(World, GetBoundsCenter(), GetBoundsExtent(), DungeonTransform.GetRotation(), IsPlayerInside() ? FColor::Green : FColor::Red);
 
 		if (bIsRoomLocked)
 		{
-			FBox Box = Bounds.GetBox().TransformBy(DungeonTransform);
-
-			DrawDebugLine(World, Box.Min, Box.Max, FColor::Red);
-			DrawDebugLine(World, FVector(Box.Min.X, Box.Min.Y, Box.Max.Z), FVector(Box.Max.X, Box.Max.Y, Box.Min.Z), FColor::Red);
-			DrawDebugLine(World, FVector(Box.Min.X, Box.Max.Y, Box.Max.Z), FVector(Box.Max.X, Box.Min.Y, Box.Min.Z), FColor::Red);
-			DrawDebugLine(World, FVector(Box.Min.X, Box.Max.Y, Box.Min.Z), FVector(Box.Max.X, Box.Min.Y, Box.Max.Z), FColor::Red);
+			FBox Box = Bounds.GetBox();
+			const FVector& Min = Box.Min;
+			const FVector& Max = Box.Max;
+#ifdef T
+			static_assert(false, "T macro is already defined! Please change its name to avoid potential conflicts");
+#endif
+#define T(POINT) DungeonTransform.TransformPositionNoScale(POINT)
+			DrawDebugLine(World, T(Min), T(Max), FColor::Red);
+			DrawDebugLine(World, T(FVector(Min.X, Min.Y, Max.Z)), T(FVector(Max.X, Max.Y, Min.Z)), FColor::Red);
+			DrawDebugLine(World, T(FVector(Min.X, Max.Y, Max.Z)), T(FVector(Max.X, Min.Y, Min.Z)), FColor::Red);
+			DrawDebugLine(World, T(FVector(Min.X, Max.Y, Min.Z)), T(FVector(Max.X, Min.Y, Max.Z)), FColor::Red);
+#undef T
 		}
 
 		// Doors
@@ -206,7 +215,7 @@ void ARoomLevel::OnTriggerEndOverlap(UPrimitiveComponent* OverlappedComp, AActor
 
 FVector ARoomLevel::GetBoundsCenter() const
 {
-	return DungeonTransform.TransformPosition(Bounds.Center);
+	return DungeonTransform.TransformPositionNoScale(Bounds.Center);
 }
 
 FVector ARoomLevel::GetBoundsExtent() const

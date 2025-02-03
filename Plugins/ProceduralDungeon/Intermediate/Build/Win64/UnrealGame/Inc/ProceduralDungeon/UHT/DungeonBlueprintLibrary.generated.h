@@ -9,9 +9,12 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class AActor;
 class ADoor;
 class APlayerController;
 class UDoorType;
+class URoom;
+class URoomCustomData;
 enum class EDoorDirection : uint8;
 struct FDataTableRowHandle;
 #ifdef PROCEDURALDUNGEON_DungeonBlueprintLibrary_generated_h
@@ -19,7 +22,7 @@ struct FDataTableRowHandle;
 #endif
 #define PROCEDURALDUNGEON_DungeonBlueprintLibrary_generated_h
 
-#define FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonBlueprintLibrary_h_36_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonBlueprintLibrary_h_39_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execSpectate); \
 	DECLARE_FUNCTION(execSettings_OccludeDynamicActors); \
 	DECLARE_FUNCTION(execSettings_SetOcclusionDistance); \
@@ -36,11 +39,13 @@ struct FDataTableRowHandle;
 	DECLARE_FUNCTION(execDoorDirection_Sub); \
 	DECLARE_FUNCTION(execDoorDirection_Add); \
 	DECLARE_FUNCTION(execDoorDirection_Valid); \
+	DECLARE_FUNCTION(execGetOwningRoomCustomData); \
+	DECLARE_FUNCTION(execGetOwningRoom); \
 	DECLARE_FUNCTION(execCompareDataTableRows); \
 	DECLARE_FUNCTION(execIsDoorOfType);
 
 
-#define FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonBlueprintLibrary_h_36_INCLASS_NO_PURE_DECLS \
+#define FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonBlueprintLibrary_h_39_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUDungeonBlueprintLibrary(); \
 	friend struct Z_Construct_UClass_UDungeonBlueprintLibrary_Statics; \
@@ -49,7 +54,7 @@ public: \
 	DECLARE_SERIALIZER(UDungeonBlueprintLibrary)
 
 
-#define FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonBlueprintLibrary_h_36_ENHANCED_CONSTRUCTORS \
+#define FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonBlueprintLibrary_h_39_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UDungeonBlueprintLibrary(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 private: \
@@ -63,13 +68,13 @@ public: \
 	NO_API virtual ~UDungeonBlueprintLibrary();
 
 
-#define FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonBlueprintLibrary_h_33_PROLOG
-#define FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonBlueprintLibrary_h_36_GENERATED_BODY \
+#define FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonBlueprintLibrary_h_36_PROLOG
+#define FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonBlueprintLibrary_h_39_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonBlueprintLibrary_h_36_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonBlueprintLibrary_h_36_INCLASS_NO_PURE_DECLS \
-	FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonBlueprintLibrary_h_36_ENHANCED_CONSTRUCTORS \
+	FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonBlueprintLibrary_h_39_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonBlueprintLibrary_h_39_INCLASS_NO_PURE_DECLS \
+	FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonBlueprintLibrary_h_39_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

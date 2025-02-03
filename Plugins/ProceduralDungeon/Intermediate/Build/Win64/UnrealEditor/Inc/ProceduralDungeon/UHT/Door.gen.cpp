@@ -47,7 +47,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ADoor_
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ADoor_IsLocked_Statics::NewProp_ReturnValue,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ADoor_IsLocked_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ADoor_IsLocked_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ADoor, nullptr, "IsLocked", nullptr, nullptr, Z_Construct_UFunction_ADoor_IsLocked_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ADoor_IsLocked_Statics::PropPointers), sizeof(Z_Construct_UFunction_ADoor_IsLocked_Statics::Door_eventIsLocked_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ADoor_IsLocked_Statics::Function_MetaDataParams), Z_Construct_UFunction_ADoor_IsLocked_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ADoor_IsLocked_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ADoor, nullptr, "IsLocked", nullptr, nullptr, Z_Construct_UFunction_ADoor_IsLocked_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ADoor_IsLocked_Statics::PropPointers), sizeof(Z_Construct_UFunction_ADoor_IsLocked_Statics::Door_eventIsLocked_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x54020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ADoor_IsLocked_Statics::Function_MetaDataParams), Z_Construct_UFunction_ADoor_IsLocked_Statics::Function_MetaDataParams) };
 static_assert(sizeof(Z_Construct_UFunction_ADoor_IsLocked_Statics::Door_eventIsLocked_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_ADoor_IsLocked()
 {
@@ -95,7 +95,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ADoor_
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ADoor_IsOpen_Statics::NewProp_ReturnValue,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ADoor_IsOpen_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ADoor_IsOpen_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ADoor, nullptr, "IsOpen", nullptr, nullptr, Z_Construct_UFunction_ADoor_IsOpen_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ADoor_IsOpen_Statics::PropPointers), sizeof(Z_Construct_UFunction_ADoor_IsOpen_Statics::Door_eventIsOpen_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ADoor_IsOpen_Statics::Function_MetaDataParams), Z_Construct_UFunction_ADoor_IsOpen_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ADoor_IsOpen_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ADoor, nullptr, "IsOpen", nullptr, nullptr, Z_Construct_UFunction_ADoor_IsOpen_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ADoor_IsOpen_Statics::PropPointers), sizeof(Z_Construct_UFunction_ADoor_IsOpen_Statics::Door_eventIsOpen_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x54020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ADoor_IsOpen_Statics::Function_MetaDataParams), Z_Construct_UFunction_ADoor_IsOpen_Statics::Function_MetaDataParams) };
 static_assert(sizeof(Z_Construct_UFunction_ADoor_IsOpen_Statics::Door_eventIsOpen_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_ADoor_IsOpen()
 {
@@ -193,10 +193,11 @@ DEFINE_FUNCTION(ADoor::execOnDoorClose)
 // End Class ADoor Function OnDoorClose
 
 // Begin Class ADoor Function OnDoorClose_BP
-static FName NAME_ADoor_OnDoorClose_BP = FName(TEXT("OnDoorClose_BP"));
+static const FName NAME_ADoor_OnDoorClose_BP = FName(TEXT("OnDoorClose_BP"));
 void ADoor::OnDoorClose_BP()
 {
-	ProcessEvent(FindFunctionChecked(NAME_ADoor_OnDoorClose_BP),NULL);
+	UFunction* Func = FindFunctionChecked(NAME_ADoor_OnDoorClose_BP);
+	ProcessEvent(Func,NULL);
 }
 struct Z_Construct_UFunction_ADoor_OnDoorClose_BP_Statics
 {
@@ -251,10 +252,11 @@ DEFINE_FUNCTION(ADoor::execOnDoorLock)
 // End Class ADoor Function OnDoorLock
 
 // Begin Class ADoor Function OnDoorLock_BP
-static FName NAME_ADoor_OnDoorLock_BP = FName(TEXT("OnDoorLock_BP"));
+static const FName NAME_ADoor_OnDoorLock_BP = FName(TEXT("OnDoorLock_BP"));
 void ADoor::OnDoorLock_BP()
 {
-	ProcessEvent(FindFunctionChecked(NAME_ADoor_OnDoorLock_BP),NULL);
+	UFunction* Func = FindFunctionChecked(NAME_ADoor_OnDoorLock_BP);
+	ProcessEvent(Func,NULL);
 }
 struct Z_Construct_UFunction_ADoor_OnDoorLock_BP_Statics
 {
@@ -309,10 +311,11 @@ DEFINE_FUNCTION(ADoor::execOnDoorOpen)
 // End Class ADoor Function OnDoorOpen
 
 // Begin Class ADoor Function OnDoorOpen_BP
-static FName NAME_ADoor_OnDoorOpen_BP = FName(TEXT("OnDoorOpen_BP"));
+static const FName NAME_ADoor_OnDoorOpen_BP = FName(TEXT("OnDoorOpen_BP"));
 void ADoor::OnDoorOpen_BP()
 {
-	ProcessEvent(FindFunctionChecked(NAME_ADoor_OnDoorOpen_BP),NULL);
+	UFunction* Func = FindFunctionChecked(NAME_ADoor_OnDoorOpen_BP);
+	ProcessEvent(Func,NULL);
 }
 struct Z_Construct_UFunction_ADoor_OnDoorOpen_BP_Statics
 {
@@ -367,10 +370,11 @@ DEFINE_FUNCTION(ADoor::execOnDoorUnlock)
 // End Class ADoor Function OnDoorUnlock
 
 // Begin Class ADoor Function OnDoorUnlock_BP
-static FName NAME_ADoor_OnDoorUnlock_BP = FName(TEXT("OnDoorUnlock_BP"));
+static const FName NAME_ADoor_OnDoorUnlock_BP = FName(TEXT("OnDoorUnlock_BP"));
 void ADoor::OnDoorUnlock_BP()
 {
-	ProcessEvent(FindFunctionChecked(NAME_ADoor_OnDoorUnlock_BP),NULL);
+	UFunction* Func = FindFunctionChecked(NAME_ADoor_OnDoorUnlock_BP);
+	ProcessEvent(Func,NULL);
 }
 struct Z_Construct_UFunction_ADoor_OnDoorUnlock_BP_Statics
 {
@@ -530,8 +534,8 @@ struct Z_Construct_UClass_ADoor_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_ADoor_IsLocked, "IsLocked" }, // 2420236923
-		{ &Z_Construct_UFunction_ADoor_IsOpen, "IsOpen" }, // 904199064
+		{ &Z_Construct_UFunction_ADoor_IsLocked, "IsLocked" }, // 4021193463
+		{ &Z_Construct_UFunction_ADoor_IsOpen, "IsOpen" }, // 3671174773
 		{ &Z_Construct_UFunction_ADoor_Lock, "Lock" }, // 419058901
 		{ &Z_Construct_UFunction_ADoor_OnDoorClose, "OnDoorClose" }, // 396925938
 		{ &Z_Construct_UFunction_ADoor_OnDoorClose_BP, "OnDoorClose_BP" }, // 3826663474
@@ -634,14 +638,23 @@ ADoor::~ADoor() {}
 // End Class ADoor
 
 // Begin Registration
+<<<<<<< Updated upstream
 struct Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_Door_h_Statics
+=======
+struct Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_Door_h_Statics
+>>>>>>> Stashed changes
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ADoor, ADoor::StaticClass, TEXT("ADoor"), &Z_Registration_Info_UClass_ADoor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ADoor), 1774493489U) },
+		{ Z_Construct_UClass_ADoor, ADoor::StaticClass, TEXT("ADoor"), &Z_Registration_Info_UClass_ADoor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ADoor), 2617218736U) },
 	};
 };
+<<<<<<< Updated upstream
 static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_Door_h_1090391232(TEXT("/Script/ProceduralDungeon"),
 	Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_Door_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_Door_h_Statics::ClassInfo),
+=======
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_Door_h_3369784310(TEXT("/Script/ProceduralDungeon"),
+	Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_Door_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_Door_h_Statics::ClassInfo),
+>>>>>>> Stashed changes
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

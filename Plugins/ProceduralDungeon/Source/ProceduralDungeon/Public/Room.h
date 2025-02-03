@@ -30,7 +30,7 @@
 #include "Math/GenericOctree.h" // for FBoxCenterAndExtent (required for UE5.0)
 #include "Room.generated.h"
 
-class ADungeonGenerator;
+class ADungeonGeneratorBase;
 class ARoomLevel;
 class URoomData;
 class ADoor;
@@ -45,7 +45,11 @@ struct FRoomConnection
 public:
 	UPROPERTY()
 	TWeakObjectPtr<URoom> OtherRoom {nullptr};
+
+	UPROPERTY()
 	int OtherDoorIndex {-1};
+
+	UPROPERTY()
 	ADoor* DoorInstance {nullptr};
 };
 
@@ -61,10 +65,57 @@ public:
 	URoomCustomData* Data {nullptr};
 };
 
+// This class does not need to be modified.
+UINTERFACE(MinimalAPI, BlueprintType, NotBlueprintable, meta = (CannotImplementInterfaceInBlueprint, Tooltip = "Allow access to only some members of Room instances during the generation process."))
+class UReadOnlyRoom : public UInterface
+{
+	GENERATED_BODY()
+};
+
+// Interface to access some room instance's data during the generation process.
+class PROCEDURALDUNGEON_API IReadOnlyRoom
+{
+	GENERATED_BODY()
+
+public:
+	// Returns the room data asset of this room instance.
+	UFUNCTION(BlueprintCallable, Category = "Room")
+	virtual const URoomData* GetRoomData() const { return nullptr; }
+
+	// Returns the unique ID (per-dungeon) of the room.
+	// The first room has ID 0 and then it increases in the order of placed room.
+	UFUNCTION(BlueprintCallable, Category = "Room")
+	virtual int64 GetRoomID() const { return -1ll; }
+
+	// Returns the world extents (half size) of the room.
+	UFUNCTION(BlueprintCallable, Category = "Room")
+	virtual FIntVector GetPosition() const { return FIntVector::ZeroValue; }
+
+	// Returns the world extents (half size) of the room.
+	UFUNCTION(BlueprintCallable, Category = "Room")
+	virtual EDoorDirection GetDirection() const { return EDoorDirection::North; }
+
+	// Returns true if all the doors of this room are connected to other rooms.
+	UFUNCTION(BlueprintCallable, Category = "Room")
+	virtual bool AreAllDoorsConnected() const { return false; }
+
+	// Returns true if all the doors of this room are connected to other rooms.
+	UFUNCTION(BlueprintCallable, Category = "Room")
+	virtual int CountConnectedDoors() const { return -1; }
+
+	// Returns the world center position of the room.
+	UFUNCTION(BlueprintCallable, Category = "Room")
+	virtual FVector GetBoundsCenter() const { return FVector::ZeroVector; }
+	
+	// Returns the world extents (half size) of the room.
+	UFUNCTION(BlueprintCallable, Category = "Room")
+	virtual FVector GetBoundsExtent() const { return FVector::ZeroVector; }
+};
+
 // The room instances of the dungeon.
 // Holds data specific to each room instance, e.g. location, direction, is player inside, room custom data, etc.
 UCLASS(BlueprintType, meta = (ShortToolTip = "The room instances of the dungeon."))
-class PROCEDURALDUNGEON_API URoom : public UReplicableObject
+class PROCEDURALDUNGEON_API URoom : public UReplicableObject, public IReadOnlyRoom
 {
 	GENERATED_BODY()
 
@@ -79,14 +130,21 @@ public:
 
 	URoom();
 
-	// Returns the room data asset of this room instance.
-	UFUNCTION(BlueprintPure, Category = "Room")
-	const URoomData* GetRoomData() const { return RoomData; }
+	//~ Begin IReadOnlyRoom Interface
+	virtual const URoomData* GetRoomData() const override { return RoomData; }
+	virtual int64 GetRoomID() const override{ return Id; }
+	virtual FIntVector GetPosition() const { return Position; }
+	virtual EDoorDirection GetDirection() const { return Direction; }
+	virtual bool AreAllDoorsConnected() const override;
+	virtual int CountConnectedDoors() const override;
+	virtual FVector GetBoundsCenter() const override;
+	virtual FVector GetBoundsExtent() const override;
+	//~ End IReadOnlyRoom Interface
 
-	const ADungeonGenerator* Generator() const { return GeneratorOwner.Get(); }
+	const ADungeonGeneratorBase* Generator() const { return GeneratorOwner.Get(); }
 	void SetPlayerInside(bool PlayerInside);
 	void SetVisible(bool Visible);
-	FORCEINLINE uint64 GetRoomID() const { return Id; }
+	FORCEINLINE bool IsReady() const { return RoomData != nullptr; }
 
 	// Is the player currently inside the room?
 	// A player can be in multiple rooms at once, for example when he stands at the door frame,
@@ -96,7 +154,11 @@ public:
 
 	// Is the room currently visible?
 	UFUNCTION(BlueprintPure, Category = "Room", meta = (CompactNodeTitle = "Is Visible"))
-	FORCEINLINE bool IsVisible() const { return bIsVisible; }
+	FORCEINLINE bool IsVisible() const { return bIsVisible || bForceVisible; }
+
+	// Force the room to be veisible
+	UFUNCTION(BlueprintCallable, Category = "Room")
+	void ForceVisibility(bool bForce);
 
 	// Is the room locked?
 	// If it is, the doors will be locked (except if they have `Alway Unlocked`).
@@ -146,10 +208,6 @@ public:
 	UFUNCTION(BlueprintPure, Category = "Room")
 	bool IsDoorConnected(int DoorIndex) const;
 
-	// Returns true if all the doors of this room are connected to other rooms.
-	UFUNCTION(BlueprintPure, Category = "Room")
-	bool AreAllDoorsConnected() const;
-
 	// Returns the connected room instance at DoorIndex.
 	UFUNCTION(BlueprintPure, Category = "Room")
 	URoom* GetConnectedRoomAt(int DoorIndex) const;
@@ -159,35 +217,58 @@ public:
 	UFUNCTION(BlueprintPure, Category = "Room")
 	void GetAllConnectedRooms(TArray<URoom*>& ConnectedRooms) const;
 
-	// Returns the world center position of the room.
+	// Returns the index of the provided room, or -1 if room is not connected.
 	UFUNCTION(BlueprintPure, Category = "Room")
-	FVector GetBoundsCenter() const;
+	int32 GetConnectedRoomIndex(const URoom* OtherRoom) const;
 
-	// Returns the world size of the room.
+	// Returns the door actor shared with the provided room.
+	// Returns null if the provided room is not connected with this.
 	UFUNCTION(BlueprintPure, Category = "Room")
-	FVector GetBoundsExtent() const;
+	void GetDoorsWith(const URoom* OtherRoom, TArray<ADoor*>& Doors) const;
 
 private:
-	UPROPERTY(Replicated)
+	UPROPERTY(ReplicatedUsing = OnRep_RoomData)
 	URoomData* RoomData {nullptr};
 
 	UPROPERTY(Replicated, Transient)
 	TArray<FCustomDataPair> CustomData;
 
-	UPROPERTY(Replicated)
+	UPROPERTY(ReplicatedUsing = OnRep_Connections)
 	TArray<FRoomConnection> Connections;
 
 	UPROPERTY(Replicated)
-	TWeakObjectPtr<ADungeonGenerator> GeneratorOwner {nullptr};
+	TWeakObjectPtr<ADungeonGeneratorBase> GeneratorOwner {nullptr};
 
-	UPROPERTY(Replicated)
+	UPROPERTY(ReplicatedUsing = OnRep_Id)
 	int64 Id {-1};
 
 	bool bPlayerInside {false};
 	bool bIsVisible {true};
+	bool bForceVisible {false};
 
 	UPROPERTY(ReplicatedUsing = OnRep_IsLocked)
 	bool bIsLocked {false};
+
+	const FCustomDataPair* GetDataPair(const TSubclassOf<URoomCustomData>& DataType) const;
+
+protected:
+	//~ Begin UReplicableObject Interface
+	virtual bool ReplicateSubobjects(UActorChannel* Channel, FOutBunch* Bunch, FReplicationFlags* RepFlags) override;
+	virtual void RegisterReplicableSubobjects(bool bRegister) override;
+	//~ End UReplicableObject Interface
+
+	void SetPosition(const FIntVector& NewPosition);
+	void SetDirection(EDoorDirection NewDirection);
+	void UpdateVisibility() const;
+
+	UFUNCTION() // Needed macro for replication to work
+	void OnRep_RoomData();
+
+	UFUNCTION() // Needed macro for replication to work
+	void OnRep_Id();
+
+	UFUNCTION() // Needed macro for replication to work
+	void OnRep_Connections();
 
 	UFUNCTION() // Needed macro for replication to work
 	void OnRep_IsLocked();
@@ -195,15 +276,8 @@ private:
 	UFUNCTION() // needed macro for binding to delegate
 	void OnInstanceLoaded();
 
-	const FCustomDataPair* GetDataPair(const TSubclassOf<URoomCustomData>& DataType) const;
-
-protected:
-	//~ Begin UReplicableObject Interface
-	virtual bool ReplicateSubobjects(UActorChannel* Channel, FOutBunch* Bunch, FReplicationFlags* RepFlags) override;
-	//~ End UReplicableObject Interface
-
 public:
-	void Init(URoomData* RoomData, ADungeonGenerator* Generator, int32 RoomId);
+	void Init(URoomData* RoomData, ADungeonGeneratorBase* Generator, int32 RoomId);
 
 	bool IsConnected(int Index) const;
 	void SetConnection(int Index, URoom* Room, int OtherDoorIndex);
@@ -216,6 +290,7 @@ public:
 	bool IsInstanceLoaded() const;
 	bool IsInstanceUnloaded() const;
 	bool IsInstanceInitialized() const;
+	void CreateLevelComponents(ARoomLevel* LevelActor);
 
 	EDoorDirection GetDoorWorldOrientation(int DoorIndex);
 	FIntVector GetDoorWorldPosition(int DoorIndex);
@@ -224,7 +299,8 @@ public:
 	bool IsDoorInstanced(int DoorIndex);
 	void SetDoorInstance(int DoorIndex, ADoor* Door);
 	int GetOtherDoorIndex(int DoorIndex);
-	void TryConnectToExistingDoors(TArray<URoom*>& RoomList);
+	bool TryConnectDoor(int DoorIndex, const TArray<URoom*>& RoomList);
+	bool TryConnectToExistingDoors(const TArray<URoom*>& RoomList);
 
 	FIntVector WorldToRoom(const FIntVector& WorldPos) const;
 	FIntVector RoomToWorld(const FIntVector& RoomPos) const;
