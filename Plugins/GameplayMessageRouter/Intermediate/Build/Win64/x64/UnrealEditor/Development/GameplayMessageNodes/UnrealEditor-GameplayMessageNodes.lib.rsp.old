@@ -1,0 +1,12 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-GameplayMessageNodes.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\symig\OneDrive\Documents\GitHub\SecondTopDown 5.4\Intermediate\Build\Win64\x64\SecondTopDownEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.InclOrderOldest.h.obj"
+"C:\Users\symig\OneDrive\Documents\GitHub\SecondTopDown 5.4\Plugins\GameplayMessageRouter\Intermediate\Build\Win64\x64\UnrealEditor\Development\GameplayMessageNodes\Module.GameplayMessageNodes.cpp.obj"
+"C:\Users\symig\OneDrive\Documents\GitHub\SecondTopDown 5.4\Plugins\GameplayMessageRouter\Intermediate\Build\Win64\x64\UnrealEditor\Development\GameplayMessageNodes\Default.rc2.res"
+/OUT:"C:\Users\symig\OneDrive\Documents\GitHub\SecondTopDown 5.4\Plugins\GameplayMessageRouter\Intermediate\Build\Win64\x64\UnrealEditor\Development\GameplayMessageNodes\UnrealEditor-GameplayMessageNodes.lib"

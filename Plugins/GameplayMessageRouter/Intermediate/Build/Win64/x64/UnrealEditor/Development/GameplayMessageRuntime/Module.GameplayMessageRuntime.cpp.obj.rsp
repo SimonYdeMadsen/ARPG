@@ -1,11 +1,11 @@
-"C:\Users\symig\OneDrive\Documents\GitHub\SecondTopDown 5.4\Plugins\GameplayMessageRouter\Intermediate\Build\Win64\x64\UnrealEditor\Development\GameplayMessageRuntime\Module.GameplayMessageRuntime.cpp"
-/FI"C:\Users\symig\OneDrive\Documents\GitHub\SecondTopDown 5.4\Intermediate\Build\Win64\x64\SecondTopDownEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.InclOrderOldest.h"
-/FI"C:\Users\symig\OneDrive\Documents\GitHub\SecondTopDown 5.4\Plugins\GameplayMessageRouter\Intermediate\Build\Win64\x64\UnrealEditor\Development\GameplayMessageRuntime\Definitions.GameplayMessageRuntime.h"
-/Yu"C:\Users\symig\OneDrive\Documents\GitHub\SecondTopDown 5.4\Intermediate\Build\Win64\x64\SecondTopDownEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.InclOrderOldest.h"
-/Fp"C:\Users\symig\OneDrive\Documents\GitHub\SecondTopDown 5.4\Intermediate\Build\Win64\x64\SecondTopDownEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.InclOrderOldest.h.pch"
-/Fo"C:\Users\symig\OneDrive\Documents\GitHub\SecondTopDown 5.4\Plugins\GameplayMessageRouter\Intermediate\Build\Win64\x64\UnrealEditor\Development\GameplayMessageRuntime\Module.GameplayMessageRuntime.cpp.obj"
-/sourceDependencies "C:\Users\symig\OneDrive\Documents\GitHub\SecondTopDown 5.4\Plugins\GameplayMessageRouter\Intermediate\Build\Win64\x64\UnrealEditor\Development\GameplayMessageRuntime\Module.GameplayMessageRuntime.cpp.dep.json"
-@"C:\Users\symig\OneDrive\Documents\GitHub\SecondTopDown 5.4\Plugins\GameplayMessageRouter\Intermediate\Build\Win64\x64\UnrealEditor\Development\GameplayMessageRuntime\GameplayMessageRuntime.Shared.rsp"
+"C:\Users\symig\Documents\GitHub\ARPG\Plugins\GameplayMessageRouter\Intermediate\Build\Win64\x64\UnrealEditor\Development\GameplayMessageRuntime\Module.GameplayMessageRuntime.cpp"
+/FI"C:\Users\symig\Documents\GitHub\ARPG\Intermediate\Build\Win64\x64\SecondTopDownEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.InclOrderOldest.h"
+/FI"C:\Users\symig\Documents\GitHub\ARPG\Plugins\GameplayMessageRouter\Intermediate\Build\Win64\x64\UnrealEditor\Development\GameplayMessageRuntime\Definitions.GameplayMessageRuntime.h"
+/Yu"C:\Users\symig\Documents\GitHub\ARPG\Intermediate\Build\Win64\x64\SecondTopDownEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.InclOrderOldest.h"
+/Fp"C:\Users\symig\Documents\GitHub\ARPG\Intermediate\Build\Win64\x64\SecondTopDownEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.InclOrderOldest.h.pch"
+/Fo"C:\Users\symig\Documents\GitHub\ARPG\Plugins\GameplayMessageRouter\Intermediate\Build\Win64\x64\UnrealEditor\Development\GameplayMessageRuntime\Module.GameplayMessageRuntime.cpp.obj"
+/sourceDependencies "C:\Users\symig\Documents\GitHub\ARPG\Plugins\GameplayMessageRouter\Intermediate\Build\Win64\x64\UnrealEditor\Development\GameplayMessageRuntime\Module.GameplayMessageRuntime.cpp.dep.json"
+@"C:\Users\symig\Documents\GitHub\ARPG\Plugins\GameplayMessageRouter\Intermediate\Build\Win64\x64\UnrealEditor\Development\GameplayMessageRuntime\GameplayMessageRuntime.Shared.rsp"
 /Zc:inline
 /nologo
 /Oi
