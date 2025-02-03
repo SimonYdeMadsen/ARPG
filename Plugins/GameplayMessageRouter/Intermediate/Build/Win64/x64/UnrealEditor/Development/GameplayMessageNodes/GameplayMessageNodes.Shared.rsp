@@ -1,9 +1,5 @@
 /I "."
-<<<<<<< Updated upstream
-/I "C:\Users\symig\Documents\GitHub\ARPG\Plugins\GameplayMessageRouter\Source\GameplayMessageNodes\Private"
-=======
 /I "C:\Users\symig\Documents\GitHub\ARPG 5.5\Plugins\GameplayMessageRouter\Source\GameplayMessageNodes\Private"
->>>>>>> Stashed changes
 /I "Runtime\Core\Public"
 /I "Runtime\Core\Internal"
 /I "Runtime\TraceLog\Public"
@@ -290,28 +286,17 @@
 /I "Editor\SceneDepthPickerMode\Public"
 /I "..\Intermediate\Build\Win64\UnrealEditor\Inc\AnimationEditMode\UHT"
 /I "Editor\AnimationEditMode\Public"
-<<<<<<< Updated upstream
-/I "C:\Users\symig\Documents\GitHub\ARPG\Plugins\GameplayMessageRouter\Intermediate\Build\Win64\UnrealEditor\Inc\GameplayMessageRuntime\UHT"
-/I "C:\Users\symig\Documents\GitHub\ARPG\Plugins\GameplayMessageRouter\Source"
-/I "C:\Users\symig\Documents\GitHub\ARPG\Plugins\GameplayMessageRouter\Source\GameplayMessageRuntime\Public"
-/I "C:\Users\symig\Documents\GitHub\ARPG\Plugins\GameplayMessageRouter\Intermediate\Build\Win64\UnrealEditor\Inc\GameplayMessageNodes\UHT"
-/I "C:\Users\symig\Documents\GitHub\ARPG\Plugins\GameplayMessageRouter\Source\GameplayMessageNodes\Public"
-=======
 /I "C:\Users\symig\Documents\GitHub\ARPG 5.5\Plugins\GameplayMessageRouter\Intermediate\Build\Win64\UnrealEditor\Inc\GameplayMessageRuntime\UHT"
 /I "C:\Users\symig\Documents\GitHub\ARPG 5.5\Plugins\GameplayMessageRouter\Source"
 /I "C:\Users\symig\Documents\GitHub\ARPG 5.5\Plugins\GameplayMessageRouter\Source\GameplayMessageRuntime\Public"
 /I "C:\Users\symig\Documents\GitHub\ARPG 5.5\Plugins\GameplayMessageRouter\Intermediate\Build\Win64\UnrealEditor\Inc\GameplayMessageNodes\UHT"
 /I "C:\Users\symig\Documents\GitHub\ARPG 5.5\Plugins\GameplayMessageRouter\Source\GameplayMessageNodes\Public"
->>>>>>> Stashed changes
 /external:W0
 /external:I "ThirdParty\GuidelinesSupportLibrary\GSL-1144\include"
 /external:I "ThirdParty\RapidJSON\1.1.0"
 /external:I "ThirdParty\LibTiff\Source\Win64"
 /external:I "ThirdParty\LibTiff\Source"
-<<<<<<< Updated upstream
-=======
 /external:I "ThirdParty\OpenGL"
->>>>>>> Stashed changes
 /external:I "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\INCLUDE"
 /external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\ucrt"
 /external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\shared"

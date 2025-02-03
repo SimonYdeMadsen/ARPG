@@ -641,43 +641,27 @@ struct Z_Construct_UClass_ARoomLevel_Statics
 		{ "ModuleRelativePath", "Public/RoomLevel.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Room_MetaData[] = {
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Macro is here to mark property to be used by GC\n" },
-#endif
 		{ "ModuleRelativePath", "Public/RoomLevel.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Macro is here to mark property to be used by GC" },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_VisibilityChangedEvent_MetaData[] = {
 		{ "Category", "Procedural Dungeon" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Event to notify when the visibility of the room has been toggled.\n" },
-#endif
 		{ "ModuleRelativePath", "Public/RoomLevel.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Event to notify when the visibility of the room has been toggled." },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ActorEnterRoomEvent_MetaData[] = {
 		{ "Category", "Procedural Dungeon" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Called when an actor enters the room bounds.\n" },
-#endif
 		{ "ModuleRelativePath", "Public/RoomLevel.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Called when an actor enters the room bounds." },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ActorExitRoomEvent_MetaData[] = {
 		{ "Category", "Procedural Dungeon" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Called when an actor exits the room bounds.\n" },
-#endif
 		{ "ModuleRelativePath", "Public/RoomLevel.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Called when an actor exits the room bounds." },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_RoomTrigger_MetaData[] = {
 		{ "EditInline", "true" },
@@ -761,23 +745,14 @@ ARoomLevel::~ARoomLevel() {}
 // End Class ARoomLevel
 
 // Begin Registration
-<<<<<<< Updated upstream
-struct Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomLevel_h_Statics
-=======
-struct Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomLevel_h_Statics
->>>>>>> Stashed changes
+struct Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomLevel_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ARoomLevel, ARoomLevel::StaticClass, TEXT("ARoomLevel"), &Z_Registration_Info_UClass_ARoomLevel, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ARoomLevel), 1872013513U) },
+		{ Z_Construct_UClass_ARoomLevel, ARoomLevel::StaticClass, TEXT("ARoomLevel"), &Z_Registration_Info_UClass_ARoomLevel, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ARoomLevel), 3983500369U) },
 	};
 };
-<<<<<<< Updated upstream
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomLevel_h_1260150226(TEXT("/Script/ProceduralDungeon"),
-	Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomLevel_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomLevel_h_Statics::ClassInfo),
-=======
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomLevel_h_1893354733(TEXT("/Script/ProceduralDungeon"),
-	Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomLevel_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomLevel_h_Statics::ClassInfo),
->>>>>>> Stashed changes
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomLevel_h_3988872288(TEXT("/Script/ProceduralDungeon"),
+	Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomLevel_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomLevel_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

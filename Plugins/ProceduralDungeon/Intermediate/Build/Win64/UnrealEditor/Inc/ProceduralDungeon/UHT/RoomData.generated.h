@@ -19,11 +19,7 @@ struct FDoorDef;
 #endif
 #define PROCEDURALDUNGEON_RoomData_generated_h
 
-<<<<<<< Updated upstream
-#define FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_51_RPC_WRAPPERS_NO_PURE_DECLS \
-=======
-#define FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_52_RPC_WRAPPERS_NO_PURE_DECLS \
->>>>>>> Stashed changes
+#define FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_52_RPC_WRAPPERS_NO_PURE_DECLS \
 	virtual void CleanupRoom_Implementation(URoom* Room, UDungeonGraph* Dungeon) const; \
 	virtual void InitializeRoom_Implementation(URoom* Room, UDungeonGraph* Dungeon) const; \
 	DECLARE_FUNCTION(execGetVolume); \
@@ -41,13 +37,8 @@ struct FDoorDef;
 	DECLARE_FUNCTION(execGetNbDoor);
 
 
-<<<<<<< Updated upstream
-#define FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_51_CALLBACK_WRAPPERS
-#define FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_51_INCLASS_NO_PURE_DECLS \
-=======
-#define FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_52_CALLBACK_WRAPPERS
-#define FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_52_INCLASS_NO_PURE_DECLS \
->>>>>>> Stashed changes
+#define FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_52_CALLBACK_WRAPPERS
+#define FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_52_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesURoomData(); \
 	friend struct Z_Construct_UClass_URoomData_Statics; \
@@ -56,11 +47,7 @@ public: \
 	DECLARE_SERIALIZER(URoomData)
 
 
-<<<<<<< Updated upstream
-#define FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_51_ENHANCED_CONSTRUCTORS \
-=======
-#define FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_52_ENHANCED_CONSTRUCTORS \
->>>>>>> Stashed changes
+#define FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_52_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	URoomData(URoomData&&); \
@@ -72,25 +59,14 @@ public: \
 	NO_API virtual ~URoomData();
 
 
-<<<<<<< Updated upstream
-#define FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_48_PROLOG
-#define FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_51_GENERATED_BODY \
+#define FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_49_PROLOG
+#define FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_52_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_51_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_51_CALLBACK_WRAPPERS \
-	FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_51_INCLASS_NO_PURE_DECLS \
-	FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_51_ENHANCED_CONSTRUCTORS \
-=======
-#define FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_49_PROLOG
-#define FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_52_GENERATED_BODY \
-PRAGMA_DISABLE_DEPRECATION_WARNINGS \
-public: \
-	FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_52_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_52_CALLBACK_WRAPPERS \
-	FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_52_INCLASS_NO_PURE_DECLS \
-	FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_52_ENHANCED_CONSTRUCTORS \
->>>>>>> Stashed changes
+	FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_52_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_52_CALLBACK_WRAPPERS \
+	FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_52_INCLASS_NO_PURE_DECLS \
+	FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_52_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -98,11 +74,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> PROCEDURALDUNGEON_API UClass* StaticClass<class URoomData>();
 
 #undef CURRENT_FILE_ID
-<<<<<<< Updated upstream
-#define CURRENT_FILE_ID FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h
-=======
-#define CURRENT_FILE_ID FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h
->>>>>>> Stashed changes
+#define CURRENT_FILE_ID FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

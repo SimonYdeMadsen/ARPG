@@ -94,7 +94,7 @@ struct Z_Construct_UFunction_UStaticRoomVisibilityComponent_GetVisibilityMode_St
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UFunction_UStaticRoomVisibilityComponent_GetVisibilityMode_Statics::NewProp_ReturnValue_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_UStaticRoomVisibilityComponent_GetVisibilityMode_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(StaticRoomVisibilityComponent_eventGetVisibilityMode_Parms, ReturnValue), Z_Construct_UEnum_ProceduralDungeon_EVisibilityMode, METADATA_PARAMS(0, nullptr) }; // 151926989
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_UStaticRoomVisibilityComponent_GetVisibilityMode_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(StaticRoomVisibilityComponent_eventGetVisibilityMode_Parms, ReturnValue), Z_Construct_UEnum_ProceduralDungeon_EVisibilityMode, METADATA_PARAMS(0, nullptr) }; // 2249036084
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UStaticRoomVisibilityComponent_GetVisibilityMode_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UStaticRoomVisibilityComponent_GetVisibilityMode_Statics::NewProp_ReturnValue_Underlying,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UStaticRoomVisibilityComponent_GetVisibilityMode_Statics::NewProp_ReturnValue,
@@ -130,15 +130,11 @@ struct Z_Construct_UFunction_UStaticRoomVisibilityComponent_IsVisible_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Procedural Dungeon" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Returns true if the actor is in a visible room.\n// Always returns true when \"Occlude Dynamic Actors\" is unchecked in the plugin's settings\n// Useful with \"Custom\" visibility.\n" },
-#endif
 		{ "CompactNodeTitle", "Is In Visible Room" },
 		{ "DisplayName", "Is In Visible Room" },
 		{ "ModuleRelativePath", "Public/Components/StaticRoomVisibilityComponent.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Returns true if the actor is in a visible room.\nAlways returns true when \"Occlude Dynamic Actors\" is unchecked in the plugin's settings\nUseful with \"Custom\" visibility." },
-#endif
 	};
 #endif // WITH_METADATA
 	static void NewProp_ReturnValue_SetBit(void* Obj);
@@ -246,7 +242,7 @@ struct Z_Construct_UFunction_UStaticRoomVisibilityComponent_SetVisibilityMode_St
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UFunction_UStaticRoomVisibilityComponent_SetVisibilityMode_Statics::NewProp_Mode_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_UStaticRoomVisibilityComponent_SetVisibilityMode_Statics::NewProp_Mode = { "Mode", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(StaticRoomVisibilityComponent_eventSetVisibilityMode_Parms, Mode), Z_Construct_UEnum_ProceduralDungeon_EVisibilityMode, METADATA_PARAMS(0, nullptr) }; // 151926989
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_UStaticRoomVisibilityComponent_SetVisibilityMode_Statics::NewProp_Mode = { "Mode", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(StaticRoomVisibilityComponent_eventSetVisibilityMode_Parms, Mode), Z_Construct_UEnum_ProceduralDungeon_EVisibilityMode, METADATA_PARAMS(0, nullptr) }; // 2249036084
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UStaticRoomVisibilityComponent_SetVisibilityMode_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UStaticRoomVisibilityComponent_SetVisibilityMode_Statics::NewProp_Mode_Underlying,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UStaticRoomVisibilityComponent_SetVisibilityMode_Statics::NewProp_Mode,
@@ -302,13 +298,9 @@ struct Z_Construct_UClass_UStaticRoomVisibilityComponent_Statics
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OnRoomVisibilityChanged_MetaData[] = {
 		{ "Category", "Procedural Dungeon" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Called when the visibility from rooms changed (either by a room visibility change or by this actor moving between rooms).\n// Useful to update a \"Custom\" visibility.\n" },
-#endif
 		{ "ModuleRelativePath", "Public/Components/StaticRoomVisibilityComponent.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Called when the visibility from rooms changed (either by a room visibility change or by this actor moving between rooms).\nUseful to update a \"Custom\" visibility." },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_VisibilityMode_MetaData[] = {
 		{ "AllowPrivateAccess", "TRUE" },
@@ -324,10 +316,10 @@ struct Z_Construct_UClass_UStaticRoomVisibilityComponent_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_UStaticRoomVisibilityComponent_GetVisibilityMode, "GetVisibilityMode" }, // 2101617766
-		{ &Z_Construct_UFunction_UStaticRoomVisibilityComponent_IsVisible, "IsVisible" }, // 3453880972
+		{ &Z_Construct_UFunction_UStaticRoomVisibilityComponent_GetVisibilityMode, "GetVisibilityMode" }, // 1944071846
+		{ &Z_Construct_UFunction_UStaticRoomVisibilityComponent_IsVisible, "IsVisible" }, // 1600272228
 		{ &Z_Construct_UFunction_UStaticRoomVisibilityComponent_RoomVisibilityChanged, "RoomVisibilityChanged" }, // 828827657
-		{ &Z_Construct_UFunction_UStaticRoomVisibilityComponent_SetVisibilityMode, "SetVisibilityMode" }, // 2517440196
+		{ &Z_Construct_UFunction_UStaticRoomVisibilityComponent_SetVisibilityMode, "SetVisibilityMode" }, // 3455071550
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -337,7 +329,7 @@ struct Z_Construct_UClass_UStaticRoomVisibilityComponent_Statics
 };
 const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UStaticRoomVisibilityComponent_Statics::NewProp_OnRoomVisibilityChanged = { "OnRoomVisibilityChanged", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UStaticRoomVisibilityComponent, OnRoomVisibilityChanged), Z_Construct_UDelegateFunction_ProceduralDungeon_RoomVisibilityEvent__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OnRoomVisibilityChanged_MetaData), NewProp_OnRoomVisibilityChanged_MetaData) }; // 1577878169
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_UStaticRoomVisibilityComponent_Statics::NewProp_VisibilityMode_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_UStaticRoomVisibilityComponent_Statics::NewProp_VisibilityMode = { "VisibilityMode", nullptr, (EPropertyFlags)0x0040000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UStaticRoomVisibilityComponent, VisibilityMode), Z_Construct_UEnum_ProceduralDungeon_EVisibilityMode, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_VisibilityMode_MetaData), NewProp_VisibilityMode_MetaData) }; // 151926989
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_UStaticRoomVisibilityComponent_Statics::NewProp_VisibilityMode = { "VisibilityMode", nullptr, (EPropertyFlags)0x0040000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UStaticRoomVisibilityComponent, VisibilityMode), Z_Construct_UEnum_ProceduralDungeon_EVisibilityMode, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_VisibilityMode_MetaData), NewProp_VisibilityMode_MetaData) }; // 2249036084
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UStaticRoomVisibilityComponent_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UStaticRoomVisibilityComponent_Statics::NewProp_OnRoomVisibilityChanged,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UStaticRoomVisibilityComponent_Statics::NewProp_VisibilityMode_Underlying,
@@ -381,23 +373,14 @@ UStaticRoomVisibilityComponent::~UStaticRoomVisibilityComponent() {}
 // End Class UStaticRoomVisibilityComponent
 
 // Begin Registration
-<<<<<<< Updated upstream
-struct Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_Components_StaticRoomVisibilityComponent_h_Statics
-=======
-struct Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_Components_StaticRoomVisibilityComponent_h_Statics
->>>>>>> Stashed changes
+struct Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_Components_StaticRoomVisibilityComponent_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UStaticRoomVisibilityComponent, UStaticRoomVisibilityComponent::StaticClass, TEXT("UStaticRoomVisibilityComponent"), &Z_Registration_Info_UClass_UStaticRoomVisibilityComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UStaticRoomVisibilityComponent), 1479327994U) },
+		{ Z_Construct_UClass_UStaticRoomVisibilityComponent, UStaticRoomVisibilityComponent::StaticClass, TEXT("UStaticRoomVisibilityComponent"), &Z_Registration_Info_UClass_UStaticRoomVisibilityComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UStaticRoomVisibilityComponent), 3208437203U) },
 	};
 };
-<<<<<<< Updated upstream
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_Components_StaticRoomVisibilityComponent_h_2118462218(TEXT("/Script/ProceduralDungeon"),
-	Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_Components_StaticRoomVisibilityComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_Components_StaticRoomVisibilityComponent_h_Statics::ClassInfo),
-=======
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_Components_StaticRoomVisibilityComponent_h_2118462218(TEXT("/Script/ProceduralDungeon"),
-	Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_Components_StaticRoomVisibilityComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_Components_StaticRoomVisibilityComponent_h_Statics::ClassInfo),
->>>>>>> Stashed changes
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_Components_StaticRoomVisibilityComponent_h_570217232(TEXT("/Script/ProceduralDungeon"),
+	Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_Components_StaticRoomVisibilityComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_Components_StaticRoomVisibilityComponent_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

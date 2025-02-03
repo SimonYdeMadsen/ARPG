@@ -56,13 +56,9 @@ struct Z_Construct_UFunction_ATriggerDoor_IsValidActor_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Door" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Should returns true if the actor can open the door.\n// Component is the component on the actor that triggered the door.\n// By default the actor is valid if it's a Character.\n" },
-#endif
 		{ "ModuleRelativePath", "Public/TriggerDoor.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Should returns true if the actor can open the door.\nComponent is the component on the actor that triggered the door.\nBy default the actor is valid if it's a Character." },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Component_MetaData[] = {
 		{ "EditInline", "true" },
@@ -292,7 +288,7 @@ struct Z_Construct_UClass_ATriggerDoor_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_ATriggerDoor_IsValidActor, "IsValidActor" }, // 3524459842
+		{ &Z_Construct_UFunction_ATriggerDoor_IsValidActor, "IsValidActor" }, // 3723796616
 		{ &Z_Construct_UFunction_ATriggerDoor_OnTriggerEnter, "OnTriggerEnter" }, // 4265182322
 		{ &Z_Construct_UFunction_ATriggerDoor_OnTriggerExit, "OnTriggerExit" }, // 149195870
 	};
@@ -348,23 +344,14 @@ ATriggerDoor::~ATriggerDoor() {}
 // End Class ATriggerDoor
 
 // Begin Registration
-<<<<<<< Updated upstream
-struct Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerDoor_h_Statics
-=======
-struct Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerDoor_h_Statics
->>>>>>> Stashed changes
+struct Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerDoor_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ATriggerDoor, ATriggerDoor::StaticClass, TEXT("ATriggerDoor"), &Z_Registration_Info_UClass_ATriggerDoor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATriggerDoor), 816553344U) },
+		{ Z_Construct_UClass_ATriggerDoor, ATriggerDoor::StaticClass, TEXT("ATriggerDoor"), &Z_Registration_Info_UClass_ATriggerDoor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATriggerDoor), 3214044731U) },
 	};
 };
-<<<<<<< Updated upstream
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerDoor_h_301808226(TEXT("/Script/ProceduralDungeon"),
-	Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerDoor_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerDoor_h_Statics::ClassInfo),
-=======
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerDoor_h_1373610455(TEXT("/Script/ProceduralDungeon"),
-	Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerDoor_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerDoor_h_Statics::ClassInfo),
->>>>>>> Stashed changes
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerDoor_h_3440542444(TEXT("/Script/ProceduralDungeon"),
+	Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerDoor_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerDoor_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

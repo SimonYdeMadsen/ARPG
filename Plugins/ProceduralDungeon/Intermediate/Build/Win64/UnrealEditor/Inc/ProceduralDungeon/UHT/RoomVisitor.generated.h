@@ -15,24 +15,15 @@ class ARoomLevel;
 #endif
 #define PROCEDURALDUNGEON_RoomVisitor_generated_h
 
-<<<<<<< Updated upstream
-#define FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_37_RPC_WRAPPERS_NO_PURE_DECLS \
-=======
-#define FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_37_RPC_WRAPPERS_NO_PURE_DECLS \
->>>>>>> Stashed changes
+#define FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_37_RPC_WRAPPERS_NO_PURE_DECLS \
 	virtual void OnRoomExit_Implementation(ARoomLevel* RoomLevel) {}; \
 	virtual void OnRoomEnter_Implementation(ARoomLevel* RoomLevel) {}; \
 	DECLARE_FUNCTION(execOnRoomExit); \
 	DECLARE_FUNCTION(execOnRoomEnter);
 
 
-<<<<<<< Updated upstream
-#define FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_37_CALLBACK_WRAPPERS
-#define FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_37_ENHANCED_CONSTRUCTORS \
-=======
-#define FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_37_CALLBACK_WRAPPERS
-#define FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_37_ENHANCED_CONSTRUCTORS \
->>>>>>> Stashed changes
+#define FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_37_CALLBACK_WRAPPERS
+#define FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_37_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	PROCEDURALDUNGEON_API URoomVisitor(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 private: \
@@ -46,11 +37,7 @@ public: \
 	PROCEDURALDUNGEON_API virtual ~URoomVisitor();
 
 
-<<<<<<< Updated upstream
-#define FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_37_GENERATED_UINTERFACE_BODY() \
-=======
-#define FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_37_GENERATED_UINTERFACE_BODY() \
->>>>>>> Stashed changes
+#define FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_37_GENERATED_UINTERFACE_BODY() \
 private: \
 	static void StaticRegisterNativesURoomVisitor(); \
 	friend struct Z_Construct_UClass_URoomVisitor_Statics; \
@@ -59,26 +46,15 @@ public: \
 	DECLARE_SERIALIZER(URoomVisitor)
 
 
-<<<<<<< Updated upstream
-#define FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_37_GENERATED_BODY \
+#define FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_37_GENERATED_BODY \
 	PRAGMA_DISABLE_DEPRECATION_WARNINGS \
-	FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_37_GENERATED_UINTERFACE_BODY() \
-	FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_37_ENHANCED_CONSTRUCTORS \
-=======
-#define FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_37_GENERATED_BODY \
-	PRAGMA_DISABLE_DEPRECATION_WARNINGS \
-	FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_37_GENERATED_UINTERFACE_BODY() \
-	FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_37_ENHANCED_CONSTRUCTORS \
->>>>>>> Stashed changes
+	FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_37_GENERATED_UINTERFACE_BODY() \
+	FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_37_ENHANCED_CONSTRUCTORS \
 private: \
 	PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-<<<<<<< Updated upstream
-#define FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_37_INCLASS_IINTERFACE_NO_PURE_DECLS \
-=======
-#define FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_37_INCLASS_IINTERFACE_NO_PURE_DECLS \
->>>>>>> Stashed changes
+#define FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_37_INCLASS_IINTERFACE_NO_PURE_DECLS \
 protected: \
 	virtual ~IRoomVisitor() {} \
 public: \
@@ -89,23 +65,13 @@ public: \
 	virtual UObject* _getUObject() const { return nullptr; }
 
 
-<<<<<<< Updated upstream
-#define FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_34_PROLOG
-#define FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_43_GENERATED_BODY \
+#define FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_34_PROLOG
+#define FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_43_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_37_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_37_CALLBACK_WRAPPERS \
-	FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_37_INCLASS_IINTERFACE_NO_PURE_DECLS \
-=======
-#define FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_34_PROLOG
-#define FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_43_GENERATED_BODY \
-PRAGMA_DISABLE_DEPRECATION_WARNINGS \
-public: \
-	FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_37_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_37_CALLBACK_WRAPPERS \
-	FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_37_INCLASS_IINTERFACE_NO_PURE_DECLS \
->>>>>>> Stashed changes
+	FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_37_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_37_CALLBACK_WRAPPERS \
+	FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_37_INCLASS_IINTERFACE_NO_PURE_DECLS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -113,11 +79,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> PROCEDURALDUNGEON_API UClass* StaticClass<class URoomVisitor>();
 
 #undef CURRENT_FILE_ID
-<<<<<<< Updated upstream
-#define CURRENT_FILE_ID FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h
-=======
-#define CURRENT_FILE_ID FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h
->>>>>>> Stashed changes
+#define CURRENT_FILE_ID FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

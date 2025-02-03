@@ -17,27 +17,15 @@ struct FHitResult;
 #endif
 #define PROCEDURALDUNGEON_TriggerType_generated_h
 
-<<<<<<< Updated upstream
-#define FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerType_h_32_DELEGATE \
+#define FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerType_h_32_DELEGATE \
 PROCEDURALDUNGEON_API void FActorTriggerEvent_DelegateWrapper(const FMulticastScriptDelegate& ActorTriggerEvent, AActor* Actor);
 
 
-#define FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerType_h_33_DELEGATE \
+#define FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerType_h_33_DELEGATE \
 PROCEDURALDUNGEON_API void FActorTriggerArrayEvent_DelegateWrapper(const FMulticastScriptDelegate& ActorTriggerArrayEvent, const TArray<AActor*>& Actor);
 
 
-#define FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerType_h_38_RPC_WRAPPERS_NO_PURE_DECLS \
-=======
-#define FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerType_h_32_DELEGATE \
-PROCEDURALDUNGEON_API void FActorTriggerEvent_DelegateWrapper(const FMulticastScriptDelegate& ActorTriggerEvent, AActor* Actor);
-
-
-#define FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerType_h_33_DELEGATE \
-PROCEDURALDUNGEON_API void FActorTriggerArrayEvent_DelegateWrapper(const FMulticastScriptDelegate& ActorTriggerArrayEvent, const TArray<AActor*>& Actor);
-
-
-#define FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerType_h_38_RPC_WRAPPERS_NO_PURE_DECLS \
->>>>>>> Stashed changes
+#define FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerType_h_38_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execTriggerDeactivate); \
 	DECLARE_FUNCTION(execTriggerActivate); \
 	DECLARE_FUNCTION(execTriggerTick); \
@@ -47,11 +35,7 @@ PROCEDURALDUNGEON_API void FActorTriggerArrayEvent_DelegateWrapper(const FMultic
 	DECLARE_FUNCTION(execIsActivated);
 
 
-<<<<<<< Updated upstream
-#define FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerType_h_38_INCLASS_NO_PURE_DECLS \
-=======
-#define FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerType_h_38_INCLASS_NO_PURE_DECLS \
->>>>>>> Stashed changes
+#define FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerType_h_38_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUTriggerType(); \
 	friend struct Z_Construct_UClass_UTriggerType_Statics; \
@@ -60,11 +44,7 @@ public: \
 	DECLARE_SERIALIZER(UTriggerType)
 
 
-<<<<<<< Updated upstream
-#define FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerType_h_38_ENHANCED_CONSTRUCTORS \
-=======
-#define FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerType_h_38_ENHANCED_CONSTRUCTORS \
->>>>>>> Stashed changes
+#define FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerType_h_38_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	UTriggerType(UTriggerType&&); \
@@ -76,23 +56,13 @@ public: \
 	NO_API virtual ~UTriggerType();
 
 
-<<<<<<< Updated upstream
-#define FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerType_h_35_PROLOG
-#define FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerType_h_38_GENERATED_BODY \
+#define FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerType_h_35_PROLOG
+#define FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerType_h_38_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerType_h_38_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerType_h_38_INCLASS_NO_PURE_DECLS \
-	FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerType_h_38_ENHANCED_CONSTRUCTORS \
-=======
-#define FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerType_h_35_PROLOG
-#define FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerType_h_38_GENERATED_BODY \
-PRAGMA_DISABLE_DEPRECATION_WARNINGS \
-public: \
-	FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerType_h_38_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerType_h_38_INCLASS_NO_PURE_DECLS \
-	FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerType_h_38_ENHANCED_CONSTRUCTORS \
->>>>>>> Stashed changes
+	FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerType_h_38_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerType_h_38_INCLASS_NO_PURE_DECLS \
+	FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerType_h_38_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -100,11 +70,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> PROCEDURALDUNGEON_API UClass* StaticClass<class UTriggerType>();
 
 #undef CURRENT_FILE_ID
-<<<<<<< Updated upstream
-#define CURRENT_FILE_ID FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerType_h
-=======
-#define CURRENT_FILE_ID FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerType_h
->>>>>>> Stashed changes
+#define CURRENT_FILE_ID FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_TriggerType_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

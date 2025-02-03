@@ -106,15 +106,11 @@ struct Z_Construct_UFunction_UDungeonBlueprintLibrary_DoorDirection_Add_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "AutoCreateRefTerm", "A,B" },
 		{ "Category", "Math|Door Direction" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Addition (A + B)\n" },
-#endif
 		{ "CompactNodeTitle", "+" },
 		{ "DisplayName", "Direction + Direction" },
 		{ "ModuleRelativePath", "Public/DungeonBlueprintLibrary.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Addition (A + B)" },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_A_MetaData[] = {
 		{ "NativeConst", "" },
@@ -180,15 +176,11 @@ struct Z_Construct_UFunction_UDungeonBlueprintLibrary_DoorDirection_Decrement_St
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Math|Door Direction" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Decrement the direction and set it\n" },
-#endif
 		{ "CompactNodeTitle", "--" },
 		{ "DisplayName", "Decrement Door Direction" },
 		{ "ModuleRelativePath", "Public/DungeonBlueprintLibrary.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Decrement the direction and set it" },
-#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FBytePropertyParams NewProp_A_Underlying;
@@ -241,15 +233,11 @@ struct Z_Construct_UFunction_UDungeonBlueprintLibrary_DoorDirection_Increment_St
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Math|Door Direction" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Increment the direction and set it\n" },
-#endif
 		{ "CompactNodeTitle", "++" },
 		{ "DisplayName", "Increment Door Direction" },
 		{ "ModuleRelativePath", "Public/DungeonBlueprintLibrary.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Increment the direction and set it" },
-#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FBytePropertyParams NewProp_A_Underlying;
@@ -302,15 +290,11 @@ struct Z_Construct_UFunction_UDungeonBlueprintLibrary_DoorDirection_Negate_Stati
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Math|Door Direction" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Negate the direction and set it (same as North - Direction)\n" },
-#endif
 		{ "CompactNodeTitle", "-" },
 		{ "DisplayName", "Negate Door Direction" },
 		{ "ModuleRelativePath", "Public/DungeonBlueprintLibrary.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Negate the direction and set it (same as North - Direction)" },
-#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FBytePropertyParams NewProp_A_Underlying;
@@ -364,15 +348,11 @@ struct Z_Construct_UFunction_UDungeonBlueprintLibrary_DoorDirection_Opposite_Sta
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "AutoCreateRefTerm", "A" },
 		{ "Category", "Math|Door Direction" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Transforms North into South and East into West (and vice versa)\n" },
-#endif
 		{ "CompactNodeTitle", "Opposite" },
 		{ "DisplayName", "Opposite" },
 		{ "ModuleRelativePath", "Public/DungeonBlueprintLibrary.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Transforms North into South and East into West (and vice versa)" },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_A_MetaData[] = {
 		{ "NativeConst", "" },
@@ -430,15 +410,11 @@ struct Z_Construct_UFunction_UDungeonBlueprintLibrary_DoorDirection_Sub_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "AutoCreateRefTerm", "A,B" },
 		{ "Category", "Math|Door Direction" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Subtraction (A - B)\n" },
-#endif
 		{ "CompactNodeTitle", "-" },
 		{ "DisplayName", "Direction - Direction" },
 		{ "ModuleRelativePath", "Public/DungeonBlueprintLibrary.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Subtraction (A - B)" },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_A_MetaData[] = {
 		{ "NativeConst", "" },
@@ -504,15 +480,11 @@ struct Z_Construct_UFunction_UDungeonBlueprintLibrary_DoorDirection_Valid_Static
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Math|Door Direction" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// True if the value is set (either North, South, East, West)\n// False otherwise\n" },
-#endif
 		{ "DisplayName", "Is Valid" },
 		{ "ExpandBoolAsExecs", "ReturnValue" },
 		{ "ModuleRelativePath", "Public/DungeonBlueprintLibrary.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "True if the value is set (either North, South, East, West)\nFalse otherwise" },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_A_MetaData[] = {
 		{ "NativeConst", "" },
@@ -570,14 +542,10 @@ struct Z_Construct_UFunction_UDungeonBlueprintLibrary_GetOwningRoom_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Utilities|Procedural Dungeon" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Returns the room instance the actor is in.\n// If the actor is spawned at runtime or the owning level is not a room level, returns null.\n" },
-#endif
 		{ "DefaultToSelf", "Target" },
 		{ "ModuleRelativePath", "Public/DungeonBlueprintLibrary.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Returns the room instance the actor is in.\nIf the actor is spawned at runtime or the owning level is not a room level, returns null." },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Target_MetaData[] = {
 		{ "NativeConst", "" },
@@ -629,17 +597,13 @@ struct Z_Construct_UFunction_UDungeonBlueprintLibrary_GetOwningRoomCustomData_St
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Utilities|Procedural Dungeon" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Returns the first RoomCustomData of the provided type in the owning room.\n// If no owning room or no custom data of this type, returns null.\n" },
-#endif
 		{ "DefaultToSelf", "Target" },
 		{ "DeterminesOutputType", "CustomDataClass" },
 		{ "DynamicOutputParam", "CustomData" },
 		{ "ExpandBoolAsExecs", "ReturnValue" },
 		{ "ModuleRelativePath", "Public/DungeonBlueprintLibrary.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Returns the first RoomCustomData of the provided type in the owning room.\nIf no owning room or no custom data of this type, returns null." },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Target_MetaData[] = {
 		{ "NativeConst", "" },
@@ -764,14 +728,10 @@ struct Z_Construct_UFunction_UDungeonBlueprintLibrary_Settings_DefaultDoorSize_S
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Procedural Dungeon|Settings" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Returns the default door type's size\n" },
-#endif
 		{ "DisplayName", "Get Default Door Size" },
 		{ "ModuleRelativePath", "Public/DungeonBlueprintLibrary.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Returns the default door type's size" },
-#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FStructPropertyParams NewProp_ReturnValue;
@@ -813,14 +773,10 @@ struct Z_Construct_UFunction_UDungeonBlueprintLibrary_Settings_DoorOffset_Static
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Procedural Dungeon|Settings" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Returns the room offset as a percentage of the height of a room unit\n" },
-#endif
 		{ "DisplayName", "Get Door Offset" },
 		{ "ModuleRelativePath", "Public/DungeonBlueprintLibrary.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Returns the room offset as a percentage of the height of a room unit" },
-#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_ReturnValue;
@@ -862,14 +818,10 @@ struct Z_Construct_UFunction_UDungeonBlueprintLibrary_Settings_OccludeDynamicAct
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Procedural Dungeon|Settings" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Returns true if actors with a RoomVisibility component should have their visibility toggled with the rooms\n" },
-#endif
 		{ "DisplayName", "Should Dynamic Actors Be Occluded" },
 		{ "ModuleRelativePath", "Public/DungeonBlueprintLibrary.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Returns true if actors with a RoomVisibility component should have their visibility toggled with the rooms" },
-#endif
 	};
 #endif // WITH_METADATA
 	static void NewProp_ReturnValue_SetBit(void* Obj);
@@ -916,14 +868,10 @@ struct Z_Construct_UFunction_UDungeonBlueprintLibrary_Settings_OcclusionCulling_
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Procedural Dungeon|Settings" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Returns true if the plugin's occlusion system is enabled\n" },
-#endif
 		{ "DisplayName", "Is Occlusion Culling Enabled" },
 		{ "ModuleRelativePath", "Public/DungeonBlueprintLibrary.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Returns true if the plugin's occlusion system is enabled" },
-#endif
 	};
 #endif // WITH_METADATA
 	static void NewProp_ReturnValue_SetBit(void* Obj);
@@ -970,14 +918,10 @@ struct Z_Construct_UFunction_UDungeonBlueprintLibrary_Settings_OcclusionDistance
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Procedural Dungeon|Settings" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Returns the number of visible room from the player's room (1 mean only the player room is visible)\n" },
-#endif
 		{ "DisplayName", "Get Occlusion Culling Distance" },
 		{ "ModuleRelativePath", "Public/DungeonBlueprintLibrary.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Returns the number of visible room from the player's room (1 mean only the player room is visible)" },
-#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FIntPropertyParams NewProp_ReturnValue;
@@ -1019,14 +963,10 @@ struct Z_Construct_UFunction_UDungeonBlueprintLibrary_Settings_RoomUnit_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Procedural Dungeon|Settings" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Returns the room unit size in unreal units\n" },
-#endif
 		{ "DisplayName", "Get Room Unit" },
 		{ "ModuleRelativePath", "Public/DungeonBlueprintLibrary.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Returns the room unit size in unreal units" },
-#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FStructPropertyParams NewProp_ReturnValue;
@@ -1068,14 +1008,10 @@ struct Z_Construct_UFunction_UDungeonBlueprintLibrary_Settings_SetOcclusionCulli
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Procedural Dungeon|Settings" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Enable/disable the plugin's occlusion system\n" },
-#endif
 		{ "DisplayName", "Enable Occlusion Culling" },
 		{ "ModuleRelativePath", "Public/DungeonBlueprintLibrary.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Enable/disable the plugin's occlusion system" },
-#endif
 	};
 #endif // WITH_METADATA
 	static void NewProp_Enable_SetBit(void* Obj);
@@ -1123,14 +1059,10 @@ struct Z_Construct_UFunction_UDungeonBlueprintLibrary_Settings_SetOcclusionDista
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Procedural Dungeon|Settings" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Set the number of visible rooms from the player's room (1 mean only the player room is visible)\n" },
-#endif
 		{ "DisplayName", "Set Occlusion Culling Distance" },
 		{ "ModuleRelativePath", "Public/DungeonBlueprintLibrary.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Set the number of visible rooms from the player's room (1 mean only the player room is visible)" },
-#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FIntPropertyParams NewProp_Distance;
@@ -1174,15 +1106,11 @@ struct Z_Construct_UFunction_UDungeonBlueprintLibrary_Spectate_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Player" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Set player to spectate\n" },
-#endif
 		{ "CPP_Default_DestroyPawn", "true" },
 		{ "DefaultToSelf", "Controller" },
 		{ "ModuleRelativePath", "Public/DungeonBlueprintLibrary.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Set player to spectate" },
-#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_Controller;
@@ -1268,25 +1196,25 @@ struct Z_Construct_UClass_UDungeonBlueprintLibrary_Statics
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_UDungeonBlueprintLibrary_CompareDataTableRows, "CompareDataTableRows" }, // 1698588697
-		{ &Z_Construct_UFunction_UDungeonBlueprintLibrary_DoorDirection_Add, "DoorDirection_Add" }, // 2530733014
-		{ &Z_Construct_UFunction_UDungeonBlueprintLibrary_DoorDirection_Decrement, "DoorDirection_Decrement" }, // 1846651023
-		{ &Z_Construct_UFunction_UDungeonBlueprintLibrary_DoorDirection_Increment, "DoorDirection_Increment" }, // 164865553
-		{ &Z_Construct_UFunction_UDungeonBlueprintLibrary_DoorDirection_Negate, "DoorDirection_Negate" }, // 95214931
-		{ &Z_Construct_UFunction_UDungeonBlueprintLibrary_DoorDirection_Opposite, "DoorDirection_Opposite" }, // 757569933
-		{ &Z_Construct_UFunction_UDungeonBlueprintLibrary_DoorDirection_Sub, "DoorDirection_Sub" }, // 255502739
-		{ &Z_Construct_UFunction_UDungeonBlueprintLibrary_DoorDirection_Valid, "DoorDirection_Valid" }, // 119151302
-		{ &Z_Construct_UFunction_UDungeonBlueprintLibrary_GetOwningRoom, "GetOwningRoom" }, // 794719910
-		{ &Z_Construct_UFunction_UDungeonBlueprintLibrary_GetOwningRoomCustomData, "GetOwningRoomCustomData" }, // 1410920744
+		{ &Z_Construct_UFunction_UDungeonBlueprintLibrary_DoorDirection_Add, "DoorDirection_Add" }, // 934478943
+		{ &Z_Construct_UFunction_UDungeonBlueprintLibrary_DoorDirection_Decrement, "DoorDirection_Decrement" }, // 2433439888
+		{ &Z_Construct_UFunction_UDungeonBlueprintLibrary_DoorDirection_Increment, "DoorDirection_Increment" }, // 757179860
+		{ &Z_Construct_UFunction_UDungeonBlueprintLibrary_DoorDirection_Negate, "DoorDirection_Negate" }, // 1503953650
+		{ &Z_Construct_UFunction_UDungeonBlueprintLibrary_DoorDirection_Opposite, "DoorDirection_Opposite" }, // 4256614741
+		{ &Z_Construct_UFunction_UDungeonBlueprintLibrary_DoorDirection_Sub, "DoorDirection_Sub" }, // 758361239
+		{ &Z_Construct_UFunction_UDungeonBlueprintLibrary_DoorDirection_Valid, "DoorDirection_Valid" }, // 178021602
+		{ &Z_Construct_UFunction_UDungeonBlueprintLibrary_GetOwningRoom, "GetOwningRoom" }, // 2727160483
+		{ &Z_Construct_UFunction_UDungeonBlueprintLibrary_GetOwningRoomCustomData, "GetOwningRoomCustomData" }, // 115930997
 		{ &Z_Construct_UFunction_UDungeonBlueprintLibrary_IsDoorOfType, "IsDoorOfType" }, // 4210210093
-		{ &Z_Construct_UFunction_UDungeonBlueprintLibrary_Settings_DefaultDoorSize, "Settings_DefaultDoorSize" }, // 3099797002
-		{ &Z_Construct_UFunction_UDungeonBlueprintLibrary_Settings_DoorOffset, "Settings_DoorOffset" }, // 2986817957
-		{ &Z_Construct_UFunction_UDungeonBlueprintLibrary_Settings_OccludeDynamicActors, "Settings_OccludeDynamicActors" }, // 2018643107
-		{ &Z_Construct_UFunction_UDungeonBlueprintLibrary_Settings_OcclusionCulling, "Settings_OcclusionCulling" }, // 2096209389
-		{ &Z_Construct_UFunction_UDungeonBlueprintLibrary_Settings_OcclusionDistance, "Settings_OcclusionDistance" }, // 1418568832
-		{ &Z_Construct_UFunction_UDungeonBlueprintLibrary_Settings_RoomUnit, "Settings_RoomUnit" }, // 4209713251
-		{ &Z_Construct_UFunction_UDungeonBlueprintLibrary_Settings_SetOcclusionCulling, "Settings_SetOcclusionCulling" }, // 2857207652
-		{ &Z_Construct_UFunction_UDungeonBlueprintLibrary_Settings_SetOcclusionDistance, "Settings_SetOcclusionDistance" }, // 1784821214
-		{ &Z_Construct_UFunction_UDungeonBlueprintLibrary_Spectate, "Spectate" }, // 3047675139
+		{ &Z_Construct_UFunction_UDungeonBlueprintLibrary_Settings_DefaultDoorSize, "Settings_DefaultDoorSize" }, // 873046383
+		{ &Z_Construct_UFunction_UDungeonBlueprintLibrary_Settings_DoorOffset, "Settings_DoorOffset" }, // 399375729
+		{ &Z_Construct_UFunction_UDungeonBlueprintLibrary_Settings_OccludeDynamicActors, "Settings_OccludeDynamicActors" }, // 3678693279
+		{ &Z_Construct_UFunction_UDungeonBlueprintLibrary_Settings_OcclusionCulling, "Settings_OcclusionCulling" }, // 463926509
+		{ &Z_Construct_UFunction_UDungeonBlueprintLibrary_Settings_OcclusionDistance, "Settings_OcclusionDistance" }, // 741489114
+		{ &Z_Construct_UFunction_UDungeonBlueprintLibrary_Settings_RoomUnit, "Settings_RoomUnit" }, // 1000188857
+		{ &Z_Construct_UFunction_UDungeonBlueprintLibrary_Settings_SetOcclusionCulling, "Settings_SetOcclusionCulling" }, // 2512831943
+		{ &Z_Construct_UFunction_UDungeonBlueprintLibrary_Settings_SetOcclusionDistance, "Settings_SetOcclusionDistance" }, // 4157251585
+		{ &Z_Construct_UFunction_UDungeonBlueprintLibrary_Spectate, "Spectate" }, // 1137834996
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -1332,23 +1260,14 @@ UDungeonBlueprintLibrary::~UDungeonBlueprintLibrary() {}
 // End Class UDungeonBlueprintLibrary
 
 // Begin Registration
-<<<<<<< Updated upstream
-struct Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonBlueprintLibrary_h_Statics
-=======
-struct Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonBlueprintLibrary_h_Statics
->>>>>>> Stashed changes
+struct Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonBlueprintLibrary_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UDungeonBlueprintLibrary, UDungeonBlueprintLibrary::StaticClass, TEXT("UDungeonBlueprintLibrary"), &Z_Registration_Info_UClass_UDungeonBlueprintLibrary, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UDungeonBlueprintLibrary), 1842867093U) },
+		{ Z_Construct_UClass_UDungeonBlueprintLibrary, UDungeonBlueprintLibrary::StaticClass, TEXT("UDungeonBlueprintLibrary"), &Z_Registration_Info_UClass_UDungeonBlueprintLibrary, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UDungeonBlueprintLibrary), 542453867U) },
 	};
 };
-<<<<<<< Updated upstream
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonBlueprintLibrary_h_4058113686(TEXT("/Script/ProceduralDungeon"),
-	Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonBlueprintLibrary_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonBlueprintLibrary_h_Statics::ClassInfo),
-=======
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonBlueprintLibrary_h_543725828(TEXT("/Script/ProceduralDungeon"),
-	Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonBlueprintLibrary_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonBlueprintLibrary_h_Statics::ClassInfo),
->>>>>>> Stashed changes
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonBlueprintLibrary_h_1852300351(TEXT("/Script/ProceduralDungeon"),
+	Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonBlueprintLibrary_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonBlueprintLibrary_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

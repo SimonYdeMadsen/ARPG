@@ -1,13 +1,5 @@
-<<<<<<< Updated upstream
-C:\Users\symig\Documents\GitHub\ARPG\Plugins\ProceduralDungeon\Source\ProceduralDungeonEditor\Private\ProceduralDungeonEdTypes.h
-C:\Users\symig\Documents\GitHub\ARPG\Plugins\ProceduralDungeon\Source\ProceduralDungeonEditor\Private\ProceduralDungeonEditorSettings.h
-C:\Users\symig\Documents\GitHub\ARPG\Plugins\ProceduralDungeon\Source\ProceduralDungeonEditor\Private\EditorMode\ProceduralDungeonEditorObject.h
-C:\Users\symig\Documents\GitHub\ARPG\Plugins\ProceduralDungeon\Source\ProceduralDungeonEditor\Private\Factories\DoorTypeFactory.h
-C:\Users\symig\Documents\GitHub\ARPG\Plugins\ProceduralDungeon\Source\ProceduralDungeonEditor\Private\Factories\RoomDataFactory.h
-=======
-C:\Users\symig\Documents\GitHub\ARPG 5.5\Plugins\ProceduralDungeon\Source\ProceduralDungeonEditor\Private\ProceduralDungeonEditorSettings.h
-C:\Users\symig\Documents\GitHub\ARPG 5.5\Plugins\ProceduralDungeon\Source\ProceduralDungeonEditor\Private\ProceduralDungeonEdTypes.h
-C:\Users\symig\Documents\GitHub\ARPG 5.5\Plugins\ProceduralDungeon\Source\ProceduralDungeonEditor\Private\EditorMode\ProceduralDungeonEditorObject.h
-C:\Users\symig\Documents\GitHub\ARPG 5.5\Plugins\ProceduralDungeon\Source\ProceduralDungeonEditor\Private\Factories\DoorTypeFactory.h
-C:\Users\symig\Documents\GitHub\ARPG 5.5\Plugins\ProceduralDungeon\Source\ProceduralDungeonEditor\Private\Factories\RoomDataFactory.h
->>>>>>> Stashed changes
+R:\ProceduralDungeon\Packaged\5.5\ProceduralDungeon\HostProject\Plugins\ProceduralDungeon\Source\ProceduralDungeonEditor\Private\ProceduralDungeonEditorSettings.h
+R:\ProceduralDungeon\Packaged\5.5\ProceduralDungeon\HostProject\Plugins\ProceduralDungeon\Source\ProceduralDungeonEditor\Private\EditorMode\ProceduralDungeonEditorObject.h
+R:\ProceduralDungeon\Packaged\5.5\ProceduralDungeon\HostProject\Plugins\ProceduralDungeon\Source\ProceduralDungeonEditor\Private\ProceduralDungeonEdTypes.h
+R:\ProceduralDungeon\Packaged\5.5\ProceduralDungeon\HostProject\Plugins\ProceduralDungeon\Source\ProceduralDungeonEditor\Private\Factories\RoomDataFactory.h
+R:\ProceduralDungeon\Packaged\5.5\ProceduralDungeon\HostProject\Plugins\ProceduralDungeon\Source\ProceduralDungeonEditor\Private\Factories\DoorTypeFactory.h

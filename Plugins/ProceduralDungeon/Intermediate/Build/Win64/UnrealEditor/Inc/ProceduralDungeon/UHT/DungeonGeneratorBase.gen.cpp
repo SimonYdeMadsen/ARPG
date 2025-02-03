@@ -240,15 +240,11 @@ struct Z_Construct_UFunction_ADungeonGeneratorBase_AddRoomToDungeon_Statics
 		{ "AutoCreateRefTerm", "DoorsToConnect" },
 		{ "BlueprintInternalUseOnly", "TRUE" },
 		{ "Category", "Dungeon Generator" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Finalize the room creation by adding it to the dungeon graph. OnRoomAdded is called here.\n" },
-#endif
 		{ "CPP_Default_bFailIfNotConnected", "true" },
 		{ "ModuleRelativePath", "Public/DungeonGeneratorBase.h" },
 		{ "ReturnDisplayName", "Success" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Finalize the room creation by adding it to the dungeon graph. OnRoomAdded is called here." },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Room_MetaData[] = {
 		{ "NativeConst", "" },
@@ -351,14 +347,10 @@ struct Z_Construct_UFunction_ADungeonGeneratorBase_ChooseDoor_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Dungeon Generator" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Return the door which will be spawned between Current Room and Next Room\n// @param CurrentRoom The first of both rooms to have been generated. By default the door will face this room.\n// @param NextRoom The second of both rooms to have been generated. Set Flipped to true to make the door facing this room.\n// @param DoorType The door type set by both room data. Use IsDoorOfType function to compare a door actor class with this.\n// @param Flipped Tells which room the door is facing between CurrentRoom (false) and NextRoom (true).\n// @return The door actor class to spawn between CurrentRoom and NextRoom.\n" },
-#endif
 		{ "DisplayName", "Choose Door" },
 		{ "ModuleRelativePath", "Public/DungeonGeneratorBase.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Return the door which will be spawned between Current Room and Next Room\n@param CurrentRoom The first of both rooms to have been generated. By default the door will face this room.\n@param NextRoom The second of both rooms to have been generated. Set Flipped to true to make the door facing this room.\n@param DoorType The door type set by both room data. Use IsDoorOfType function to compare a door actor class with this.\n@param Flipped Tells which room the door is facing between CurrentRoom (false) and NextRoom (true).\n@return The door actor class to spawn between CurrentRoom and NextRoom." },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CurrentRoom_MetaData[] = {
 		{ "NativeConst", "" },
@@ -452,13 +444,9 @@ struct Z_Construct_UFunction_ADungeonGeneratorBase_CreateDungeon_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "BlueprintInternalUseOnly", "TRUE" },
 		{ "Category", "Dungeon Generator" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Create virtually the dungeon (no load nor initialization of room levels)\n" },
-#endif
 		{ "ModuleRelativePath", "Public/DungeonGeneratorBase.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Create virtually the dungeon (no load nor initialization of room levels)" },
-#endif
 	};
 #endif // WITH_METADATA
 	static void NewProp_ReturnValue_SetBit(void* Obj);
@@ -507,13 +495,9 @@ struct Z_Construct_UFunction_ADungeonGeneratorBase_CreateRoomInstance_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "BlueprintInternalUseOnly", "TRUE" },
 		{ "Category", "Dungeon Generator" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Create and initialize a new room instance using the room data provided.\n" },
-#endif
 		{ "ModuleRelativePath", "Public/DungeonGeneratorBase.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Create and initialize a new room instance using the room data provided." },
-#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_RoomData;
@@ -556,13 +540,9 @@ struct Z_Construct_UFunction_ADungeonGeneratorBase_FinalizeDungeon_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "BlueprintInternalUseOnly", "TRUE" },
 		{ "Category", "Dungeon Generator" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Initialize room instances after all rooms have been placed and connected (call InitializeDungeon).\n" },
-#endif
 		{ "ModuleRelativePath", "Public/DungeonGeneratorBase.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Initialize room instances after all rooms have been placed and connected (call InitializeDungeon)." },
-#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFunctionParams FuncParams;
@@ -592,13 +572,9 @@ struct Z_Construct_UFunction_ADungeonGeneratorBase_Generate_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Dungeon Generator" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Update the seed and call the generation on all clients\n// Do nothing when called on clients\n" },
-#endif
 		{ "ModuleRelativePath", "Public/DungeonGeneratorBase.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Update the seed and call the generation on all clients\nDo nothing when called on clients" },
-#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFunctionParams FuncParams;
@@ -635,13 +611,9 @@ struct Z_Construct_UFunction_ADungeonGeneratorBase_GetCompatibleRoomData_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Dungeon Generator" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Returns an array of room data with at least one compatible door with the door data provided.\n// @param bSuccess True if at least one compatible room data was found.\n// @param CompatibleRooms Filled with all compatible room data found.\n// @param RoomDataArray The list of room data to check for compatibility.\n// @param DoorData The door used to check if a room is compatible.\n" },
-#endif
 		{ "ModuleRelativePath", "Public/DungeonGeneratorBase.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Returns an array of room data with at least one compatible door with the door data provided.\n@param bSuccess True if at least one compatible room data was found.\n@param CompatibleRooms Filled with all compatible room data found.\n@param RoomDataArray The list of room data to check for compatibility.\n@param DoorData The door used to check if a room is compatible." },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_RoomDataArray_MetaData[] = {
 		{ "NativeConst", "" },
@@ -713,13 +685,9 @@ struct Z_Construct_UFunction_ADungeonGeneratorBase_GetProgress_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Dungeon Generator" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Returns the current generation progress.\n" },
-#endif
 		{ "ModuleRelativePath", "Public/DungeonGeneratorBase.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Returns the current generation progress." },
-#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_ReturnValue;
@@ -762,13 +730,9 @@ struct Z_Construct_UFunction_ADungeonGeneratorBase_GetRandomRoomData_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Dungeon Generator" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Return a random RoomData from the array provided\n" },
-#endif
 		{ "ModuleRelativePath", "Public/DungeonGeneratorBase.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Return a random RoomData from the array provided" },
-#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_RoomDataArray_Inner;
@@ -818,13 +782,9 @@ struct Z_Construct_UFunction_ADungeonGeneratorBase_GetRandomRoomDataWeighted_Sta
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Dungeon Generator" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Return a random RoomData from the weighted map provided.\n// For example: you have RoomA with weight 1 and RoomB with weight 2,\n// then RoomA has proba of 1/3 and RoomB 2/3 to be returned.\n" },
-#endif
 		{ "ModuleRelativePath", "Public/DungeonGeneratorBase.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Return a random RoomData from the weighted map provided.\nFor example: you have RoomA with weight 1 and RoomB with weight 2,\nthen RoomA has proba of 1/3 and RoomB 2/3 to be returned." },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_RoomDataWeightedMap_MetaData[] = {
 		{ "NativeConst", "" },
@@ -879,13 +839,9 @@ struct Z_Construct_UFunction_ADungeonGeneratorBase_GetRandomStream_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Dungeon Generator" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Access to the random stream of the procedural dungeon. You should always use this for the procedural generation.\n// @return The random stream used by the dungeon generator.\n" },
-#endif
 		{ "ModuleRelativePath", "Public/DungeonGeneratorBase.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Access to the random stream of the procedural dungeon. You should always use this for the procedural generation.\n@return The random stream used by the dungeon generator." },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ReturnValue_MetaData[] = {
 		{ "NativeConst", "" },
@@ -994,13 +950,9 @@ struct Z_Construct_UFunction_ADungeonGeneratorBase_GetVisibilityPawn_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Dungeon Generator" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Returns which pawn is used for the room culling system.\n// This pawn will also affect the PlayerInside variable of the rooms.\n// By default returns GetPlayerController(0)->GetPawnOrSpectator().\n" },
-#endif
 		{ "ModuleRelativePath", "Public/DungeonGeneratorBase.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Returns which pawn is used for the room culling system.\nThis pawn will also affect the PlayerInside variable of the rooms.\nBy default returns GetPlayerController(0)->GetPawnOrSpectator()." },
-#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_ReturnValue;
@@ -1057,13 +1009,9 @@ struct Z_Construct_UFunction_ADungeonGeneratorBase_InitializeDungeon_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Dungeon Generator" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Initialize the room instances during the generation step\n" },
-#endif
 		{ "ModuleRelativePath", "Public/DungeonGeneratorBase.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Initialize the room instances during the generation step" },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Rooms_MetaData[] = {
 		{ "NativeConst", "" },
@@ -1126,14 +1074,10 @@ struct Z_Construct_UFunction_ADungeonGeneratorBase_OnFailedToAddRoom_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Dungeon Generator" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Called each time no room could have been placed at a door (all room placement tries have been exhausted).\n" },
-#endif
 		{ "DisplayName", "Failed To Add Room" },
 		{ "ModuleRelativePath", "Public/DungeonGeneratorBase.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Called each time no room could have been placed at a door (all room placement tries have been exhausted)." },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_FromRoom_MetaData[] = {
 		{ "NativeConst", "" },
@@ -1195,14 +1139,10 @@ struct Z_Construct_UFunction_ADungeonGeneratorBase_OnGenerationFailed_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Dungeon Generator" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Called when all dungeon generation tries are exhausted (IsValidDungeon always return false).\n// No dungeon had been generated.\n" },
-#endif
 		{ "DisplayName", "Generation Failed" },
 		{ "ModuleRelativePath", "Public/DungeonGeneratorBase.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Called when all dungeon generation tries are exhausted (IsValidDungeon always return false).\nNo dungeon had been generated." },
-#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFunctionParams FuncParams;
@@ -1245,14 +1185,10 @@ struct Z_Construct_UFunction_ADungeonGeneratorBase_OnGenerationInit_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Dungeon Generator" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Called before trying to generate a new dungeon and each time IsValidDungeon return false.\n" },
-#endif
 		{ "DisplayName", "Generation Init" },
 		{ "ModuleRelativePath", "Public/DungeonGeneratorBase.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Called before trying to generate a new dungeon and each time IsValidDungeon return false." },
-#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFunctionParams FuncParams;
@@ -1295,14 +1231,10 @@ struct Z_Construct_UFunction_ADungeonGeneratorBase_OnPostGeneration_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Dungeon Generator" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Called once after all the dungeon generation (even if failed).\n" },
-#endif
 		{ "DisplayName", "Post Generation" },
 		{ "ModuleRelativePath", "Public/DungeonGeneratorBase.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Called once after all the dungeon generation (even if failed)." },
-#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFunctionParams FuncParams;
@@ -1345,14 +1277,10 @@ struct Z_Construct_UFunction_ADungeonGeneratorBase_OnPreGeneration_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Dungeon Generator" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Called once before anything else when generating a new dungeon.\n" },
-#endif
 		{ "DisplayName", "Pre Generation" },
 		{ "ModuleRelativePath", "Public/DungeonGeneratorBase.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Called once before anything else when generating a new dungeon." },
-#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFunctionParams FuncParams;
@@ -1403,14 +1331,10 @@ struct Z_Construct_UFunction_ADungeonGeneratorBase_OnRoomAdded_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Dungeon Generator" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Called each time a room is added in the dungeon (but not spawned yet).\n// Those rooms can be destroyed without loading them if the generation try is not valid.\n// @param NewRoom The room data successfully added to the dungeon [DEPRECATED: will be removed in future version, use RoomInstance->GetRoomData instead]\n// @param RoomInstance The room successfully added to the dungeon\n" },
-#endif
 		{ "DisplayName", "On Room Added" },
 		{ "ModuleRelativePath", "Public/DungeonGeneratorBase.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Called each time a room is added in the dungeon (but not spawned yet).\nThose rooms can be destroyed without loading them if the generation try is not valid.\n@param NewRoom The room data successfully added to the dungeon [DEPRECATED: will be removed in future version, use RoomInstance->GetRoomData instead]\n@param RoomInstance The room successfully added to the dungeon" },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_NewRoom_MetaData[] = {
 		{ "NativeConst", "" },
@@ -1503,13 +1427,9 @@ struct Z_Construct_UFunction_ADungeonGeneratorBase_StartNewDungeon_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "BlueprintInternalUseOnly", "TRUE" },
 		{ "Category", "Dungeon Generator" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Clear current graph and call GenerationInit event.\n" },
-#endif
 		{ "ModuleRelativePath", "Public/DungeonGeneratorBase.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Clear current graph and call GenerationInit event." },
-#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFunctionParams FuncParams;
@@ -1548,16 +1468,12 @@ struct Z_Construct_UFunction_ADungeonGeneratorBase_TryPlaceRoom_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "BlueprintInternalUseOnly", "TRUE" },
 		{ "Category", "Dungeon Generator" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Set the position and rotation of a room instance and return true if there is nothing colliding with it.\n" },
-#endif
 		{ "CPP_Default_World", "None" },
 		{ "HidePin", "World" },
 		{ "ModuleRelativePath", "Public/DungeonGeneratorBase.h" },
 		{ "ReturnDisplayName", "Success" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Set the position and rotation of a room instance and return true if there is nothing colliding with it." },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Room_MetaData[] = {
 		{ "NativeConst", "" },
@@ -1625,13 +1541,9 @@ struct Z_Construct_UFunction_ADungeonGeneratorBase_Unload_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Dungeon Generator" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Unload the current dungeon\n// Do nothing when called on clients\n" },
-#endif
 		{ "ModuleRelativePath", "Public/DungeonGeneratorBase.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Unload the current dungeon\nDo nothing when called on clients" },
-#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFunctionParams FuncParams;
@@ -1698,118 +1610,74 @@ struct Z_Construct_UClass_ADungeonGeneratorBase_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
 		{ "BlueprintType", "true" },
 		{ "ClassGroupNames", "Procedural Dungeon" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// This is the main actor of the plugin. The dungeon generator is responsible to generate dungeons and replicate them over the network. \n" },
-#endif
 		{ "IncludePath", "DungeonGeneratorBase.h" },
 		{ "IsBlueprintBase", "false" },
 		{ "ModuleRelativePath", "Public/DungeonGeneratorBase.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "This is the main actor of the plugin. The dungeon generator is responsible to generate dungeons and replicate them over the network." },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OnPreGenerationEvent_MetaData[] = {
 		{ "Category", "Dungeon Generator" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Called once before anything else when generating a new dungeon.\n" },
-#endif
 		{ "ModuleRelativePath", "Public/DungeonGeneratorBase.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Called once before anything else when generating a new dungeon." },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OnPostGenerationEvent_MetaData[] = {
 		{ "Category", "Dungeon Generator" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Called once after all the dungeon generation (even if failed).\n" },
-#endif
 		{ "ModuleRelativePath", "Public/DungeonGeneratorBase.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Called once after all the dungeon generation (even if failed)." },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OnGenerationInitEvent_MetaData[] = {
 		{ "Category", "Dungeon Generator" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Called before trying to generate a new dungeon and each time IsValidDungeon return false.\n" },
-#endif
 		{ "ModuleRelativePath", "Public/DungeonGeneratorBase.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Called before trying to generate a new dungeon and each time IsValidDungeon return false." },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OnGenerationFailedEvent_MetaData[] = {
 		{ "Category", "Dungeon Generator" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Called when all dungeon generation tries are exhausted (IsValidDungeon always return false).\n// No dungeon had been generated.\n" },
-#endif
 		{ "ModuleRelativePath", "Public/DungeonGeneratorBase.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Called when all dungeon generation tries are exhausted (IsValidDungeon always return false).\nNo dungeon had been generated." },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OnRoomAddedEvent_MetaData[] = {
 		{ "Category", "Dungeon Generator" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Called each time a room is added in the dungeon (but not spawned yet).\n// Those rooms can be destroyed without loading them if the generation try is not valid.\n" },
-#endif
 		{ "ModuleRelativePath", "Public/DungeonGeneratorBase.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Called each time a room is added in the dungeon (but not spawned yet).\nThose rooms can be destroyed without loading them if the generation try is not valid." },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OnFailedToAddRoomEvent_MetaData[] = {
 		{ "Category", "Dungeon Generator" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Called each time no room could have been placed at a door (all room placement tries have been exhausted).\n" },
-#endif
 		{ "ModuleRelativePath", "Public/DungeonGeneratorBase.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Called each time no room could have been placed at a door (all room placement tries have been exhausted)." },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bUseGeneratorTransform_MetaData[] = {
 		{ "Category", "Procedural Generation" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// If ticked, the rooms location and rotation will be relative to this actor transform.\n// If unticked, the rooms will be placed relatively to the world's origin.\n" },
-#endif
 		{ "ModuleRelativePath", "Public/DungeonGeneratorBase.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "If ticked, the rooms location and rotation will be relative to this actor transform.\nIf unticked, the rooms will be placed relatively to the world's origin." },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SeedType_MetaData[] = {
 		{ "Category", "Procedural Generation|Seed" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// How to handle the seed at each generation call.\n// Random: Generate and use a random seed.\n// Auto Increment: Use Seed for first generation, and increment it by SeedIncrement in each subsequent generation.\n// Fixed: Use only Seed for each generation.\n" },
-#endif
 		{ "ModuleRelativePath", "Public/DungeonGeneratorBase.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "How to handle the seed at each generation call.\nRandom: Generate and use a random seed.\nAuto Increment: Use Seed for first generation, and increment it by SeedIncrement in each subsequent generation.\nFixed: Use only Seed for each generation." },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SeedIncrement_MetaData[] = {
 		{ "Category", "Procedural Generation|Seed" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// The increment number for each subsequent dungeon generation when SeedType is AutoIncrement.\n" },
-#endif
 		{ "DisplayAfter", "Seed" },
 		{ "EditCondition", "SeedType==ESeedType::AutoIncrement" },
 		{ "EditConditionHides", "" },
 		{ "ModuleRelativePath", "Public/DungeonGeneratorBase.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "The increment number for each subsequent dungeon generation when SeedType is AutoIncrement." },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bUseWorldCollisionChecks_MetaData[] = {
 		{ "Category", "Procedural Generation" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// If ticked, when trying to place a new room during a dungeon generation,\n// a box overlap test will be made to make sure the room will not spawn\n// inside existing meshes in the persistent world.\n// This is a heavy work and should be ticked only when necessary.\n// Does not have impact during gameplay. Only during the generation process.\n" },
-#endif
 		{ "ModuleRelativePath", "Public/DungeonGeneratorBase.h" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "If ticked, when trying to place a new room during a dungeon generation,\na box overlap test will be made to make sure the room will not spawn\ninside existing meshes in the persistent world.\nThis is a heavy work and should be ticked only when necessary.\nDoes not have impact during gameplay. Only during the generation process." },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Graph_MetaData[] = {
 		{ "Category", "Dungeon Generator" },
@@ -1850,30 +1718,30 @@ struct Z_Construct_UClass_ADungeonGeneratorBase_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_ADungeonGeneratorBase_AddRoomToDungeon, "AddRoomToDungeon" }, // 4285814945
-		{ &Z_Construct_UFunction_ADungeonGeneratorBase_ChooseDoor, "ChooseDoor" }, // 627064545
-		{ &Z_Construct_UFunction_ADungeonGeneratorBase_CreateDungeon, "CreateDungeon" }, // 860996237
-		{ &Z_Construct_UFunction_ADungeonGeneratorBase_CreateRoomInstance, "CreateRoomInstance" }, // 2519505396
-		{ &Z_Construct_UFunction_ADungeonGeneratorBase_FinalizeDungeon, "FinalizeDungeon" }, // 1674930353
-		{ &Z_Construct_UFunction_ADungeonGeneratorBase_Generate, "Generate" }, // 199515025
-		{ &Z_Construct_UFunction_ADungeonGeneratorBase_GetCompatibleRoomData, "GetCompatibleRoomData" }, // 4118349778
-		{ &Z_Construct_UFunction_ADungeonGeneratorBase_GetProgress, "GetProgress" }, // 2781760690
-		{ &Z_Construct_UFunction_ADungeonGeneratorBase_GetRandomRoomData, "GetRandomRoomData" }, // 1406764557
-		{ &Z_Construct_UFunction_ADungeonGeneratorBase_GetRandomRoomDataWeighted, "GetRandomRoomDataWeighted" }, // 804922878
-		{ &Z_Construct_UFunction_ADungeonGeneratorBase_GetRandomStream, "GetRandomStream" }, // 1866634386
+		{ &Z_Construct_UFunction_ADungeonGeneratorBase_AddRoomToDungeon, "AddRoomToDungeon" }, // 3605328402
+		{ &Z_Construct_UFunction_ADungeonGeneratorBase_ChooseDoor, "ChooseDoor" }, // 970464885
+		{ &Z_Construct_UFunction_ADungeonGeneratorBase_CreateDungeon, "CreateDungeon" }, // 684121758
+		{ &Z_Construct_UFunction_ADungeonGeneratorBase_CreateRoomInstance, "CreateRoomInstance" }, // 3376730215
+		{ &Z_Construct_UFunction_ADungeonGeneratorBase_FinalizeDungeon, "FinalizeDungeon" }, // 3795112365
+		{ &Z_Construct_UFunction_ADungeonGeneratorBase_Generate, "Generate" }, // 177889356
+		{ &Z_Construct_UFunction_ADungeonGeneratorBase_GetCompatibleRoomData, "GetCompatibleRoomData" }, // 597535262
+		{ &Z_Construct_UFunction_ADungeonGeneratorBase_GetProgress, "GetProgress" }, // 1425974233
+		{ &Z_Construct_UFunction_ADungeonGeneratorBase_GetRandomRoomData, "GetRandomRoomData" }, // 4276657609
+		{ &Z_Construct_UFunction_ADungeonGeneratorBase_GetRandomRoomDataWeighted, "GetRandomRoomDataWeighted" }, // 4130823998
+		{ &Z_Construct_UFunction_ADungeonGeneratorBase_GetRandomStream, "GetRandomStream" }, // 403396255
 		{ &Z_Construct_UFunction_ADungeonGeneratorBase_GetSeed, "GetSeed" }, // 2100929760
-		{ &Z_Construct_UFunction_ADungeonGeneratorBase_GetVisibilityPawn, "GetVisibilityPawn" }, // 2554828416
-		{ &Z_Construct_UFunction_ADungeonGeneratorBase_InitializeDungeon, "InitializeDungeon" }, // 2915102290
-		{ &Z_Construct_UFunction_ADungeonGeneratorBase_OnFailedToAddRoom, "OnFailedToAddRoom" }, // 1157757214
-		{ &Z_Construct_UFunction_ADungeonGeneratorBase_OnGenerationFailed, "OnGenerationFailed" }, // 565934793
-		{ &Z_Construct_UFunction_ADungeonGeneratorBase_OnGenerationInit, "OnGenerationInit" }, // 4290946408
-		{ &Z_Construct_UFunction_ADungeonGeneratorBase_OnPostGeneration, "OnPostGeneration" }, // 1013352391
-		{ &Z_Construct_UFunction_ADungeonGeneratorBase_OnPreGeneration, "OnPreGeneration" }, // 4260073458
-		{ &Z_Construct_UFunction_ADungeonGeneratorBase_OnRoomAdded, "OnRoomAdded" }, // 997008871
+		{ &Z_Construct_UFunction_ADungeonGeneratorBase_GetVisibilityPawn, "GetVisibilityPawn" }, // 3379170393
+		{ &Z_Construct_UFunction_ADungeonGeneratorBase_InitializeDungeon, "InitializeDungeon" }, // 4049083952
+		{ &Z_Construct_UFunction_ADungeonGeneratorBase_OnFailedToAddRoom, "OnFailedToAddRoom" }, // 1633788167
+		{ &Z_Construct_UFunction_ADungeonGeneratorBase_OnGenerationFailed, "OnGenerationFailed" }, // 2872532912
+		{ &Z_Construct_UFunction_ADungeonGeneratorBase_OnGenerationInit, "OnGenerationInit" }, // 3529816395
+		{ &Z_Construct_UFunction_ADungeonGeneratorBase_OnPostGeneration, "OnPostGeneration" }, // 1660845998
+		{ &Z_Construct_UFunction_ADungeonGeneratorBase_OnPreGeneration, "OnPreGeneration" }, // 3221750037
+		{ &Z_Construct_UFunction_ADungeonGeneratorBase_OnRoomAdded, "OnRoomAdded" }, // 3014414813
 		{ &Z_Construct_UFunction_ADungeonGeneratorBase_SetSeed, "SetSeed" }, // 3867147143
-		{ &Z_Construct_UFunction_ADungeonGeneratorBase_StartNewDungeon, "StartNewDungeon" }, // 2836736760
-		{ &Z_Construct_UFunction_ADungeonGeneratorBase_TryPlaceRoom, "TryPlaceRoom" }, // 2959134743
-		{ &Z_Construct_UFunction_ADungeonGeneratorBase_Unload, "Unload" }, // 2097568041
+		{ &Z_Construct_UFunction_ADungeonGeneratorBase_StartNewDungeon, "StartNewDungeon" }, // 3665847507
+		{ &Z_Construct_UFunction_ADungeonGeneratorBase_TryPlaceRoom, "TryPlaceRoom" }, // 4104513459
+		{ &Z_Construct_UFunction_ADungeonGeneratorBase_Unload, "Unload" }, // 966085129
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -1970,18 +1838,18 @@ ADungeonGeneratorBase::~ADungeonGeneratorBase() {}
 // End Class ADungeonGeneratorBase
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonGeneratorBase_h_Statics
+struct Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonGeneratorBase_h_Statics
 {
 	static constexpr FEnumRegisterCompiledInInfo EnumInfo[] = {
 		{ EGenerationResult_StaticEnum, TEXT("EGenerationResult"), &Z_Registration_Info_UEnum_EGenerationResult, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 2848199281U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ADungeonGeneratorBase, ADungeonGeneratorBase::StaticClass, TEXT("ADungeonGeneratorBase"), &Z_Registration_Info_UClass_ADungeonGeneratorBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ADungeonGeneratorBase), 2096949078U) },
+		{ Z_Construct_UClass_ADungeonGeneratorBase, ADungeonGeneratorBase::StaticClass, TEXT("ADungeonGeneratorBase"), &Z_Registration_Info_UClass_ADungeonGeneratorBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ADungeonGeneratorBase), 4028195964U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonGeneratorBase_h_350178864(TEXT("/Script/ProceduralDungeon"),
-	Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonGeneratorBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonGeneratorBase_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonGeneratorBase_h_1565892120(TEXT("/Script/ProceduralDungeon"),
+	Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonGeneratorBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonGeneratorBase_h_Statics::ClassInfo),
 	nullptr, 0,
-	Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonGeneratorBase_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonGeneratorBase_h_Statics::EnumInfo));
+	Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonGeneratorBase_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DungeonGeneratorBase_h_Statics::EnumInfo));
 // End Registration
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

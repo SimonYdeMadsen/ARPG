@@ -300,9 +300,7 @@ struct Z_Construct_UEnum_ProceduralDungeon_EVisibilityMode_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[] = {
 		{ "BlueprintType", "true" },
-#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Visibility mode for Room Visibilty Components.\n" },
-#endif
 		{ "Custom.DisplayName", "Custom" },
 		{ "Custom.Name", "EVisibilityMode::Custom" },
 		{ "Default.DisplayName", "Same As Room" },
@@ -315,9 +313,7 @@ struct Z_Construct_UEnum_ProceduralDungeon_EVisibilityMode_Statics
 		{ "ModuleRelativePath", "Public/ProceduralDungeonTypes.h" },
 		{ "NbMode.Hidden", "" },
 		{ "NbMode.Name", "EVisibilityMode::NbMode" },
-#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Visibility mode for Room Visibilty Components." },
-#endif
 	};
 #endif // WITH_METADATA
 	static constexpr UECodeGen_Private::FEnumeratorParam Enumerators[] = {
@@ -432,33 +428,22 @@ UScriptStruct* Z_Construct_UScriptStruct_FDoorDef()
 // End ScriptStruct FDoorDef
 
 // Begin Registration
-<<<<<<< Updated upstream
-struct Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_ProceduralDungeonTypes_h_Statics
-=======
-struct Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_ProceduralDungeonTypes_h_Statics
->>>>>>> Stashed changes
+struct Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_ProceduralDungeonTypes_h_Statics
 {
 	static constexpr FEnumRegisterCompiledInInfo EnumInfo[] = {
 		{ EGenerationState_StaticEnum, TEXT("EGenerationState"), &Z_Registration_Info_UEnum_EGenerationState, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3727864342U) },
 		{ EDoorDirection_StaticEnum, TEXT("EDoorDirection"), &Z_Registration_Info_UEnum_EDoorDirection, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 687843478U) },
 		{ EGenerationType_StaticEnum, TEXT("EGenerationType"), &Z_Registration_Info_UEnum_EGenerationType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 513687356U) },
 		{ ESeedType_StaticEnum, TEXT("ESeedType"), &Z_Registration_Info_UEnum_ESeedType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 1284640329U) },
-		{ EVisibilityMode_StaticEnum, TEXT("EVisibilityMode"), &Z_Registration_Info_UEnum_EVisibilityMode, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 151926989U) },
+		{ EVisibilityMode_StaticEnum, TEXT("EVisibilityMode"), &Z_Registration_Info_UEnum_EVisibilityMode, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 2249036084U) },
 	};
 	static constexpr FStructRegisterCompiledInInfo ScriptStructInfo[] = {
 		{ FDoorDef::StaticStruct, Z_Construct_UScriptStruct_FDoorDef_Statics::NewStructOps, TEXT("DoorDef"), &Z_Registration_Info_UScriptStruct_DoorDef, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FDoorDef), 3661065545U) },
 	};
 };
-<<<<<<< Updated upstream
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_ProceduralDungeonTypes_h_1373064582(TEXT("/Script/ProceduralDungeon"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_ProceduralDungeonTypes_h_2942898526(TEXT("/Script/ProceduralDungeon"),
 	nullptr, 0,
-	Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_ProceduralDungeonTypes_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_ProceduralDungeonTypes_h_Statics::ScriptStructInfo),
-	Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_ProceduralDungeonTypes_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_ProceduralDungeonTypes_h_Statics::EnumInfo));
-=======
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_ProceduralDungeonTypes_h_1373064582(TEXT("/Script/ProceduralDungeon"),
-	nullptr, 0,
-	Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_ProceduralDungeonTypes_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_ProceduralDungeonTypes_h_Statics::ScriptStructInfo),
-	Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_ProceduralDungeonTypes_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_5_5_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_ProceduralDungeonTypes_h_Statics::EnumInfo));
->>>>>>> Stashed changes
+	Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_ProceduralDungeonTypes_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_ProceduralDungeonTypes_h_Statics::ScriptStructInfo),
+	Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_ProceduralDungeonTypes_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_ProceduralDungeonTypes_h_Statics::EnumInfo));
 // End Registration
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

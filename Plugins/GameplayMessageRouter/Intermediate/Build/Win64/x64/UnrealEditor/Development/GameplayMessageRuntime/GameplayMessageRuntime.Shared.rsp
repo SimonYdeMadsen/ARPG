@@ -1,9 +1,5 @@
 /I "."
-<<<<<<< Updated upstream
-/I "C:\Users\symig\Documents\GitHub\ARPG\Plugins\GameplayMessageRouter\Source\GameplayMessageRuntime\Private"
-=======
 /I "C:\Users\symig\Documents\GitHub\ARPG 5.5\Plugins\GameplayMessageRouter\Source\GameplayMessageRuntime\Private"
->>>>>>> Stashed changes
 /I "..\Intermediate\Build\Win64\UnrealEditor\Inc\CoreUObject\UHT"
 /I "..\Intermediate\Build\Win64\UnrealEditor\Inc\CoreUObject\VerseVMBytecode"
 /I "Runtime\CoreUObject\Public"
@@ -11,17 +7,11 @@
 /I "Runtime\Core\Public"
 /I "Runtime\Core\Internal"
 /I "Runtime\TraceLog\Public"
-<<<<<<< Updated upstream
-/I "C:\Users\symig\Documents\GitHub\ARPG\Plugins\GameplayMessageRouter\Intermediate\Build\Win64\UnrealEditor\Inc\GameplayMessageRuntime\UHT"
-/I "C:\Users\symig\Documents\GitHub\ARPG\Plugins\GameplayMessageRouter\Source"
-/I "C:\Users\symig\Documents\GitHub\ARPG\Plugins\GameplayMessageRouter\Source\GameplayMessageRuntime\Public"
-=======
 /I "Runtime\CorePreciseFP\Public"
 /I "Runtime\CorePreciseFP\Internal"
 /I "C:\Users\symig\Documents\GitHub\ARPG 5.5\Plugins\GameplayMessageRouter\Intermediate\Build\Win64\UnrealEditor\Inc\GameplayMessageRuntime\UHT"
 /I "C:\Users\symig\Documents\GitHub\ARPG 5.5\Plugins\GameplayMessageRouter\Source"
 /I "C:\Users\symig\Documents\GitHub\ARPG 5.5\Plugins\GameplayMessageRouter\Source\GameplayMessageRuntime\Public"
->>>>>>> Stashed changes
 /I "..\Intermediate\Build\Win64\UnrealEditor\Inc\Engine\UHT"
 /I "Runtime\Engine\Classes"
 /I "Runtime\Engine\Public"
@@ -304,10 +294,7 @@
 /external:I "ThirdParty\RapidJSON\1.1.0"
 /external:I "ThirdParty\LibTiff\Source\Win64"
 /external:I "ThirdParty\LibTiff\Source"
-<<<<<<< Updated upstream
-=======
 /external:I "ThirdParty\OpenGL"
->>>>>>> Stashed changes
 /external:I "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\INCLUDE"
 /external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\ucrt"
 /external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\shared"
