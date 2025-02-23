@@ -48,9 +48,13 @@ struct Z_Construct_UFunction_URoomVisitor_OnRoomEnter_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Room Visitor" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// This function is called when the actor enters a dungeon room.\n// @param RoomLevel The room level blueprint this actor has entered. You can use the Room accessor from here.\n" },
+#endif
 		{ "ModuleRelativePath", "Public/RoomVisitor.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "This function is called when the actor enters a dungeon room.\n@param RoomLevel The room level blueprint this actor has entered. You can use the Room accessor from here." },
+#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_RoomLevel;
@@ -114,9 +118,13 @@ struct Z_Construct_UFunction_URoomVisitor_OnRoomExit_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Room Visitor" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// This function is called when the actor exits a dungeon room.\n// @param RoomLevel The room level blueprint this actor has exited. You can use the Room accessor from here.\n" },
+#endif
 		{ "ModuleRelativePath", "Public/RoomVisitor.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "This function is called when the actor exits a dungeon room.\n@param RoomLevel The room level blueprint this actor has exited. You can use the Room accessor from here." },
+#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_RoomLevel;
@@ -174,8 +182,8 @@ struct Z_Construct_UClass_URoomVisitor_Statics
 #endif // WITH_METADATA
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_URoomVisitor_OnRoomEnter, "OnRoomEnter" }, // 3577754884
-		{ &Z_Construct_UFunction_URoomVisitor_OnRoomExit, "OnRoomExit" }, // 2012539264
+		{ &Z_Construct_UFunction_URoomVisitor_OnRoomEnter, "OnRoomEnter" }, // 1467074019
+		{ &Z_Construct_UFunction_URoomVisitor_OnRoomExit, "OnRoomExit" }, // 3544903353
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -221,14 +229,14 @@ URoomVisitor::~URoomVisitor() {}
 // End Interface URoomVisitor
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_Statics
+struct Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_URoomVisitor, URoomVisitor::StaticClass, TEXT("URoomVisitor"), &Z_Registration_Info_UClass_URoomVisitor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(URoomVisitor), 654307368U) },
+		{ Z_Construct_UClass_URoomVisitor, URoomVisitor::StaticClass, TEXT("URoomVisitor"), &Z_Registration_Info_UClass_URoomVisitor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(URoomVisitor), 4091944047U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_1498438010(TEXT("/Script/ProceduralDungeon"),
-	Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_3957904702(TEXT("/Script/ProceduralDungeon"),
+	Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomVisitor_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

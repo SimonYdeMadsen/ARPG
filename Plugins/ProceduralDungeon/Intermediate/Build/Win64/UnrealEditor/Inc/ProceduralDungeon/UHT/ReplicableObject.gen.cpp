@@ -22,9 +22,13 @@ struct Z_Construct_UFunction_UReplicableObject_WakeUpOwnerActor_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Replication" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Wakes up the owner actor from dormance to indicate that a replicated variable will change.\n// You have to use it *before* modifying the replicated variables.\n" },
+#endif
 		{ "ModuleRelativePath", "Public/ReplicableObject.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Wakes up the owner actor from dormance to indicate that a replicated variable will change.\nYou have to use it *before* modifying the replicated variables." },
+#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFunctionParams FuncParams;
@@ -74,7 +78,7 @@ struct Z_Construct_UClass_UReplicableObject_Statics
 #endif // WITH_METADATA
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_UReplicableObject_WakeUpOwnerActor, "WakeUpOwnerActor" }, // 2151424048
+		{ &Z_Construct_UFunction_UReplicableObject_WakeUpOwnerActor, "WakeUpOwnerActor" }, // 90360053
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -120,14 +124,14 @@ UReplicableObject::~UReplicableObject() {}
 // End Class UReplicableObject
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_ReplicableObject_h_Statics
+struct Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_ReplicableObject_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UReplicableObject, UReplicableObject::StaticClass, TEXT("UReplicableObject"), &Z_Registration_Info_UClass_UReplicableObject, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UReplicableObject), 3202952041U) },
+		{ Z_Construct_UClass_UReplicableObject, UReplicableObject::StaticClass, TEXT("UReplicableObject"), &Z_Registration_Info_UClass_UReplicableObject, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UReplicableObject), 2616119483U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_ReplicableObject_h_2143723217(TEXT("/Script/ProceduralDungeon"),
-	Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_ReplicableObject_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_ReplicableObject_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_ReplicableObject_h_692416027(TEXT("/Script/ProceduralDungeon"),
+	Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_ReplicableObject_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_ReplicableObject_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

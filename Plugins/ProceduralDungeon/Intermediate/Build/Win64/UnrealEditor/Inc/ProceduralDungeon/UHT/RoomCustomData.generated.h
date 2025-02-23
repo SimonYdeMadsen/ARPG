@@ -14,7 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define PROCEDURALDUNGEON_RoomCustomData_generated_h
 
-#define FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomCustomData_h_37_INCLASS_NO_PURE_DECLS \
+#define FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomCustomData_h_37_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesURoomCustomData(); \
 	friend struct Z_Construct_UClass_URoomCustomData_Statics; \
@@ -23,7 +23,7 @@ public: \
 	DECLARE_SERIALIZER(URoomCustomData)
 
 
-#define FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomCustomData_h_37_ENHANCED_CONSTRUCTORS \
+#define FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomCustomData_h_37_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API URoomCustomData(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 private: \
@@ -37,12 +37,12 @@ public: \
 	NO_API virtual ~URoomCustomData();
 
 
-#define FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomCustomData_h_34_PROLOG
-#define FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomCustomData_h_37_GENERATED_BODY \
+#define FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomCustomData_h_34_PROLOG
+#define FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomCustomData_h_37_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomCustomData_h_37_INCLASS_NO_PURE_DECLS \
-	FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomCustomData_h_37_ENHANCED_CONSTRUCTORS \
+	FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomCustomData_h_37_INCLASS_NO_PURE_DECLS \
+	FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomCustomData_h_37_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -50,7 +50,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> PROCEDURALDUNGEON_API UClass* StaticClass<class URoomCustomData>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomCustomData_h
+#define CURRENT_FILE_ID FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomCustomData_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

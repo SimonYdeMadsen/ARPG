@@ -765,9 +765,13 @@ struct Z_Construct_UClass_URoomData_Statics
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_RandomDoor_MetaData[] = {
 		{ "Category", "Doors" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// This will force a random door to be chosen during the dungeon generation.\n// DEPRECATED: It will be removed in a future version of the plugin. As a replacement, you should return -1 as DoorIndex in the ChooseNextRoomData of your DungeonGenerator.\n" },
+#endif
 		{ "ModuleRelativePath", "Public/RoomData.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "This will force a random door to be chosen during the dungeon generation.\nDEPRECATED: It will be removed in a future version of the plugin. As a replacement, you should return -1 as DoorIndex in the ChooseNextRoomData of your DungeonGenerator." },
+#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Doors_MetaData[] = {
 		{ "Category", "Doors" },
@@ -878,14 +882,14 @@ URoomData::~URoomData() {}
 // End Class URoomData
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_Statics
+struct Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_URoomData, URoomData::StaticClass, TEXT("URoomData"), &Z_Registration_Info_UClass_URoomData, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(URoomData), 759105631U) },
+		{ Z_Construct_UClass_URoomData, URoomData::StaticClass, TEXT("URoomData"), &Z_Registration_Info_UClass_URoomData, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(URoomData), 3665733619U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_389383504(TEXT("/Script/ProceduralDungeon"),
-	Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_59445043(TEXT("/Script/ProceduralDungeon"),
+	Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_RoomData_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

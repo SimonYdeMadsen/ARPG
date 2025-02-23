@@ -181,9 +181,13 @@ struct Z_Construct_UFunction_UReadOnlyRoom_AreAllDoorsConnected_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Room" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Returns true if all the doors of this room are connected to other rooms.\n" },
+#endif
 		{ "ModuleRelativePath", "Public/Room.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Returns true if all the doors of this room are connected to other rooms." },
+#endif
 	};
 #endif // WITH_METADATA
 	static void NewProp_ReturnValue_SetBit(void* Obj);
@@ -230,9 +234,13 @@ struct Z_Construct_UFunction_UReadOnlyRoom_CountConnectedDoors_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Room" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Returns true if all the doors of this room are connected to other rooms.\n" },
+#endif
 		{ "ModuleRelativePath", "Public/Room.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Returns true if all the doors of this room are connected to other rooms." },
+#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FIntPropertyParams NewProp_ReturnValue;
@@ -274,9 +282,13 @@ struct Z_Construct_UFunction_UReadOnlyRoom_GetBoundsCenter_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Room" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Returns the world center position of the room.\n" },
+#endif
 		{ "ModuleRelativePath", "Public/Room.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Returns the world center position of the room." },
+#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FStructPropertyParams NewProp_ReturnValue;
@@ -318,9 +330,13 @@ struct Z_Construct_UFunction_UReadOnlyRoom_GetBoundsExtent_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Room" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Returns the world extents (half size) of the room.\n" },
+#endif
 		{ "ModuleRelativePath", "Public/Room.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Returns the world extents (half size) of the room." },
+#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FStructPropertyParams NewProp_ReturnValue;
@@ -362,9 +378,13 @@ struct Z_Construct_UFunction_UReadOnlyRoom_GetDirection_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Room" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Returns the world extents (half size) of the room.\n" },
+#endif
 		{ "ModuleRelativePath", "Public/Room.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Returns the world extents (half size) of the room." },
+#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FBytePropertyParams NewProp_ReturnValue_Underlying;
@@ -409,9 +429,13 @@ struct Z_Construct_UFunction_UReadOnlyRoom_GetPosition_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Room" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Returns the world extents (half size) of the room.\n" },
+#endif
 		{ "ModuleRelativePath", "Public/Room.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Returns the world extents (half size) of the room." },
+#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FStructPropertyParams NewProp_ReturnValue;
@@ -453,9 +477,13 @@ struct Z_Construct_UFunction_UReadOnlyRoom_GetRoomData_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Room" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Returns the room data asset of this room instance.\n" },
+#endif
 		{ "ModuleRelativePath", "Public/Room.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Returns the room data asset of this room instance." },
+#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ReturnValue_MetaData[] = {
 		{ "NativeConst", "" },
@@ -500,9 +528,13 @@ struct Z_Construct_UFunction_UReadOnlyRoom_GetRoomID_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Room" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Returns the unique ID (per-dungeon) of the room.\n// The first room has ID 0 and then it increases in the order of placed room.\n" },
+#endif
 		{ "ModuleRelativePath", "Public/Room.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Returns the unique ID (per-dungeon) of the room.\nThe first room has ID 0 and then it increases in the order of placed room." },
+#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FInt64PropertyParams NewProp_ReturnValue;
@@ -562,19 +594,21 @@ struct Z_Construct_UClass_UReadOnlyRoom_Statics
 		{ "CannotImplementInterfaceInBlueprint", "" },
 		{ "IsBlueprintBase", "false" },
 		{ "ModuleRelativePath", "Public/Room.h" },
+#if !UE_BUILD_SHIPPING
 		{ "Tooltip", "Allow access to only some members of Room instances during the generation process." },
+#endif
 	};
 #endif // WITH_METADATA
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_UReadOnlyRoom_AreAllDoorsConnected, "AreAllDoorsConnected" }, // 2022938193
-		{ &Z_Construct_UFunction_UReadOnlyRoom_CountConnectedDoors, "CountConnectedDoors" }, // 2771109805
-		{ &Z_Construct_UFunction_UReadOnlyRoom_GetBoundsCenter, "GetBoundsCenter" }, // 2608062353
-		{ &Z_Construct_UFunction_UReadOnlyRoom_GetBoundsExtent, "GetBoundsExtent" }, // 4239847400
-		{ &Z_Construct_UFunction_UReadOnlyRoom_GetDirection, "GetDirection" }, // 4053428190
-		{ &Z_Construct_UFunction_UReadOnlyRoom_GetPosition, "GetPosition" }, // 3354556619
-		{ &Z_Construct_UFunction_UReadOnlyRoom_GetRoomData, "GetRoomData" }, // 2596183622
-		{ &Z_Construct_UFunction_UReadOnlyRoom_GetRoomID, "GetRoomID" }, // 2647586466
+		{ &Z_Construct_UFunction_UReadOnlyRoom_AreAllDoorsConnected, "AreAllDoorsConnected" }, // 320627936
+		{ &Z_Construct_UFunction_UReadOnlyRoom_CountConnectedDoors, "CountConnectedDoors" }, // 1402148901
+		{ &Z_Construct_UFunction_UReadOnlyRoom_GetBoundsCenter, "GetBoundsCenter" }, // 3611878226
+		{ &Z_Construct_UFunction_UReadOnlyRoom_GetBoundsExtent, "GetBoundsExtent" }, // 2755356984
+		{ &Z_Construct_UFunction_UReadOnlyRoom_GetDirection, "GetDirection" }, // 3714301047
+		{ &Z_Construct_UFunction_UReadOnlyRoom_GetPosition, "GetPosition" }, // 2297756492
+		{ &Z_Construct_UFunction_UReadOnlyRoom_GetRoomData, "GetRoomData" }, // 2948467431
+		{ &Z_Construct_UFunction_UReadOnlyRoom_GetRoomID, "GetRoomID" }, // 1895944949
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -629,9 +663,13 @@ struct Z_Construct_UFunction_URoom_ForceVisibility_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Room" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Force the room to be veisible\n" },
+#endif
 		{ "ModuleRelativePath", "Public/Room.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Force the room to be veisible" },
+#endif
 	};
 #endif // WITH_METADATA
 	static void NewProp_bForce_SetBit(void* Obj);
@@ -679,9 +717,13 @@ struct Z_Construct_UFunction_URoom_GetAllConnectedRooms_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Room" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Returns all the room instances connected with this one.\n// @param ConnectedRooms This array will be filled with the room instances.\n" },
+#endif
 		{ "ModuleRelativePath", "Public/Room.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Returns all the room instances connected with this one.\n@param ConnectedRooms This array will be filled with the room instances." },
+#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_ConnectedRooms_Inner;
@@ -727,9 +769,13 @@ struct Z_Construct_UFunction_URoom_GetAllDoors_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Room" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Fill an array with all the door actors connected to the room.\n// @param OutDoors THIS IS NOT AN INPUT! This array will be emptied and then filled with the door actors. This is your result!\n" },
+#endif
 		{ "ModuleRelativePath", "Public/Room.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Fill an array with all the door actors connected to the room.\n@param OutDoors THIS IS NOT AN INPUT! This array will be emptied and then filled with the door actors. This is your result!" },
+#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_OutDoors_Inner;
@@ -776,9 +822,13 @@ struct Z_Construct_UFunction_URoom_GetConnectedRoomAt_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Room" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Returns the connected room instance at DoorIndex.\n" },
+#endif
 		{ "ModuleRelativePath", "Public/Room.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Returns the connected room instance at DoorIndex." },
+#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FIntPropertyParams NewProp_DoorIndex;
@@ -825,9 +875,13 @@ struct Z_Construct_UFunction_URoom_GetConnectedRoomIndex_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Room" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Returns the index of the provided room, or -1 if room is not connected.\n" },
+#endif
 		{ "ModuleRelativePath", "Public/Room.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Returns the index of the provided room, or -1 if room is not connected." },
+#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OtherRoom_MetaData[] = {
 		{ "NativeConst", "" },
@@ -878,13 +932,17 @@ struct Z_Construct_UFunction_URoom_GetCustomData_BP_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Room" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Access to custom data of the room.\n// @param DataType The type of the custom data to retrieve.\n// @param Data The custom data found, or null if no custom data found.\n// @return True if a custom data of the specified type has been found, false otherwise.\n" },
+#endif
 		{ "DeterminesOutputType", "DataType" },
 		{ "DisplayName", "Get Custom Data" },
 		{ "DynamicOutputParam", "Data" },
 		{ "ExpandBoolAsExecs", "ReturnValue" },
 		{ "ModuleRelativePath", "Public/Room.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Access to custom data of the room.\n@param DataType The type of the custom data to retrieve.\n@param Data The custom data found, or null if no custom data found.\n@return True if a custom data of the specified type has been found, false otherwise." },
+#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FClassPropertyParams NewProp_DataType;
@@ -940,9 +998,13 @@ struct Z_Construct_UFunction_URoom_GetDoor_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Room" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Get the door actor from a specific index.\n// @param DoorIndex The index of the door to retrieve.\n// @return The door actor at the index, or null if the index is out of range.\n" },
+#endif
 		{ "ModuleRelativePath", "Public/Room.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Get the door actor from a specific index.\n@param DoorIndex The index of the door to retrieve.\n@return The door actor at the index, or null if the index is out of range." },
+#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FIntPropertyParams NewProp_DoorIndex;
@@ -989,9 +1051,13 @@ struct Z_Construct_UFunction_URoom_GetDoorsWith_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Room" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Returns the door actor shared with the provided room.\n// Returns null if the provided room is not connected with this.\n" },
+#endif
 		{ "ModuleRelativePath", "Public/Room.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Returns the door actor shared with the provided room.\nReturns null if the provided room is not connected with this." },
+#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OtherRoom_MetaData[] = {
 		{ "NativeConst", "" },
@@ -1044,9 +1110,13 @@ struct Z_Construct_UFunction_URoom_GetRandomStream_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Room" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Returns the RandomStream from the Dungeon Generator\n" },
+#endif
 		{ "ModuleRelativePath", "Public/Room.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Returns the RandomStream from the Dungeon Generator" },
+#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FStructPropertyParams NewProp_ReturnValue;
@@ -1090,11 +1160,15 @@ struct Z_Construct_UFunction_URoom_HasCustomData_BP_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "AutoCreateRefTerm", "DataType" },
 		{ "Category", "Room" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Check if the room instance contains a custom data of a specific type.\n// @param DataType The type of the custom data to check.\n// @return True if the rooms has a custom data of the specified type, false otherwise.\n" },
+#endif
 		{ "DisplayName", "Has Custom Data" },
 		{ "ExpandBoolAsExecs", "ReturnValue" },
 		{ "ModuleRelativePath", "Public/Room.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Check if the room instance contains a custom data of a specific type.\n@param DataType The type of the custom data to check.\n@return True if the rooms has a custom data of the specified type, false otherwise." },
+#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_DataType_MetaData[] = {
 		{ "NativeConst", "" },
@@ -1149,9 +1223,13 @@ struct Z_Construct_UFunction_URoom_IsDoorConnected_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Room" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Returns true if the door at DoorIndex is connected to another room.\n// @param DoorIndex The index of the door to check.\n" },
+#endif
 		{ "ModuleRelativePath", "Public/Room.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Returns true if the door at DoorIndex is connected to another room.\n@param DoorIndex The index of the door to check." },
+#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FIntPropertyParams NewProp_DoorIndex;
@@ -1202,10 +1280,14 @@ struct Z_Construct_UFunction_URoom_IsLocked_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Room" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Is the room locked?\n// If it is, the doors will be locked (except if they have `Alway Unlocked`).\n" },
+#endif
 		{ "CompactNodeTitle", "Is Locked" },
 		{ "ModuleRelativePath", "Public/Room.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Is the room locked?\nIf it is, the doors will be locked (except if they have `Alway Unlocked`)." },
+#endif
 	};
 #endif // WITH_METADATA
 	static void NewProp_ReturnValue_SetBit(void* Obj);
@@ -1252,9 +1334,13 @@ struct Z_Construct_UFunction_URoom_IsPlayerInside_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Room" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Is the player currently inside the room?\n// A player can be in multiple rooms at once, for example when he stands at the door frame,\n// the player's capsule is in both rooms.\n" },
+#endif
 		{ "ModuleRelativePath", "Public/Room.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Is the player currently inside the room?\nA player can be in multiple rooms at once, for example when he stands at the door frame,\nthe player's capsule is in both rooms." },
+#endif
 	};
 #endif // WITH_METADATA
 	static void NewProp_ReturnValue_SetBit(void* Obj);
@@ -1301,10 +1387,14 @@ struct Z_Construct_UFunction_URoom_IsVisible_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Room" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Is the room currently visible?\n" },
+#endif
 		{ "CompactNodeTitle", "Is Visible" },
 		{ "ModuleRelativePath", "Public/Room.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Is the room currently visible?" },
+#endif
 	};
 #endif // WITH_METADATA
 	static void NewProp_ReturnValue_SetBit(void* Obj);
@@ -1351,9 +1441,13 @@ struct Z_Construct_UFunction_URoom_Lock_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Room" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Lock or unlock the room instance.\n// Will lock/unlock the doors too (except if they have `Alway Unlocked`).\n// @param lock Should the room be locked?\n" },
+#endif
 		{ "ModuleRelativePath", "Public/Room.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Lock or unlock the room instance.\nWill lock/unlock the doors too (except if they have `Alway Unlocked`).\n@param lock Should the room be locked?" },
+#endif
 	};
 #endif // WITH_METADATA
 	static void NewProp_lock_SetBit(void* Obj);
@@ -1396,9 +1490,13 @@ struct Z_Construct_UFunction_URoom_OnInstanceLoaded_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// needed macro for binding to delegate\n" },
+#endif
 		{ "ModuleRelativePath", "Public/Room.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "needed macro for binding to delegate" },
+#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFunctionParams FuncParams;
@@ -1427,9 +1525,13 @@ struct Z_Construct_UFunction_URoom_OnRep_Connections_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Needed macro for replication to work\n" },
+#endif
 		{ "ModuleRelativePath", "Public/Room.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Needed macro for replication to work" },
+#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFunctionParams FuncParams;
@@ -1458,9 +1560,13 @@ struct Z_Construct_UFunction_URoom_OnRep_Id_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Needed macro for replication to work\n" },
+#endif
 		{ "ModuleRelativePath", "Public/Room.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Needed macro for replication to work" },
+#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFunctionParams FuncParams;
@@ -1489,9 +1595,13 @@ struct Z_Construct_UFunction_URoom_OnRep_IsLocked_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Needed macro for replication to work\n" },
+#endif
 		{ "ModuleRelativePath", "Public/Room.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Needed macro for replication to work" },
+#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFunctionParams FuncParams;
@@ -1520,9 +1630,13 @@ struct Z_Construct_UFunction_URoom_OnRep_RoomData_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Needed macro for replication to work\n" },
+#endif
 		{ "ModuleRelativePath", "Public/Room.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Needed macro for replication to work" },
+#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFunctionParams FuncParams;
@@ -1584,16 +1698,24 @@ struct Z_Construct_UClass_URoom_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
 		{ "BlueprintType", "true" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// The room instances of the dungeon.\n// Holds data specific to each room instance, e.g. location, direction, is player inside, room custom data, etc.\n" },
+#endif
 		{ "IncludePath", "Room.h" },
 		{ "ModuleRelativePath", "Public/Room.h" },
 		{ "ShortToolTip", "The room instances of the dungeon." },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "The room instances of the dungeon.\nHolds data specific to each room instance, e.g. location, direction, is player inside, room custom data, etc." },
+#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Instance_MetaData[] = {
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// TODO: Make them private\n" },
+#endif
 		{ "ModuleRelativePath", "Public/Room.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "TODO: Make them private" },
+#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Position_MetaData[] = {
 		{ "ModuleRelativePath", "Public/Room.h" },
@@ -1636,26 +1758,26 @@ struct Z_Construct_UClass_URoom_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_URoom_ForceVisibility, "ForceVisibility" }, // 1854433453
-		{ &Z_Construct_UFunction_URoom_GetAllConnectedRooms, "GetAllConnectedRooms" }, // 3330009815
-		{ &Z_Construct_UFunction_URoom_GetAllDoors, "GetAllDoors" }, // 2905037425
-		{ &Z_Construct_UFunction_URoom_GetConnectedRoomAt, "GetConnectedRoomAt" }, // 2710034488
-		{ &Z_Construct_UFunction_URoom_GetConnectedRoomIndex, "GetConnectedRoomIndex" }, // 1965023458
-		{ &Z_Construct_UFunction_URoom_GetCustomData_BP, "GetCustomData_BP" }, // 286025540
-		{ &Z_Construct_UFunction_URoom_GetDoor, "GetDoor" }, // 498029985
-		{ &Z_Construct_UFunction_URoom_GetDoorsWith, "GetDoorsWith" }, // 533972772
-		{ &Z_Construct_UFunction_URoom_GetRandomStream, "GetRandomStream" }, // 513413376
-		{ &Z_Construct_UFunction_URoom_HasCustomData_BP, "HasCustomData_BP" }, // 1266876807
-		{ &Z_Construct_UFunction_URoom_IsDoorConnected, "IsDoorConnected" }, // 166653326
-		{ &Z_Construct_UFunction_URoom_IsLocked, "IsLocked" }, // 71058903
-		{ &Z_Construct_UFunction_URoom_IsPlayerInside, "IsPlayerInside" }, // 877714339
-		{ &Z_Construct_UFunction_URoom_IsVisible, "IsVisible" }, // 4072056342
-		{ &Z_Construct_UFunction_URoom_Lock, "Lock" }, // 1075131511
-		{ &Z_Construct_UFunction_URoom_OnInstanceLoaded, "OnInstanceLoaded" }, // 27482227
-		{ &Z_Construct_UFunction_URoom_OnRep_Connections, "OnRep_Connections" }, // 1954017198
-		{ &Z_Construct_UFunction_URoom_OnRep_Id, "OnRep_Id" }, // 3254014230
-		{ &Z_Construct_UFunction_URoom_OnRep_IsLocked, "OnRep_IsLocked" }, // 2323962617
-		{ &Z_Construct_UFunction_URoom_OnRep_RoomData, "OnRep_RoomData" }, // 3666755010
+		{ &Z_Construct_UFunction_URoom_ForceVisibility, "ForceVisibility" }, // 4066405156
+		{ &Z_Construct_UFunction_URoom_GetAllConnectedRooms, "GetAllConnectedRooms" }, // 1848479660
+		{ &Z_Construct_UFunction_URoom_GetAllDoors, "GetAllDoors" }, // 303881271
+		{ &Z_Construct_UFunction_URoom_GetConnectedRoomAt, "GetConnectedRoomAt" }, // 774664264
+		{ &Z_Construct_UFunction_URoom_GetConnectedRoomIndex, "GetConnectedRoomIndex" }, // 3298230147
+		{ &Z_Construct_UFunction_URoom_GetCustomData_BP, "GetCustomData_BP" }, // 456403637
+		{ &Z_Construct_UFunction_URoom_GetDoor, "GetDoor" }, // 3329981696
+		{ &Z_Construct_UFunction_URoom_GetDoorsWith, "GetDoorsWith" }, // 3020033632
+		{ &Z_Construct_UFunction_URoom_GetRandomStream, "GetRandomStream" }, // 3243261312
+		{ &Z_Construct_UFunction_URoom_HasCustomData_BP, "HasCustomData_BP" }, // 2237662059
+		{ &Z_Construct_UFunction_URoom_IsDoorConnected, "IsDoorConnected" }, // 597185030
+		{ &Z_Construct_UFunction_URoom_IsLocked, "IsLocked" }, // 3691834318
+		{ &Z_Construct_UFunction_URoom_IsPlayerInside, "IsPlayerInside" }, // 3874179263
+		{ &Z_Construct_UFunction_URoom_IsVisible, "IsVisible" }, // 316328911
+		{ &Z_Construct_UFunction_URoom_Lock, "Lock" }, // 360632581
+		{ &Z_Construct_UFunction_URoom_OnInstanceLoaded, "OnInstanceLoaded" }, // 1777068720
+		{ &Z_Construct_UFunction_URoom_OnRep_Connections, "OnRep_Connections" }, // 353749397
+		{ &Z_Construct_UFunction_URoom_OnRep_Id, "OnRep_Id" }, // 1951149509
+		{ &Z_Construct_UFunction_URoom_OnRep_IsLocked, "OnRep_IsLocked" }, // 3059925681
+		{ &Z_Construct_UFunction_URoom_OnRep_RoomData, "OnRep_RoomData" }, // 4274132222
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static const UECodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
@@ -1701,7 +1823,7 @@ UObject* (*const Z_Construct_UClass_URoom_Statics::DependentSingletons[])() = {
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_URoom_Statics::DependentSingletons) < 16);
 const UECodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_URoom_Statics::InterfaceParams[] = {
-	{ Z_Construct_UClass_UReadOnlyRoom_NoRegister, (int32)VTABLE_OFFSET(URoom, IReadOnlyRoom), false },  // 3559005185
+	{ Z_Construct_UClass_UReadOnlyRoom_NoRegister, (int32)VTABLE_OFFSET(URoom, IReadOnlyRoom), false },  // 3424549496
 };
 const UECodeGen_Private::FClassParams Z_Construct_UClass_URoom_Statics::ClassParams = {
 	&URoom::StaticClass,
@@ -1756,20 +1878,20 @@ URoom::~URoom() {}
 // End Class URoom
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_Room_h_Statics
+struct Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_Room_h_Statics
 {
 	static constexpr FStructRegisterCompiledInInfo ScriptStructInfo[] = {
 		{ FRoomConnection::StaticStruct, Z_Construct_UScriptStruct_FRoomConnection_Statics::NewStructOps, TEXT("RoomConnection"), &Z_Registration_Info_UScriptStruct_RoomConnection, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FRoomConnection), 3036610391U) },
 		{ FCustomDataPair::StaticStruct, Z_Construct_UScriptStruct_FCustomDataPair_Statics::NewStructOps, TEXT("CustomDataPair"), &Z_Registration_Info_UScriptStruct_CustomDataPair, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FCustomDataPair), 610714562U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UReadOnlyRoom, UReadOnlyRoom::StaticClass, TEXT("UReadOnlyRoom"), &Z_Registration_Info_UClass_UReadOnlyRoom, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UReadOnlyRoom), 3559005185U) },
-		{ Z_Construct_UClass_URoom, URoom::StaticClass, TEXT("URoom"), &Z_Registration_Info_UClass_URoom, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(URoom), 3293379179U) },
+		{ Z_Construct_UClass_UReadOnlyRoom, UReadOnlyRoom::StaticClass, TEXT("UReadOnlyRoom"), &Z_Registration_Info_UClass_UReadOnlyRoom, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UReadOnlyRoom), 3424549496U) },
+		{ Z_Construct_UClass_URoom, URoom::StaticClass, TEXT("URoom"), &Z_Registration_Info_UClass_URoom, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(URoom), 566292184U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_Room_h_61885940(TEXT("/Script/ProceduralDungeon"),
-	Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_Room_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_Room_h_Statics::ClassInfo),
-	Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_Room_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_Room_h_Statics::ScriptStructInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_Room_h_875277137(TEXT("/Script/ProceduralDungeon"),
+	Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_Room_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_Room_h_Statics::ClassInfo),
+	Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_Room_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_Room_h_Statics::ScriptStructInfo),
 	nullptr, 0);
 // End Registration
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

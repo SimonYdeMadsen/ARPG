@@ -33,105 +33,157 @@ struct Z_Construct_UScriptStruct_FBoundsParams_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Struct_MetaDataParams[] = {
 		{ "BlueprintType", "true" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Holds the settings for the dungeon limits.\n// These values are expressed in Room cells, and are based on the origin of the first room (0,0,0).\n// For example, if the first room is only 1 room cell (`FirstPoint = (0,0,0)`, `SecondPoint = (1,1,1)`), then  this is the cell (0,0,0).\n// If you set a `MinY=2` et `MaxY=2`, then on the Y axis the dungeon can go from the cell -2 to cell 2,\n// Making an effective range of 5 cells, centered on the first room.\n" },
+#endif
 		{ "ModuleRelativePath", "Public/BoundsParams.h" },
 		{ "ShortToolTip", "Holds the settings for the dungeon limits." },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Holds the settings for the dungeon limits.\nThese values are expressed in Room cells, and are based on the origin of the first room (0,0,0).\nFor example, if the first room is only 1 room cell (`FirstPoint = (0,0,0)`, `SecondPoint = (1,1,1)`), then  this is the cell (0,0,0).\nIf you set a `MinY=2` et `MaxY=2`, then on the Y axis the dungeon can go from the cell -2 to cell 2,\nMaking an effective range of 5 cells, centered on the first room." },
+#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bLimitMaxX_MetaData[] = {
 		{ "Category", "Procedural Generation|Bounds Limits" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Enables the X limit in positive axis (north from the first room).\n" },
+#endif
 		{ "InlineEditConditionToggle", "" },
 		{ "ModuleRelativePath", "Public/BoundsParams.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Enables the X limit in positive axis (north from the first room)." },
+#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MaxX_MetaData[] = {
 		{ "Category", "Procedural Generation|Bounds Limits" },
 		{ "ClampMin", "0" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// The X positive limit (north) of the dungeon in room units (starting from the origin of the first room).\n" },
+#endif
 		{ "EditCondition", "bLimitMaxX" },
 		{ "ModuleRelativePath", "Public/BoundsParams.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "The X positive limit (north) of the dungeon in room units (starting from the origin of the first room)." },
+#endif
 		{ "UIMin", "0" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bLimitMinX_MetaData[] = {
 		{ "Category", "Procedural Generation|Bounds Limits" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Enables the X limit in negative axis (south from the first room).\n" },
+#endif
 		{ "InlineEditConditionToggle", "" },
 		{ "ModuleRelativePath", "Public/BoundsParams.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Enables the X limit in negative axis (south from the first room)." },
+#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MinX_MetaData[] = {
 		{ "Category", "Procedural Generation|Bounds Limits" },
 		{ "ClampMin", "0" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// The X negative limit (south) of the dungeon in room units (starting from the origin of the first room).\n" },
+#endif
 		{ "EditCondition", "bLimitMinX" },
 		{ "ModuleRelativePath", "Public/BoundsParams.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "The X negative limit (south) of the dungeon in room units (starting from the origin of the first room)." },
+#endif
 		{ "UIMin", "0" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bLimitMaxY_MetaData[] = {
 		{ "Category", "Procedural Generation|Bounds Limits" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Enables the Y limit in positive axis (east from the first room).\n" },
+#endif
 		{ "InlineEditConditionToggle", "" },
 		{ "ModuleRelativePath", "Public/BoundsParams.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Enables the Y limit in positive axis (east from the first room)." },
+#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MaxY_MetaData[] = {
 		{ "Category", "Procedural Generation|Bounds Limits" },
 		{ "ClampMin", "0" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// The Y positive limit (east) of the dungeon in room units (starting from the origin of the first room).\n" },
+#endif
 		{ "EditCondition", "bLimitMaxY" },
 		{ "ModuleRelativePath", "Public/BoundsParams.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "The Y positive limit (east) of the dungeon in room units (starting from the origin of the first room)." },
+#endif
 		{ "UIMin", "0" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bLimitMinY_MetaData[] = {
 		{ "Category", "Procedural Generation|Bounds Limits" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Enables the Y limit in negative axis (west from the first room).\n" },
+#endif
 		{ "InlineEditConditionToggle", "" },
 		{ "ModuleRelativePath", "Public/BoundsParams.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Enables the Y limit in negative axis (west from the first room)." },
+#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MinY_MetaData[] = {
 		{ "Category", "Procedural Generation|Bounds Limits" },
 		{ "ClampMin", "0" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// The Y negative limit (west) of the dungeon in room units (starting from the origin of the first room).\n" },
+#endif
 		{ "EditCondition", "bLimitMinY" },
 		{ "ModuleRelativePath", "Public/BoundsParams.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "The Y negative limit (west) of the dungeon in room units (starting from the origin of the first room)." },
+#endif
 		{ "UIMin", "0" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bLimitMaxZ_MetaData[] = {
 		{ "Category", "Procedural Generation|Bounds Limits" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Enables the Z limit in positive axis (up from the first room).\n" },
+#endif
 		{ "InlineEditConditionToggle", "" },
 		{ "ModuleRelativePath", "Public/BoundsParams.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Enables the Z limit in positive axis (up from the first room)." },
+#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MaxZ_MetaData[] = {
 		{ "Category", "Procedural Generation|Bounds Limits" },
 		{ "ClampMin", "0" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// The Z positive limit (up) of the dungeon in room units (starting from the origin of the first room).\n" },
+#endif
 		{ "EditCondition", "bLimitMaxZ" },
 		{ "ModuleRelativePath", "Public/BoundsParams.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "The Z positive limit (up) of the dungeon in room units (starting from the origin of the first room)." },
+#endif
 		{ "UIMin", "0" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bLimitMinZ_MetaData[] = {
 		{ "Category", "Procedural Generation|Bounds Limits" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Enables the Z limit in negative axis (down from the first room).\n" },
+#endif
 		{ "InlineEditConditionToggle", "" },
 		{ "ModuleRelativePath", "Public/BoundsParams.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Enables the Z limit in negative axis (down from the first room)." },
+#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MinZ_MetaData[] = {
 		{ "Category", "Procedural Generation|Bounds Limits" },
 		{ "ClampMin", "0" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// The Z negative limit (down) of the dungeon in room units (starting from the origin of the first room).\n" },
+#endif
 		{ "EditCondition", "bLimitMinZ" },
 		{ "ModuleRelativePath", "Public/BoundsParams.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "The Z negative limit (down) of the dungeon in room units (starting from the origin of the first room)." },
+#endif
 		{ "UIMin", "0" },
 	};
 #endif // WITH_METADATA
@@ -235,15 +287,15 @@ UScriptStruct* Z_Construct_UScriptStruct_FBoundsParams()
 // End ScriptStruct FBoundsParams
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_BoundsParams_h_Statics
+struct Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_BoundsParams_h_Statics
 {
 	static constexpr FStructRegisterCompiledInInfo ScriptStructInfo[] = {
-		{ FBoundsParams::StaticStruct, Z_Construct_UScriptStruct_FBoundsParams_Statics::NewStructOps, TEXT("BoundsParams"), &Z_Registration_Info_UScriptStruct_BoundsParams, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FBoundsParams), 2432163894U) },
+		{ FBoundsParams::StaticStruct, Z_Construct_UScriptStruct_FBoundsParams_Statics::NewStructOps, TEXT("BoundsParams"), &Z_Registration_Info_UScriptStruct_BoundsParams, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FBoundsParams), 3499304364U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_BoundsParams_h_409498274(TEXT("/Script/ProceduralDungeon"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_BoundsParams_h_640759495(TEXT("/Script/ProceduralDungeon"),
 	nullptr, 0,
-	Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_BoundsParams_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_BoundsParams_h_Statics::ScriptStructInfo),
+	Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_BoundsParams_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_BoundsParams_h_Statics::ScriptStructInfo),
 	nullptr, 0);
 // End Registration
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

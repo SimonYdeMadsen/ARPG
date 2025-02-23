@@ -184,10 +184,14 @@ struct Z_Construct_UClass_UStaticRoomObserverComponent_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
 		{ "BlueprintSpawnableComponent", "" },
 		{ "ClassGroupNames", "ProceduralDungeon" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Room Observer that auto-(un)bind itself at BeginPlay and EndPlay.\n// This component will bind to the level it belongs to. So it needs to be placed directly in the Room map.\n// This component does **not** track its own Room, thus the actor should not move between rooms (use RoomObserverComponent instead).\n" },
+#endif
 		{ "IncludePath", "Components/StaticRoomObserverComponent.h" },
 		{ "ModuleRelativePath", "Public/Components/StaticRoomObserverComponent.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Room Observer that auto-(un)bind itself at BeginPlay and EndPlay.\nThis component will bind to the level it belongs to. So it needs to be placed directly in the Room map.\nThis component does **not** track its own Room, thus the actor should not move between rooms (use RoomObserverComponent instead)." },
+#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ActorEnterRoomEvent_MetaData[] = {
 		{ "Category", "Room Observer" },
@@ -258,14 +262,14 @@ UStaticRoomObserverComponent::~UStaticRoomObserverComponent() {}
 // End Class UStaticRoomObserverComponent
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_Components_StaticRoomObserverComponent_h_Statics
+struct Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_Components_StaticRoomObserverComponent_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UStaticRoomObserverComponent, UStaticRoomObserverComponent::StaticClass, TEXT("UStaticRoomObserverComponent"), &Z_Registration_Info_UClass_UStaticRoomObserverComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UStaticRoomObserverComponent), 881538894U) },
+		{ Z_Construct_UClass_UStaticRoomObserverComponent, UStaticRoomObserverComponent::StaticClass, TEXT("UStaticRoomObserverComponent"), &Z_Registration_Info_UClass_UStaticRoomObserverComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UStaticRoomObserverComponent), 49151117U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_Components_StaticRoomObserverComponent_h_2850515163(TEXT("/Script/ProceduralDungeon"),
-	Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_Components_StaticRoomObserverComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_Components_StaticRoomObserverComponent_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_Components_StaticRoomObserverComponent_h_3367630794(TEXT("/Script/ProceduralDungeon"),
+	Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_Components_StaticRoomObserverComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_Components_StaticRoomObserverComponent_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

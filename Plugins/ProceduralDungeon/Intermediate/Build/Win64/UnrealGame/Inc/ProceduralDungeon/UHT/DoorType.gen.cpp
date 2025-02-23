@@ -37,16 +37,24 @@ struct Z_Construct_UClass_UDoorType_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Size_MetaData[] = {
 		{ "Category", "Door Type" },
 		{ "ClampMin", "0" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Size of the door bounds, only used by the debug draw as a visual hint for designers and artists.\n" },
+#endif
 		{ "ModuleRelativePath", "Public/DoorType.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Size of the door bounds, only used by the debug draw as a visual hint for designers and artists." },
+#endif
 	};
 #if WITH_EDITORONLY_DATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Description_MetaData[] = {
 		{ "Category", "Door Type" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Just a description, used nowhere.\n" },
+#endif
 		{ "ModuleRelativePath", "Public/DoorType.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Just a description, used nowhere." },
+#endif
 	};
 #endif // WITH_EDITORONLY_DATA
 #endif // WITH_METADATA
@@ -109,14 +117,14 @@ UDoorType::~UDoorType() {}
 // End Class UDoorType
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DoorType_h_Statics
+struct Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DoorType_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UDoorType, UDoorType::StaticClass, TEXT("UDoorType"), &Z_Registration_Info_UClass_UDoorType, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UDoorType), 1701982079U) },
+		{ Z_Construct_UClass_UDoorType, UDoorType::StaticClass, TEXT("UDoorType"), &Z_Registration_Info_UClass_UDoorType, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UDoorType), 1015544195U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DoorType_h_2499568140(TEXT("/Script/ProceduralDungeon"),
-	Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DoorType_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DoorType_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DoorType_h_3854430744(TEXT("/Script/ProceduralDungeon"),
+	Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DoorType_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Public_DoorType_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

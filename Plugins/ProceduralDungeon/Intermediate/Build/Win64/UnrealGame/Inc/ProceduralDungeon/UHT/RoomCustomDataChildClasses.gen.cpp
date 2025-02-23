@@ -210,16 +210,16 @@ UCustomDataC::~UCustomDataC() {}
 // End Class UCustomDataC
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Private_Tests_Classes_RoomCustomDataChildClasses_h_Statics
+struct Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Private_Tests_Classes_RoomCustomDataChildClasses_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UCustomDataA, UCustomDataA::StaticClass, TEXT("UCustomDataA"), &Z_Registration_Info_UClass_UCustomDataA, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UCustomDataA), 4279312590U) },
-		{ Z_Construct_UClass_UCustomDataB, UCustomDataB::StaticClass, TEXT("UCustomDataB"), &Z_Registration_Info_UClass_UCustomDataB, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UCustomDataB), 729871154U) },
-		{ Z_Construct_UClass_UCustomDataC, UCustomDataC::StaticClass, TEXT("UCustomDataC"), &Z_Registration_Info_UClass_UCustomDataC, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UCustomDataC), 3663110911U) },
+		{ Z_Construct_UClass_UCustomDataA, UCustomDataA::StaticClass, TEXT("UCustomDataA"), &Z_Registration_Info_UClass_UCustomDataA, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UCustomDataA), 691288807U) },
+		{ Z_Construct_UClass_UCustomDataB, UCustomDataB::StaticClass, TEXT("UCustomDataB"), &Z_Registration_Info_UClass_UCustomDataB, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UCustomDataB), 1316144333U) },
+		{ Z_Construct_UClass_UCustomDataC, UCustomDataC::StaticClass, TEXT("UCustomDataC"), &Z_Registration_Info_UClass_UCustomDataC, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UCustomDataC), 2194376213U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Private_Tests_Classes_RoomCustomDataChildClasses_h_1524121597(TEXT("/Script/ProceduralDungeon"),
-	Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Private_Tests_Classes_RoomCustomDataChildClasses_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_HostProject_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Private_Tests_Classes_RoomCustomDataChildClasses_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Private_Tests_Classes_RoomCustomDataChildClasses_h_1562996055(TEXT("/Script/ProceduralDungeon"),
+	Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Private_Tests_Classes_RoomCustomDataChildClasses_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_symig_Documents_GitHub_ARPG_Plugins_ProceduralDungeon_Source_ProceduralDungeon_Private_Tests_Classes_RoomCustomDataChildClasses_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

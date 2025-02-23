@@ -1,0 +1,65 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.ProceduralDungeon.1.cpp.obj": [
+			"BoundsParams.gen.cpp.obj",
+			"Door.gen.cpp.obj",
+			"DoorType.gen.cpp.obj",
+			"DungeonBlueprintLibrary.gen.cpp.obj",
+			"DungeonGenerator.gen.cpp.obj",
+			"DungeonGeneratorBase.gen.cpp.obj"
+		],
+		"Module.ProceduralDungeon.2.cpp.obj": [
+			"DungeonGraph.gen.cpp.obj",
+			"ProceduralDungeon.init.gen.cpp.obj",
+			"ProceduralDungeonSettings.gen.cpp.obj",
+			"ProceduralDungeonTypes.gen.cpp.obj",
+			"ReplicableObject.gen.cpp.obj",
+			"Room.gen.cpp.obj",
+			"RoomCustomData.gen.cpp.obj",
+			"RoomCustomDataChildClasses.gen.cpp.obj",
+			"RoomData.gen.cpp.obj",
+			"RoomLevel.gen.cpp.obj"
+		],
+		"Module.ProceduralDungeon.3.cpp.obj": [
+			"RoomObserverComponent.gen.cpp.obj",
+			"RoomVisibilityComponent.gen.cpp.obj",
+			"RoomVisitor.gen.cpp.obj",
+			"StaticRoomObserverComponent.gen.cpp.obj",
+			"StaticRoomVisibilityComponent.gen.cpp.obj",
+			"TriggerDoor.gen.cpp.obj",
+			"TriggerType.gen.cpp.obj",
+			"BoundsParams.cpp.obj",
+			"RoomObserverComponent.cpp.obj",
+			"StaticRoomObserverComponent.cpp.obj",
+			"StaticRoomVisibilityComponent.cpp.obj",
+			"Door.cpp.obj",
+			"DoorType.cpp.obj",
+			"DungeonBlueprintLibrary.cpp.obj",
+			"DungeonGenerator.cpp.obj",
+			"DungeonGeneratorBase.cpp.obj",
+			"DungeonGraph.cpp.obj",
+			"DungeonOctree.cpp.obj",
+			"ProceduralDungeon.cpp.obj",
+			"ProceduralDungeonLog.cpp.obj",
+			"ProceduralDungeonSettings.cpp.obj",
+			"ProceduralDungeonTypes.cpp.obj",
+			"ProceduralDungeonUtils.cpp.obj",
+			"QueueOrStack.cpp.obj",
+			"ReplicableObject.cpp.obj",
+			"Room.cpp.obj",
+			"RoomCustomData.cpp.obj",
+			"RoomData.cpp.obj",
+			"RoomLevel.cpp.obj",
+			"RoomVisibilityComponent.cpp.obj",
+			"RoomVisitor.cpp.obj",
+			"BoxMinAndMaxTests.cpp.obj",
+			"DoorDirectionTests.cpp.obj",
+			"DungeonGraphTests.cpp.obj",
+			"DungeonUtilsTests.cpp.obj",
+			"RoomDataTests.cpp.obj",
+			"TriggerDoor.cpp.obj",
+			"TriggerType.cpp.obj"
+		]
+	}
+}
