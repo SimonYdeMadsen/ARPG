@@ -1,0 +1,15 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-ProceduralDungeon-Win64-DebugGame.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\symig\Documents\GitHub\ARPG\Intermediate\Build\Win64\x64\SecondTopDownEditor\DebugGame\UnrealEd\SharedPCH.UnrealEd.Project.NonOptimized.ValApi.Cpp20.InclOrderUnreal5_3.h.obj"
+"C:\Users\symig\Documents\GitHub\ARPG\Plugins\ProceduralDungeon\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\ProceduralDungeon\Module.ProceduralDungeon.1.cpp.obj"
+"C:\Users\symig\Documents\GitHub\ARPG\Plugins\ProceduralDungeon\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\ProceduralDungeon\Module.ProceduralDungeon.2.cpp.obj"
+"C:\Users\symig\Documents\GitHub\ARPG\Plugins\ProceduralDungeon\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\ProceduralDungeon\Module.ProceduralDungeon.3.cpp.obj"
+"C:\Users\symig\Documents\GitHub\ARPG\Plugins\ProceduralDungeon\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\ProceduralDungeon\PerModuleInline.gen.cpp.obj"
+"C:\Users\symig\Documents\GitHub\ARPG\Plugins\ProceduralDungeon\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\ProceduralDungeon\Default.rc2.res"
+/OUT:"C:\Users\symig\Documents\GitHub\ARPG\Plugins\ProceduralDungeon\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\ProceduralDungeon\UnrealEditor-ProceduralDungeon-Win64-DebugGame.lib"

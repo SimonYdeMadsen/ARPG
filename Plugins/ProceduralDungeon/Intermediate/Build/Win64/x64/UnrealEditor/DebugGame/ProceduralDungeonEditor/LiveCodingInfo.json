@@ -1,0 +1,31 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.ProceduralDungeonEditor.cpp.obj": [
+			"DoorTypeFactory.gen.cpp.obj",
+			"ProceduralDungeonEditor.init.gen.cpp.obj",
+			"ProceduralDungeonEditorObject.gen.cpp.obj",
+			"ProceduralDungeonEditorSettings.gen.cpp.obj",
+			"ProceduralDungeonEdTypes.gen.cpp.obj",
+			"RoomDataFactory.gen.cpp.obj",
+			"AssetTypeActions_DoorType.cpp.obj",
+			"AssetTypeActions_RoomData.cpp.obj",
+			"DoorDefCustomization.cpp.obj",
+			"Margin3DCustomization.cpp.obj",
+			"ProceduralDungeonEditorCommands.cpp.obj",
+			"ProceduralDungeonEditorObject.cpp.obj",
+			"ProceduralDungeonEdMode.cpp.obj",
+			"ProceduralDungeonEdModeToolkit.cpp.obj",
+			"SProceduralDungeonEdModeWidget.cpp.obj",
+			"ProceduralDungeonEditorTool_Door.cpp.obj",
+			"ProceduralDungeonEditorTool_Size.cpp.obj",
+			"DoorTypeFactory.cpp.obj",
+			"RoomDataFactory.cpp.obj",
+			"ProceduralDungeonEditor.cpp.obj",
+			"ProceduralDungeonEditorSettings.cpp.obj",
+			"ProceduralDungeonEdLog.cpp.obj",
+			"ProceduralDungeonEdTypes.cpp.obj",
+			"PerModuleInline.gen.cpp.obj"
+		]
+	}
+}

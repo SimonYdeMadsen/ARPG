@@ -6,7 +6,8 @@
 			"GameplayMessageTypes2.gen.cpp.obj",
 			"AsyncAction_ListenForGameplayMessage.cpp.obj",
 			"GameplayMessageRuntime.cpp.obj",
-			"GameplayMessageSubsystem.cpp.obj"
+			"GameplayMessageSubsystem.cpp.obj",
+			"PerModuleInline.gen.cpp.obj"
 		]
 	}
 }
