@@ -26,3 +26,21 @@ int32 UGlobalBlueprintFunctionLibrary::BinarySearch(const TArray<int32>& arr, in
     }
     return left; // `left` will be the index of the smallest element greater than target
 }
+
+FString UGlobalBlueprintFunctionLibrary::AddSpacesBeforeCaps(const FString& Input)
+{
+    FRegexPattern Pattern(TEXT("(?<!^)([A-Z])"));
+    FRegexMatcher Matcher(Pattern, Input);
+
+    FString Result = Input;
+    int32 Offset = 0;
+
+    while (Matcher.FindNext())
+    {
+        int32 MatchPos = Matcher.GetMatchBeginning() + Offset;
+        Result.InsertAt(MatchPos, TEXT(" "));
+        Offset++;
+    }
+
+    return Result;
+}

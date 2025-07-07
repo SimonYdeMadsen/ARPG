@@ -11,4 +11,8 @@ class SECONDTOPDOWN_API UGlobalBlueprintFunctionLibrary : public UBlueprintFunct
 public:
     UFUNCTION(BlueprintCallable, Category = "Search")
     static int32 BinarySearch(const TArray<int32>& arr, int32 target);
+
+    UFUNCTION(BlueprintCallable, Category = "String")
+    static FString AddSpacesBeforeCaps(const FString& Input);
+
 };
