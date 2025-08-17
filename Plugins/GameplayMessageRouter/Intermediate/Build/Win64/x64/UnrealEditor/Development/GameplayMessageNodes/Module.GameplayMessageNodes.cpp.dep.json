@@ -7,6 +7,8 @@
         "Includes": [
             "c:\\users\\symig\\documents\\github\\arpg\\plugins\\gameplaymessagerouter\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\gameplaymessagenodes\\definitions.gameplaymessagenodes.h",
             "c:\\users\\symig\\documents\\github\\arpg\\plugins\\gameplaymessagerouter\\intermediate\\build\\win64\\unrealeditor\\inc\\gameplaymessagenodes\\uht\\gameplaymessagenodes.init.gen.cpp",
+            "c:\\users\\symig\\documents\\github\\arpg\\plugins\\gameplaymessagerouter\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\gameplaymessagenodes\\permoduleinline.gen.cpp",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\core\\public\\hal\\permoduleinline.inl",
             "c:\\users\\symig\\documents\\github\\arpg\\plugins\\gameplaymessagerouter\\source\\gameplaymessagenodes\\private\\gameplaymessagenodesmodule.cpp",
             "c:\\users\\symig\\documents\\github\\arpg\\plugins\\gameplaymessagerouter\\source\\gameplaymessagenodes\\private\\k2node_asyncaction_listenforgameplaymessages.cpp",
             "c:\\users\\symig\\documents\\github\\arpg\\plugins\\gameplaymessagerouter\\source\\gameplaymessagenodes\\public\\k2node_asyncaction_listenforgameplaymessages.h",

@@ -98,7 +98,7 @@ void UCombatantAttributeSet::SetIncreasedHealth(float Value)
 
 float UCombatantAttributeSet::GetTotalMaxHealth() const
 {
-    return GetBaseMaxHealth() * (1 + GetIncreasedHealth()/100);
+    return GetBaseMaxHealth() * (GetIncreasedHealth());
 }
 
 float UCombatantAttributeSet::GetInDamage() const
@@ -259,7 +259,7 @@ float UCombatantAttributeSet::ApplyDamageMitigation(const FGameplayEffectModCall
 
     
 
-    return Damage * (DamageMultiplier / 100);
+    return Damage * (DamageMultiplier);
     
 }
 

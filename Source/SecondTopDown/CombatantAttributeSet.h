@@ -16,140 +16,139 @@
 UCLASS()
 class SECONDTOPDOWN_API UCombatantAttributeSet : public UAttributeSet
 {
-    GENERATED_BODY()
+	GENERATED_BODY()
 
 public:
-    UFUNCTION(BlueprintPure, Category = "Attributes")
-    static FGameplayAttribute GetCurrentHealthAttribute();
+	UFUNCTION(BlueprintPure, Category = "Attributes")
+	static FGameplayAttribute GetCurrentHealthAttribute();
 
-    UFUNCTION(BlueprintPure, Category = "Attributes")
-    static FGameplayAttribute GetIncreasedHealthAttribute();
+	UFUNCTION(BlueprintPure, Category = "Attributes")
+	static FGameplayAttribute GetIncreasedHealthAttribute();
 
-    UFUNCTION(BlueprintPure, Category = "Attributes")
-    static FGameplayAttribute GetBaseMaxHealthAttribute();
-
-
-    UFUNCTION(BlueprintPure, Category = "Attributes")
-    static FGameplayAttribute GetInDamageAttribute();
+	UFUNCTION(BlueprintPure, Category = "Attributes")
+	static FGameplayAttribute GetBaseMaxHealthAttribute();
 
 
-
-    UFUNCTION(BlueprintPure, Category = "Attributes")
-    static FGameplayAttribute GetFireTakenAttribute();
-
-    UFUNCTION(BlueprintPure, Category = "Attributes")
-    static FGameplayAttribute GetColdTakenAttribute();
-
-    UFUNCTION(BlueprintPure, Category = "Attributes")
-    static FGameplayAttribute GetLightningTakenAttribute();
-
-    UFUNCTION(BlueprintPure, Category = "Attributes")
-    static FGameplayAttribute GetChaosTakenAttribute();
-
-    UFUNCTION(BlueprintPure, Category = "Attributes")
-    static FGameplayAttribute GetPhysicalTakenAttribute();
+	UFUNCTION(BlueprintPure, Category = "Attributes")
+	static FGameplayAttribute GetInDamageAttribute();
 
 
 
-    // Existing getters and setters
-    UFUNCTION(BlueprintPure, Category = "Attributes")
-    float GetTotalMaxHealth() const;
+	UFUNCTION(BlueprintPure, Category = "Attributes")
+	static FGameplayAttribute GetFireTakenAttribute();
 
-    UFUNCTION(BlueprintPure, Category = "Attributes")
-    float GetCurrentHealth() const;
-    void SetCurrentHealth(float Value);
+	UFUNCTION(BlueprintPure, Category = "Attributes")
+	static FGameplayAttribute GetColdTakenAttribute();
 
-    UFUNCTION(BlueprintPure, Category = "Attributes")
-    float GetBaseMaxHealth() const;
-    void SetBaseMaxHealth(float Value);
+	UFUNCTION(BlueprintPure, Category = "Attributes")
+	static FGameplayAttribute GetLightningTakenAttribute();
 
-    UFUNCTION(BlueprintPure, Category = "Attributes")
-    float GetIncreasedHealth() const;
-    void SetIncreasedHealth(float Value);
+	UFUNCTION(BlueprintPure, Category = "Attributes")
+	static FGameplayAttribute GetChaosTakenAttribute();
 
-
-    UFUNCTION(BlueprintPure, Category = "Attributes")
-    float GetInDamage() const;
-    void SetInDamage(float Value);
-
-
-    UFUNCTION(BlueprintPure, Category = "Attributes")
-    float GetFireTaken() const;
-    void SetFireTaken(float Value);
-
-    UFUNCTION(BlueprintPure, Category = "Attributes")
-    float GetColdTaken() const;
-    void SetColdTaken(float Value);
-
-    UFUNCTION(BlueprintPure, Category = "Attributes")
-    float GetLightningTaken() const;
-    void SetLightningTaken(float Value);
-
-    UFUNCTION(BlueprintPure, Category = "Attributes")
-    float GetChaosTaken() const;
-    void SetChaosTaken(float Value);
-
-    UFUNCTION(BlueprintPure, Category = "Attributes")
-    float GetPhysicalTaken() const;
-    void SetPhysicalTaken(float Value);
-
-
-    // Energy Shield variables
-    UFUNCTION(BlueprintPure, Category = "Attributes")
-    float GetCurrentShield();
-    float AddShieldCurrent(float Addition);
+	UFUNCTION(BlueprintPure, Category = "Attributes")
+	static FGameplayAttribute GetPhysicalTakenAttribute();
 
 
 
-    // Override to enforce rules like limiting Health to MaxHealth
-    virtual void PostGameplayEffectExecute(const FGameplayEffectModCallbackData& Data) override;
+	// Existing getters and setters
+	UFUNCTION(BlueprintPure, Category = "Attributes")
+	float GetTotalMaxHealth() const;
+
+	UFUNCTION(BlueprintPure, Category = "Attributes")
+	float GetCurrentHealth() const;
+	void SetCurrentHealth(float Value);
+
+	UFUNCTION(BlueprintPure, Category = "Attributes")
+	float GetBaseMaxHealth() const;
+	void SetBaseMaxHealth(float Value);
+
+	UFUNCTION(BlueprintPure, Category = "Attributes")
+	float GetIncreasedHealth() const;
+	void SetIncreasedHealth(float Value);
+
+
+	UFUNCTION(BlueprintPure, Category = "Attributes")
+	float GetInDamage() const;
+	void SetInDamage(float Value);
+
+
+	UFUNCTION(BlueprintPure, Category = "Attributes")
+	float GetFireTaken() const;
+	void SetFireTaken(float Value);
+
+	UFUNCTION(BlueprintPure, Category = "Attributes")
+	float GetColdTaken() const;
+	void SetColdTaken(float Value);
+
+	UFUNCTION(BlueprintPure, Category = "Attributes")
+	float GetLightningTaken() const;
+	void SetLightningTaken(float Value);
+
+	UFUNCTION(BlueprintPure, Category = "Attributes")
+	float GetChaosTaken() const;
+	void SetChaosTaken(float Value);
+
+	UFUNCTION(BlueprintPure, Category = "Attributes")
+	float GetPhysicalTaken() const;
+	void SetPhysicalTaken(float Value);
+
+
+	// Energy Shield variables
+	UFUNCTION(BlueprintPure, Category = "Attributes")
+	float GetCurrentShield();
+	float AddShieldCurrent(float Addition);
+
+
+	// Override to enforce rules like limiting Health to MaxHealth
+	virtual void PostGameplayEffectExecute(const FGameplayEffectModCallbackData& Data) override;
 
 private:
-    
-    
-    UPROPERTY()
-    FGameplayAttributeData BaseMaxHealth;
+	
+	
+	UPROPERTY()
+	FGameplayAttributeData BaseMaxHealth;
 
-    UPROPERTY()
-    FGameplayAttributeData IncreasedHealth;
+	UPROPERTY()
+	FGameplayAttributeData IncreasedHealth = 1;
 
-    UPROPERTY()
-    FGameplayAttributeData CurrentHealth;
-
-
-    UPROPERTY()
-    FGameplayAttributeData InDamage;
+	UPROPERTY()
+	FGameplayAttributeData CurrentHealth;
 
 
-    UPROPERTY()
-    FGameplayAttributeData FireTaken = 100;
-
-    UPROPERTY()
-    FGameplayAttributeData ColdTaken = 100;
-
-    UPROPERTY()
-    FGameplayAttributeData LightningTaken = 100;
-
-    UPROPERTY()
-    FGameplayAttributeData ChaosTaken = 100;
-
-    UPROPERTY()
-    FGameplayAttributeData PhysicalTaken = 100;
+	UPROPERTY()
+	FGameplayAttributeData InDamage;
 
 
-    float ApplyDamageMitigation(const FGameplayEffectModCallbackData& Data, FGameplayTagContainer& GameplayTagContainer, float& Damage);
+	UPROPERTY()
+	FGameplayAttributeData FireTaken = 1;
+
+	UPROPERTY()
+	FGameplayAttributeData ColdTaken = 1;
+
+	UPROPERTY()
+	FGameplayAttributeData LightningTaken = 1;
+
+	UPROPERTY()
+	FGameplayAttributeData ChaosTaken = 1;
+
+	UPROPERTY()
+	FGameplayAttributeData PhysicalTaken = 1;
 
 
-    // Energy Shield variables
-    UPROPERTY()
-    FGameplayAttributeData ShieldCurrent;
-    UPROPERTY()
-    FGameplayAttributeData ShieldAddedBuff;
-    UPROPERTY()
-    FGameplayAttributeData ShieldTimeOfLastAddition;
-    UPROPERTY()
-    FGameplayAttributeData ShieldDecayRate = 0.2;
-    UPROPERTY()
-    FGameplayAttributeData ShieldSnapshot;
+	float ApplyDamageMitigation(const FGameplayEffectModCallbackData& Data, FGameplayTagContainer& GameplayTagContainer, float& Damage);
+
+
+	// Energy Shield variables
+	UPROPERTY()
+	FGameplayAttributeData ShieldCurrent;
+	UPROPERTY()
+	FGameplayAttributeData ShieldAddedBuff;
+	UPROPERTY()
+	FGameplayAttributeData ShieldTimeOfLastAddition;
+	UPROPERTY()
+	FGameplayAttributeData ShieldDecayRate = 0.2;
+	UPROPERTY()
+	FGameplayAttributeData ShieldSnapshot;
 
 };
